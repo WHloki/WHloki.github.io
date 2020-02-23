@@ -10,7 +10,7 @@
     <title>线性表 | Haohao</title>
     <meta name="author" content="WHloki" />
     <meta name="keywords" content="" />
-    <meta name="description" content="今天开始学习线性表，这也算是进入数据结构的世界了；线性表定义1、定义：n(n≥0)个数据元素的有限序列；2、线性表是一种最常用且最简单的数据结构，含有n个元素的线性表是一个数据结构；3、List = (D,R)  ——&amp;gt;  D是data数据，R是relation关系；前驱后继若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3,..." />
+    <meta name="description" content="今天开始学习线性表，这也算是进入数据结构的世界了；线性表定义1、定义：n(n≥0)个数据元素的有限序列；2、线性表是一种最常用且最简单的数据结构，含有n个元素的线性表是一个数据结构；3、List = (D,R)  ——&amp;gt;  D是data数据，R是relation关系；前驱后继若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3..." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
@@ -140,7 +140,8 @@
 <h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>1、定义：n(n≥0)个数据元素的有限序列；</p>
 <p>2、线性表是一种最常用且最简单的数据结构，含有n个元素的线性表是一个数据结构；</p>
 <p>3、List = (D,R)  ——&gt;  D是data数据，R是relation关系；</p>
-<h4 id="前驱后继"><a href="#前驱后继" class="headerlink" title="前驱后继"></a>前驱后继</h4><p>若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3,4…n时，ai有且仅有一个直接前驱；</p>
+<h4 id="前驱后继"><a href="#前驱后继" class="headerlink" title="前驱后继"></a>前驱后继</h4><p>若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当</p>
+<p>i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3,4…n时，ai有且仅有一个直接前驱；</p>
 <p>所以，线性表的元素的个数n(n≥0)定义为线性表的长度，当n=0时，称为空表；</p>
 <h4 id="线性表的抽象数据类型——基本操作-增-删-查-取-空-长"><a href="#线性表的抽象数据类型——基本操作-增-删-查-取-空-长" class="headerlink" title="线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )"></a>线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )</h4><p>1、InitList(*L) //初始化,建立一个新的线性表L；</p>
 <p>2、ListEmpty(L) //线性表为空，返回true，否则返回false；</p>
@@ -209,7 +210,9 @@
 <p>​        ⅰ顺序存储结构需要预分配存储空间，分大了，浪费，分小了，易发生上溢</p>
 <p>​        ⅱ单链表不需要分配存储空间，只要有就可以分配，元素个数也不受限制</p>
 <h4 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h4><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><p>用数组描述的链表叫做静态链表 ；</p>
-<p>具体描述：首先让数组的两个元素都是由两个数据域组成，data和cur；也就是说，数组的每个下标都对应一个data和cur；数据域data，用来存放数据元素,也就是通常我们要处理的数据；而cur相当于链表中的next指针，存放该元素的后继在数组中的下标，我们把cur叫做游标；</p>
+<p>具体描述：首先让数组的两个元素都是由两个数据域组成，data和cur；也就是说，数组的每个下标都对应一个</p>
+<p>data和cur；数据域data，用来存放数据元素,也就是通常我们要处理的数据；而cur相当于链表中的next指针，存</p>
+<p>放该元素的后继在数组中的下标，我们把cur叫做游标；</p>
 <p>小注：这里我理解的游标就是next那根链，元素的游标指向下一个数值的下标；;</p>
 <h5 id="静态链表存储结构"><a href="#静态链表存储结构" class="headerlink" title="静态链表存储结构"></a>静态链表存储结构</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 1000 <span class="comment">// 假设链表最大长度是1k</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	<span class="keyword">int</span> cur; <span class="comment">//游标，为0时表示无指向</span></span><br><span class="line">&#125;StaticLinkList[MAXSIZE];</span><br></pre></td></tr></table></figure>
 
@@ -233,13 +236,16 @@
 <h6 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ListDelete</span><span class="params">(StaticLinkList L, <span class="keyword">int</span> i)</span> <span class="comment">// 删除L中第i个元素e</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j, k;</span><br><span class="line">	<span class="keyword">if</span> (i&lt;<span class="number">1</span> || i&gt;ListLength(L))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	&#125;</span><br><span class="line">	k = MAXSIZE - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= i - <span class="number">1</span>; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		k = L[k].cur;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// j &gt; k</span></span><br><span class="line">	j = L[k].cur;  <span class="comment">//L[k].cur指向删除元素的下标，赋值给j</span></span><br><span class="line">	L[k].cur = L[j].cur;  <span class="comment">//被删除元素的游标赋值给前一个元素的游标，实现连接</span></span><br><span class="line">	Free_SSL(L, j); <span class="comment">//回收</span></span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="静态链表优缺点"><a href="#静态链表优缺点" class="headerlink" title="静态链表优缺点"></a>静态链表优缺点</h5><p>1、优点：</p>
-<p>​        ●在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了在顺序存储结构中的插入和删除操作需要移动大量元素的缺点</p>
+<p>​        ●在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了在顺序存储结构中的插入和删除操作</p>
+<p>需要移动大量元素的缺点</p>
 <p>2、缺点：</p>
 <p>​        ●没有解决连续存储分配带来的表长难以确定的问题</p>
 <p>​        ●失去了顺序存储结构随机存取的特性</p>
 <h4 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h4><h5 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h5><p>循环链表——首尾相连的链表；</p>
-<p>将单链表中终端节点的指针端由空指针改为指向头节点，就使整个单链表形成一个环。这种头尾相接的单链表称为单循环链表，简称循环链表；</p>
-<h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><p>循环链表中，从任一节点出发都可以访问到表中所有节点，在单链表中，必须从头指针开始，否则无法访问到该节点之前的其他节点；</p>
+<p>将单链表中终端节点的指针端由空指针改为指向头节点，就使整个单链表形成一个环。这种头尾相接的单链表称为</p>
+<p>单循环链表，简称循环链表；</p>
+<h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><p>循环链表中，从任一节点出发都可以访问到表中所有节点，在单链表中，必须从头指针开始，否则无法访问到该节</p>
+<p>点之前的其他节点；</p>
 <h4 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h4><h5 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h5><p>双向链表是在单链表的每个节点中，再设置一个指向其前驱节点的指针域，前驱后继方向都能遍历；</p>
 <h5 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">DulNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">DulNode</span>* <span class="title">prior</span>;</span>  <span class="comment">//直接前驱指针</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">DulNode</span>* <span class="title">next</span>;</span>  <span class="comment">//直接后继指针</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
