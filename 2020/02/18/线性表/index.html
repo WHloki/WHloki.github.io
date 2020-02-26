@@ -7,7 +7,7 @@
 
     
 
-    <title>线性表 | Haohao</title>
+    <title>线性——Linear List | Haohao</title>
     <meta name="author" content="WHloki" />
     <meta name="keywords" content="" />
     <meta name="description" content="今天开始学习线性表，这也算是进入数据结构的世界了；线性表定义1、定义：n(n≥0)个数据元素的有限序列；2、线性表是一种最常用且最简单的数据结构，含有n个元素的线性表是一个数据结构；3、List = (D,R)  ——&amp;gt;  D是data数据，R是relation关系；前驱后继若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3..." />
@@ -111,7 +111,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            线性表
+            线性——Linear List
         </h1>
         
         <div class="article-meta clearfix">
@@ -143,14 +143,10 @@
 <h4 id="前驱后继"><a href="#前驱后继" class="headerlink" title="前驱后继"></a>前驱后继</h4><p>若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当</p>
 <p>i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3,4…n时，ai有且仅有一个直接前驱；</p>
 <p>所以，线性表的元素的个数n(n≥0)定义为线性表的长度，当n=0时，称为空表；</p>
-<h4 id="线性表的抽象数据类型——基本操作-增-删-查-取-空-长"><a href="#线性表的抽象数据类型——基本操作-增-删-查-取-空-长" class="headerlink" title="线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )"></a>线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )</h4><p>1、InitList(*L) //初始化,建立一个新的线性表L；</p>
-<p>2、ListEmpty(L) //线性表为空，返回true，否则返回false；</p>
-<p>3、ListLength(L) //求长度，返回线性表中元素的个数；</p>
-<p>4、GetElem(L,i,*e) //将线性表L中第i个数据元素赋值给e；</p>
-<p>5、LocateElem(L,e) //在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功，否则，返回0表示失败；</p>
-<p>6、ListInsert(*L,i,e) //在线性表L中第i个位置插入新的数据e，表长+1；</p>
-<p>7、ListDelete(*L,i,e) //删除线性表L中第i个数据元素，e返回其值，表长-1；</p>
-<p>8、ClearList(*L) //将线性表清空；</p>
+<h4 id="线性表的抽象数据类型——基本操作-增-删-查-取-空-长"><a href="#线性表的抽象数据类型——基本操作-增-删-查-取-空-长" class="headerlink" title="线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )"></a>线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、InitList(*L) <span class="comment">//初始化,建立一个新的线性表L；</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、ListEmpty(L) <span class="comment">//线性表为空，返回true，否则返回false；</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、ListLength(L) <span class="comment">//求长度，返回线性表中元素的个数；</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、GetElem(L,i,*e) <span class="comment">//将线性表L中第i个数据元素赋值给e；</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、LocateElem(L,e) <span class="comment">//在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功，否则，返回0表示失败；</span></span><br><span class="line"></span><br><span class="line"><span class="number">6</span>、ListInsert(*L,i,e) <span class="comment">//在线性表L中第i个位置插入新的数据e，表长+1；</span></span><br><span class="line"></span><br><span class="line"><span class="number">7</span>、ListDelete(*L,i,e) <span class="comment">//删除线性表L中第i个数据元素，e返回其值，表长-1；</span></span><br><span class="line"></span><br><span class="line"><span class="number">8</span>、ClearList(*L) <span class="comment">//将线性表清空；</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="线性表的顺序存储结构——顺序表"><a href="#线性表的顺序存储结构——顺序表" class="headerlink" title="线性表的顺序存储结构——顺序表"></a>线性表的顺序存储结构——顺序表</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>线性表的顺序存储结构，指的是用一段地址连续的储存单元依次储存线性表的数据元素；</p>
 <h4 id="顺序储存方式"><a href="#顺序储存方式" class="headerlink" title="顺序储存方式"></a>顺序储存方式</h4><p>先来看看结构代码</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 20  <span class="comment">//储存空间初始分配量</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElemType data[MaxSize];</span><br><span class="line">	<span class="keyword">int</span> length;  <span class="comment">//线性表当前长度</span></span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
@@ -263,6 +259,8 @@
 
 <a id="pagenext" href="/2020/02/18/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="article-next" title="时间复杂度"><i class="icon-arrow-right"></i></a>
 
+
+<a id="pageprev" href="/2020/02/26/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/" class="article-prev" title="栈与队列——Stack &amp; Queue"><i class="icon-arrow-left"></i></a>
 
 
 
