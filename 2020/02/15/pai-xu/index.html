@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据结构, Haohao">
+    <meta name="keywords" content="排序, Haohao">
     <meta name="description" content="nice">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>数据结构 | Haohao</title>
+    <title>排序 | Haohao</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -281,12 +281,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据结构</h1>
+                    <h1 class="description center-align post-title">排序</h1>
                 </div>
             </div>
         </div>
@@ -407,6 +407,10 @@
                                 <span class="chip bg-color">数据结构</span>
                             </a>
                         
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -426,21 +430,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-02-27
+                    2020-03-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    336
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    8 Min
                 </div>
                 
 
@@ -456,20 +460,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>数据结构是学习语言过程中必会内容，对以后做项目，工作会有很大的帮助；</p>
-<p>下学习开数据结构课，所以将学习记的一些笔记写进blog里面；</p>
-<p>后面会不定时的更新；</p>
+                <p>初学算法，从最简单的开始——排序；</p>
 <a id="more"></a>
 
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>算法（Algorithm）是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法</p>
-<p>描述解决问题的策略机制；简单来讲，就是解决问题的方法和机制；</p>
-<h5 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h5><p>1、有穷性：算法在执行有限的步骤之后，自动结束而不会出现无限循环，并且每一步骤在可接受的时间内完成；</p>
-<p>2、确定性：算法的每一步骤都有确定的含义，不会出现二义性；</p>
-<p>3、可行性：算法的每一步都必须是可行的，也就是说，每一步都能够通过执行有限次数完成；</p>
-<p>4、输入输出：0至多个输入，1至多个输出；</p>
-<h4 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h4><p>程序 = 数据结构 + 算法；</p>
-<h4 id="数据结构概念"><a href="#数据结构概念" class="headerlink" title="数据结构概念"></a>数据结构概念</h4><p>数据结构：是相互之间存在一种或多种特定关系的数据结构元素的集合；</p>
-<p>//接下来的时间我将会整理数据结构的相关内容，敬请期待；</p>
+<p>算法中常用的排序有多钟，比如冒泡排序，桶排序，快速排序，归并排序，sort（我只会这么多，hhh），下面我</p>
+<p>将会一一介绍：</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="桶排序（Bucket-Sort）"><a href="#桶排序（Bucket-Sort）" class="headerlink" title="桶排序（Bucket Sort）"></a>桶排序（Bucket Sort）</h3><p>首先，我们来看桶排序。桶排序，顾名思义，会用到“桶”，核心思想是将要排序的数据分到几个有序的桶里，每个</p>
+<p>桶里的数据再单独进行排序。桶内排完序之后，再把每个桶里的数据按照顺序依次取出，组成的序列就是有序的</p>
+<p>了；</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> bucket[<span class="number">101</span>],i,j,t,n;</span><br><span class="line">	<span class="built_in">memset</span>(bucket,<span class="number">0</span>,<span class="keyword">sizeof</span>(bucket));  <span class="comment">//数组全体置为 0 </span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);  <span class="comment">//输入一个数字 n，表示有 n个数 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) <span class="comment">//循环读入 n个数，并进行桶排序 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);   <span class="comment">//把每次读入的数字用变量 t保存 </span></span><br><span class="line">		bucket[t]++;<span class="comment">//进行计数，对编号为 t的桶加一 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">101</span>;i++)  <span class="comment">//依次判断编号为 0-100 的桶 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=bucket[i];j++)  <span class="comment">// 出现几次就将桶打印几次 </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>,i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>设桶的个数为m，待排序数的个数为n；</p>
+<p>第8行执行了m次，第13行执行了n次，第16行和第19行共执行了m+n次，所以程序共执行了2（m+n)次，时间复</p>
+<p>杂度即为O（2*（m+n）），即O（m+n）；</p>
+<h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><p>其次，我们来看冒泡排序。冒泡排序基本思想是：每次比较两个相邻的元素，如果它们的顺序错误就把它们交换过</p>
+<p>来；</p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	t=*a,*a=*b,*b=t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,n;</span><br><span class="line">	<span class="keyword">int</span> bubble[<span class="number">100</span>]; </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n); <span class="comment">// 输入一个n，表示有n个数。 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;bubble[i]);	<span class="comment">// 循环读入n个数，放入数组中 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//下面是冒泡排序核心	</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)   <span class="comment">//外层for循环控制循环次数 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>;j++)   <span class="comment">//内层for循环控制相邻两元素进行比较 </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(bubble[j]&gt;bubble[j+<span class="number">1</span>])   <span class="comment">//if(bubble[j]&lt;bubble[j+1]) </span></span><br><span class="line">			<span class="comment">// 比较；两数大小并交换，前者从小到大排序，后者从大到小排序（也可以通过输出改变排列次序） </span></span><br><span class="line">			&#123;</span><br><span class="line">				swap(&amp;bubble[j],&amp;bubble[j+<span class="number">1</span>]);	<span class="comment">//交换两个数 </span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,bubble[i]);	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>设待排序数的个数为n；</p>
+<p>不难看出，核心代码中，最短时间为n，最长为n^2,所以时间复杂度为O（n^2）；</p>
+<h3 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h3><p>桶排序和冒泡排序虽然简单，但是如果有几万几亿个数排序，那效率就会非常低，这就需要一种快速的排序方法</p>
+<p>——快速排序；</p>
+<p>思路：</p>
+<p>1.对于一个数组，首先选择一个基准值key，这个基准值可以随意选，但是一般选择的是这个数组的第一个元素；</p>
+<p>2.我们对于这个数组，把数组中所有比基准值key小的元素向基准值key的左边扔，把数组中所有比基准值key大的</p>
+<p>元素向key的右边扔；</p>
+<p>3.这样的话基准值key就成为了一个”分界线”，所有比基准值key小的元素都在基准值key的左边，所有比基准值key</p>
+<p>大的元素都在基准值key的右边；</p>
+<p>4.之后我们在递归的对基准值key左边的序列和右边的序列再用以上方法进行排序；</p>
+<p>5.最终整个序列就是有序的了；</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> quick[<span class="number">101</span>],n; <span class="comment">//定义全局变量，需要在子函数中使用 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j,t,temp;</span><br><span class="line">        <span class="keyword">if</span>(left&gt;right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        temp=quick[left];  <span class="comment">// temp存的就是基准数 </span></span><br><span class="line">        i=left;</span><br><span class="line">        j=right;</span><br><span class="line">        <span class="keyword">while</span>(i!=j)  <span class="comment">//顺序很重要 </span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(quick[j]&gt;=temp&amp;&amp;i&lt;j) j--;  <span class="comment">//从右往左找 </span></span><br><span class="line">            <span class="keyword">while</span>(quick[i]&lt;=temp&amp;&amp;i&lt;j) i++;  <span class="comment">//从左往右找 </span></span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) <span class="comment">// 交换两个数在数组中的位置 </span></span><br><span class="line">            &#123;</span><br><span class="line">                t=quick[i];</span><br><span class="line">                quick[i]=quick[j];</span><br><span class="line">                quick[j]=t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 基准数归位 </span></span><br><span class="line">        quick[left]=quick[i];</span><br><span class="line">        quick[i]=temp;</span><br><span class="line">        quicksort(left,i<span class="number">-1</span>);  <span class="comment">//继续处理左边的，这是一个递归的过程 </span></span><br><span class="line">        quicksort(i+<span class="number">1</span>,right); <span class="comment">//继续处理右边的，这是一个递归的过程 </span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        &#123; </span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;quick[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        quicksort(<span class="number">1</span>,n);  <span class="comment">// 快排调用 </span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,quick[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度-2"><a href="#时间复杂度-2" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>设需要排序的数字的个数为n；</p>
+<p>理想的情况是，每次划分所选择的中间数恰好将当前序列几乎等分，经过log2n趟划分，便可得到长度为1的子</p>
+<p>表。这样，整个算法的时间复杂度为O(nlog2n)；</p>
+<p>最坏的情况是，每次所选的中间数是当前序列中的最大或最小元素，这使得每次划分所得的子表中一个为空表，另</p>
+<p>一子表的长度为原表的长度-1。这样，长度为n的数据表的快速排序需要经过n趟划分，使得整个排序算法的时间</p>
+<p>复杂度为O(n^2)；</p>
+<p>平均起来，快速排序的时间复杂度为O（nlogn）；</p>
+<h3 id="归并排序（Merge-Sort）"><a href="#归并排序（Merge-Sort）" class="headerlink" title="归并排序（Merge Sort）"></a>归并排序（Merge Sort）</h3><p>原理：</p>
+<p>假设初始待排序数据有n个，可以将n个数据看成n个独立的子序列，因此每个子序列的长度为1，然后两两合并，</p>
+<p>得到n/2个长度为2或1(如果n为奇数时，就会出现多出一个元素无法与其他元素合并)的有序子序列; 再两两合并，</p>
+<p>一直重复下去，直到得到一个长度为n的有序序列为止（2路排序）；</p>
+<p>核心：</p>
+<p>两个有序子序列的合并；</p>
+<p>（1）将待排序序列一分为二，对左右两边进行递归分割，得到m个子序列；</p>
+<p>（2）对m个子序列递归执行合并操作，最终得到有序的序列；</p>
+<h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//原数组arr1，临时空间数组arr2</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr1[],<span class="keyword">int</span> arr2[],<span class="keyword">int</span> low, <span class="keyword">int</span> mid, <span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = low, j = mid+<span class="number">1</span>, k = low;</span><br><span class="line">	<span class="keyword">while</span> (i&lt;=mid &amp;&amp; j&lt;=high)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (arr1[i]&lt;arr1[j])</span><br><span class="line">		&#123;</span><br><span class="line">			arr2[k++] = arr1[i++];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			arr2[k++] = arr1[j++];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (i&lt;=mid)</span><br><span class="line">	&#123;</span><br><span class="line">		arr2[k++] = arr1[i++];</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">while</span> (j&lt;=high)</span><br><span class="line">	&#123;</span><br><span class="line">    	arr2[k++] = arr1[j++];</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">for</span> (i=low; i&lt;=high;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		arr1[i] = arr2[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> arr1[],<span class="keyword">int</span> arr2[],<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//直到a=b时，停止递归。</span></span><br><span class="line">	<span class="keyword">if</span> (a&lt;b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> mid = (a+b)/<span class="number">2</span>;</span><br><span class="line">		mergeSort(arr1,arr2,a,mid);</span><br><span class="line">		mergeSort(arr1,arr2,mid+<span class="number">1</span>,b);</span><br><span class="line">		merge(arr1,arr2,a,mid,b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,a[<span class="number">10</span>]=&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">4</span>&#125;,b[<span class="number">10</span>];</span><br><span class="line">    mergeSort(a,b,<span class="number">0</span>,<span class="number">9</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度-3"><a href="#时间复杂度-3" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>设需要排序的数字的个数为n；</p>
+<p>归并排序稳定性比较高，最好情况、最坏情况都为nlogn，所以时间复杂度为O(nlogn)；</p>
+<h3 id="sort函数"><a href="#sort函数" class="headerlink" title="sort函数"></a>sort函数</h3><p>sort函数用于C++中，可以实现升序，也可以实现降序，原理不多说，直接上代码；</p>
+<h4 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp1</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span>  <span class="comment">//自定义函数 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m&gt;n;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp2</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span>  <span class="comment">//自定义函数 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m&lt;n;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">5</span>],i;	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i]; </span><br><span class="line">	&#125;;</span><br><span class="line">    <span class="comment">//从大到小--&gt; sort(a,a+5,greater&lt;int&gt;()); 或者 sort(a,a+5,cmp1); </span></span><br><span class="line">    <span class="comment">//从小到大--&gt; sort(a,a+5,less&lt;int&gt;());  或者 sort(a,a+5,cmp2);</span></span><br><span class="line">    <span class="comment">//acm做题的时候，常常直接sort(a,a+n);--&gt;从小到大</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度-4"><a href="#时间复杂度-4" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>sort函数是qsort的升级版，它的时间复杂度也是nlogn，acm的话用sort多一些，简洁明了（偷懒）；</p>
+<p>。。。。未完待续。。。。</p>
 
             </div>
             <hr/>
@@ -495,7 +540,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/02/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">http://yoursite.com/2020/02/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a>
+                    <a href="http://yoursite.com/2020/02/15/pai-xu/">http://yoursite.com/2020/02/15/pai-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -535,6 +580,10 @@
                             
                                 <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                                     <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -704,7 +753,57 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/15/%E7%AE%97%E6%B3%95/">
+                <a href="/2020/02/17/ctf-gong-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="CTF工具">
+                        
+                        <span class="card-title">CTF工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            假期做了很多CTF（攻防世界）的题目，小浩刚学没多久，只会简单的MISC和CRYPTO，网上搜集各种解密类型，
+一个个去尝试，先整理一波；
+
+
+整理这个其实是因为收藏夹满了，工具堆叠太多（噗哈哈哈），话不多说直接上网址；
+密码之前就喜欢密码
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            WHloki
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/15/suan-fa/">
                     <div class="card-image">
                         
                         
@@ -725,9 +824,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -741,56 +840,6 @@
                     
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/02/14/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Welcome to Hexo！！
-我是一名计算机小白，这是我的第一篇博客，不足之处，请多指教；
-学习语言最基本了解它大概长什么样子，下面通过打印Hello World！来了解了解；
-
-
-打印”Hello World!”C1234567#i
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            WHloki
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Testing/">
-                        <span class="chip bg-color">Testing</span>
                     </a>
                     
                 </div>
