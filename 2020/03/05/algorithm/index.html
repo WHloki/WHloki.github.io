@@ -420,14 +420,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.1k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    9 Min
+                    11 Min
                 </div>
                 
 
@@ -814,6 +814,79 @@ using namespace std<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>    
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<h3 id="Dfs-amp-Bfs"><a href="#Dfs-amp-Bfs" class="headerlink" title="Dfs &amp; Bfs"></a>Dfs &amp; Bfs</h3><p>相信打过acm比赛的人都知道这两种算法，一种叫做dfs（深度优先搜索），一种叫做bfs（广度优先搜索）；</p>
+<p>怎么说呢，折两种算法早就想学了，就是没找到机会，现在正好学习算法，就简单学学吧；</p>
+<h4 id="Dfs"><a href="#Dfs" class="headerlink" title="Dfs"></a>Dfs</h4><p>深度优先搜索算法（Depth First Search，简称DFS）：一种用于遍历或搜索树或图的算法。 沿着树的深度遍历树</p>
+<p>的节点，尽可能深的搜索树的分支，当节点v的所在边都己被探寻过或者在搜寻时结点不满足条件，搜索将回溯到</p>
+<p>发现节点v的那条边的起始节点，整个进程反复进行直到所有节点都被访问为止；</p>
+<h5 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h5><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">check</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>满足条件<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> step<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+        判断边界
+        <span class="token punctuation">{</span>
+            <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>操作
+        <span class="token punctuation">}</span>
+        尝试每一种可能
+        <span class="token punctuation">{</span>
+               满足check条件
+               标记
+               继续下一步<span class="token function">dfs</span><span class="token punctuation">(</span>step<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+               恢复初始状态（回溯的时候要用到）
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>模板也是根据实际情况来改，下面通过一个实例来了解一下：</p>
+<h5 id="全排列问题"><a href="#全排列问题" class="headerlink" title="全排列问题"></a>全排列问题</h5><p>问题描述：1~n , n个数字，能组成多少个不同的数字？</p>
+<p>例如：n=3，则能组成的数字有：123 , 132 , 213 , 231 , 312 , 321</p>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span> </span>
+using namespace std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> book<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span>num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> step<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>step <span class="token operator">==</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断边界</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            cout <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>num<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//遍历</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>book<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//满足check</span>
+        <span class="token punctuation">{</span>
+            a<span class="token punctuation">[</span>step<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            book<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//标记</span>
+            <span class="token function">dfs</span><span class="token punctuation">(</span>step <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//继续搜索</span>
+            book<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//恢复初始状态</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//从第一个开始</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"共有"</span> <span class="token operator">&lt;&lt;</span> num<span class="token operator">/</span>n <span class="token operator">&lt;&lt;</span> <span class="token string">"个"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="Bfs"><a href="#Bfs" class="headerlink" title="Bfs"></a>Bfs</h4><p>广度优先算法（Breadth-First-Search，简称BFS），是一种图形搜索演算法。简单的说，BFS是从根节点开始，沿</p>
+<p>着树的宽度遍历树的节点，如果发现目标，则演算终止；</p>
 
             </div>
             <hr/>
@@ -1332,7 +1405,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.1k</span>&nbsp;字
+                class="white-color">15.6k</span>&nbsp;字
             
             
             
