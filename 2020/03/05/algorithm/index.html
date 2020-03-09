@@ -411,14 +411,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.2k
+                    161
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    10 Min
+                    1 Min
                 </div>
                 
 
@@ -440,50 +440,258 @@
 <h3 id="Unix时间戳"><a href="#Unix时间戳" class="headerlink" title="Unix时间戳"></a>Unix时间戳</h3><p>讲算法之前，先说一个实用的东西——Unix时间戳；</p>
 <p>Unix时间戳是从1970年1月1日开始所经过的秒数，不考虑闰秒。</p>
 <p>这个是柠檬大佬给我写的（自己太菜）；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">time_t</span> now;</span><br><span class="line">	<span class="keyword">int</span> Time=time(&amp;now);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"现在的时间为"</span> &lt;&lt; Time &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<time.h>
+using namespace std;
 
-
-
+int main()
+{
+    time_t now;
+    int Time=time(&now);
+    cout << "现在的时间为" << Time << endl;
+}</code></pre>
 <h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>先来一个简单的sort吧；</p>
 <p>sort() 是C++标准库里面的库函数，之前做编程练习题目的时候经常会用到，算是quicksort的另一种形式，因为时</p>
 <p>间复杂度都为 O(log₂N)，完美地解决了所谓的TLE问题，直接上代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">100</span>],i,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a,a+n); <span class="comment">//调用sort函数 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int main()
+{
+    int a[100],i,n;
+    cin >> n;    
+    for(i=0;i<n;i++)
+    {
+        cin >> a[i];
+    }
+    sort(a,a+n); //调用sort函数 
+    for(i=0;i<n;i++)
+    {
+        cout << a[i] << ' ';
+    }
+}</code></pre>
 <p>这种是最简单的形式，默认从小到大，那从大到小呢？嘿嘿，别着急，来看：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span>  <span class="comment">//自定义函数 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m&gt;n;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">100</span>],i,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a,a+n,cmp); <span class="comment">//调用sort函数 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int cmp(int m,int n)  //自定义函数 
+{
+    return m>n;
+} 
+int main()
+{
+    int a[100],i,n;
+    cin >> n;    
+    for(i=0;i<n;i++)
+    {
+        cin >> a[i];
+    }
+    sort(a,a+n,cmp); //调用sort函数 
+    for(i=0;i<n;i++)
+    {
+        cout << a[i] << ' ';
+    }
+}</code></pre>
 <p>这种是加一个自定义函数cmp，用于大小比较，从小到大时也可以自定义一个函数，但是没必要其实；</p>
 <p>还有其他很多种形式，去about页面，有我的联系方式，给我发信息给你代码（嘻嘻嘻）；</p>
 <p>可以去练习一下，请见<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1040" target="_blank" rel="noopener">杭电1040</a></p>
 <h3 id="gcd-amp-lcm"><a href="#gcd-amp-lcm" class="headerlink" title="gcd &amp; lcm"></a>gcd &amp; lcm</h3><p>gcd模板其实已经写烂了，但是几个月没碰过编程了，难免会有些生疏，再来回顾一下；</p>
 <p>lcm也很简单，两数乘积除以最大公约数；</p>
 <h4 id="gcd"><a href="#gcd" class="headerlink" title="gcd"></a>gcd</h4><p>先看最原始的代码（我第一次写的代码）：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">while</span>(b!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		t = a%b; </span><br><span class="line">		a = b;</span><br><span class="line">	 	b = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; gcd(m,n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int gcd(int a,int b)
+{
+    int t;
+    while(b!=0)
+    {
+        t = a%b; 
+        a = b;
+         b = t;
+    }
+    return a;
+}
+
+int main()
+{
+    int m,n;
+    cin >> m >> n;
+    cout << gcd(m,n) << endl;
+}</code></pre>
 <p>三目运算法（这个超级简单）：</p>
 <p>不会三目运算符的回C语言再学习一下哦~</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> !b?a:gcd(b,a%b); <span class="comment">//三目运算符</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; gcd(m,n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int gcd(int a,int b)
+{
+    return !b?a:gcd(b,a%b); //三目运算符
+} 
+
+int main()
+{
+    int m,n;
+    cin >> m >> n;
+    cout << gcd(m,n) << endl;
+}</code></pre>
 <h4 id="lcm"><a href="#lcm" class="headerlink" title="lcm"></a>lcm</h4><p>lcm其实没啥好说的，用三目来说，直接看代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> !b?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (m*n)/gcd(m,n);</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; lcm(m,n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int gcd(int a,int b)
+{
+    return !b?a:gcd(b,a%b);
+}
+int lcm(int m,int n)
+{
+    return (m*n)/gcd(m,n);
+} 
+int main()
+{
+    int m,n;
+    cin >> m >> n;
+    cout << lcm(m,n) << endl;
+}</code></pre>
 <p>是不是超级简单，那就去练习一下：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=2504" target="_blank" rel="noopener">杭电2504</a></p>
 <h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>排列组合也遇到过，解决“有多少种”这类问题经常遇见，只不过，这类问题都很简单，一学就会；概念高中已经学</p>
 <p>过了，这里就不多说了；</p>
-<h4 id="排列A"><a href="#排列A" class="headerlink" title="排列A"></a>排列A</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">A</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,t,ans=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(m&lt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		m=t;</span><br><span class="line">		t=n;</span><br><span class="line">		n=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=m;i&gt;=m-n+<span class="number">1</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		ans *= i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(m&gt;n) <span class="built_in">cout</span> &lt;&lt; A(m,n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; A(n,m) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="排列A"><a href="#排列A" class="headerlink" title="排列A"></a>排列A</h4><pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
-<h4 id="组合C"><a href="#组合C" class="headerlink" title="组合C"></a>组合C</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">C</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=n;i&gt;=n-k+<span class="number">1</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">    	ans*=i;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	ans/=i;</span><br><span class="line">	&#125;	</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(m&gt;n) <span class="built_in">cout</span> &lt;&lt; C(m,n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; C(n,m) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+int A(int m, int n)
+{
+    int i,t,ans=1;
+    if(m<n)
+    {
+        m=t;
+        t=n;
+        n=m;
+    }
+    for(i=m;i>=m-n+1;i--)
+    {
+        ans *= i;
+    }
+    return ans;
+}
+int main()
+{
+    int m,n;
+    cin >> m >> n;
+    if(m>n) cout << A(m,n) << endl;
+    else cout << A(n,m) << endl;
+}</code></pre>
+<h4 id="组合C"><a href="#组合C" class="headerlink" title="组合C"></a>组合C</h4><pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int C(int n,int k)
+{
+    int ans=1;
+    int i;
+    for(i=n;i>=n-k+1;i--)
+    {
+        ans*=i;
+    }
+    for(i=1;i<=k;i++)
+    {
+        ans/=i;
+    }    
+    return ans;
+}
+int main()
+{
+    int m,n;
+    cin >> m >> n;
+    if(m>n) cout << C(m,n) << endl;
+    else cout << C(n,m) << endl;
+}</code></pre>
 <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p>快速幂这个算法可以用来计算那些次方很多数据很大的问题，有些问题会出现TLE，引入快速幂，很好得解决了这</p>
 <p>个问题，它的时间复杂度为 O(log₂N)，上代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">quick</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x,<span class="keyword">long</span> <span class="keyword">long</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>,base = x;</span><br><span class="line">	<span class="keyword">while</span>( y &gt; <span class="number">0</span> )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>( y % <span class="number">2</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			ans *= base;</span><br><span class="line">		&#125;</span><br><span class="line">		base *= base;</span><br><span class="line">		y /= <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> m,n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; quick(m,n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+long long quick(long long x,long long y)
+{
+    long long ans = 1,base = x;
+    while( y > 0 )
+    {
+        if( y % 2 )
+        {
+            ans *= base;
+        }
+        base *= base;
+        y /= 2;
+    }
+    return ans;
+}
+int main()
+{
+    long long m,n;
+    cin >> m >> n;
+    cout << quick(m,n) << endl;
+} 
+
+</code></pre>
 <p>这个可以计算到2的62次方左右，因为long long的范围有限；</p>
 <h3 id="大数相加（模拟）"><a href="#大数相加（模拟）" class="headerlink" title="大数相加（模拟）"></a>大数相加（模拟）</h3><p>这个挺有意思的题目，上大学之前刷题的时候就有人说，初学者做不出来“A+B”，当时我还笑了，“A+B”有什么难</p>
 <p>的，一个输入一个输出不就完事，后来有人说，那你计算111….(100个1) + 222….(100个2)的值，我一想，不行</p>
 <p>啊，int不够，long long不够，int64页不够，我就放弃了；再后来….咳，请看代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//大数相加</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m=<span class="number">1</span>,n=<span class="number">1</span>,i,j,L1,L2,k;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">1002</span>],b[<span class="number">1002</span>];</span><br><span class="line">	<span class="keyword">int</span> num1[<span class="number">1002</span>],num2[<span class="number">1002</span>];</span><br><span class="line">	<span class="built_in">memset</span>(num1,<span class="number">0</span>,<span class="keyword">sizeof</span>(num1));  		  <span class="comment">//数组清零 </span></span><br><span class="line">	<span class="built_in">memset</span>(num2,<span class="number">0</span>,<span class="keyword">sizeof</span>(num2));  		  <span class="comment">//数组清零</span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;			                  <span class="comment">//输入数组 </span></span><br><span class="line">	L1 = <span class="built_in">strlen</span>(a);				  <span class="comment">//计算数组a的长度 </span></span><br><span class="line">	L2 = <span class="built_in">strlen</span>(b);				 <span class="comment">//计算数组b的长度 </span></span><br><span class="line">	<span class="keyword">for</span>(i=L1<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		num1[m] = a[i] - <span class="string">'0'</span>;   </span><br><span class="line">		m++; 		  		<span class="comment">//字符--&gt;数字 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=L2<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		num2[n] = b[i] - <span class="string">'0'</span>;    </span><br><span class="line">		n++;		 		 <span class="comment">//字符--&gt;数字 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">1002</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		k = i;</span><br><span class="line">		num1[i] += num2[i];		<span class="comment">// num1数组当成一个新的数组，重新赋值 </span></span><br><span class="line">		<span class="keyword">if</span>(num1[i]&gt;<span class="number">9</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			num1[i] = num1[i]%<span class="number">10</span>;	<span class="comment">//判断是否超过10 超过进位 </span></span><br><span class="line">			num1[++k] ++;			<span class="comment">//下一位进 1 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1001</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(num1[i]!=<span class="number">0</span>) 			<span class="comment">//判断什么时候不为 0 </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=i;j&gt;<span class="number">0</span>;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; num1[j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">//大数相加
+#include<iostream>
+#include<algorithm>
+#include<cstring>
+using namespace std;
 
+int main()
+{
+    int m=1,n=1,i,j,L1,L2,k;
+    char a[1002],b[1002];
+    int num1[1002],num2[1002];
+    memset(num1,0,sizeof(num1));            //数组清零 
+    memset(num2,0,sizeof(num2));            //数组清零
+    cin >> a >> b;                              //输入数组 
+    L1 = strlen(a);                  //计算数组a的长度 
+    L2 = strlen(b);                 //计算数组b的长度 
+    for(i=L1-1;i>=0;i--)
+    {
+        num1[m] = a[i] - '0';   
+        m++;                   //字符-->数字 
+    }
+    for(i=L2-1;i>=0;i--)
+    {
+        num2[n] = b[i] - '0';    
+        n++;                  //字符-->数字 
+    }
+    for(i=1;i<1002;i++)
+    {
+        k = i;
+        num1[i] += num2[i];        // num1数组当成一个新的数组，重新赋值 
+        if(num1[i]>9)
+        {
+            num1[i] = num1[i]%10;    //判断是否超过10 超过进位 
+            num1[++k] ++;            //下一位进 1 
+        }
+    }
+    for(i=1001;i>0;i--)
+    {
+        if(num1[i]!=0)             //判断什么时候不为 0 
+        {
+            for(j=i;j>0;j--)
+            {
+                cout << num1[j];
+            }
+            break;
+        }
+    }
+}</code></pre>
 <p>原来啊，把数字转换成字符串的形式，这样的话，就很容易了；</p>
 <p>学会了吗，去练习一下吧：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1002" target="_blank" rel="noopener">杭电1002</a></p>
 <h3 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h3><p>这个算法是过双创中心面试之后第一个讲解的算法，其实现在还是懵懵的；</p>
@@ -496,14 +704,105 @@
 <p>适用情况：求最大值中的最小值、求最小值中的最大值；（听着很别扭，其实就是这样）</p>
 <p>类似于数学里面的二分，思想差不多；</p>
 <p>以一道题来举例：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=4004" target="_blank" rel="noopener">杭电4004</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">500200</span>];</span><br><span class="line"><span class="keyword">int</span> L,n,m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span> <span class="comment">//二分函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,cnt=<span class="number">0</span>,t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]-a[i<span class="number">-1</span>]&gt;x)</span><br><span class="line">        &#123;</span><br><span class="line">        	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="keyword">if</span>(a[i]-t&gt;x)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            t=a[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt+<span class="number">1</span>&lt;=m)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mid,i;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;L&gt;&gt;n&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">        	<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">		&#125;</span><br><span class="line">        a[<span class="number">0</span>]=<span class="number">0</span>,a[++n]=L;</span><br><span class="line">        sort(a,a+n+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=L,res;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r) <span class="comment">//这里的小于等于千万不能忘记等于</span></span><br><span class="line">        &#123;</span><br><span class="line">            mid=(l+r)/<span class="number">2</span>; <span class="comment">//分半</span></span><br><span class="line">            <span class="keyword">if</span>(check(mid)) <span class="comment">//取左</span></span><br><span class="line">            &#123;</span><br><span class="line">                res=mid;</span><br><span class="line">                r=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="comment">//取右</span></span><br><span class="line">            &#123;</span><br><span class="line">            	l=mid+<span class="number">1</span>; </span><br><span class="line">			&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; res &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+using namespace std;
 
+int a[500200];
+int L,n,m;
+int check(int x) //二分函数
+{
+    int i,cnt=0,t=0;
+    for(i=1;i<=n;i++)
+    {
+        if(a[i]-a[i-1]>x)
+        {
+            return 0;
+        }
+        if(a[i]-t>x)
+        {
+            cnt++;
+            t=a[i-1];
+        }
+    }
+    if(cnt+1<=m)
+        return 1;
+    else
+        return 0;
+}
+int main()
+{
+    int mid,i;
+    while(cin>>L>>n>>m)
+    {
+        for(i=1;i<=n;i++)
+        {
+            cin >> a[i];
+        }
+        a[0]=0,a[++n]=L;
+        sort(a,a+n+1);
+        int l=0,r=L,res;
+        while(l<=r) //这里的小于等于千万不能忘记等于
+        {
+            mid=(l+r)/2; //分半
+            if(check(mid)) //取左
+            {
+                res=mid;
+                r=mid-1;
+            }
+            else //取右
+            {
+                l=mid+1; 
+            }
+        }
+        cout << res <<endl;
+    }
+    return 0;
+}</code></pre>
 <p>这题是不是太难了呀，不要紧，在给你一道简单的：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=2199" target="_blank" rel="noopener">杭电2199</a></p>
 <p>这题算是很简单的二分了，要是不会的话，回来看代码：</p>
 <p>注意啊，这段代码里面的cin和cout要改成C语言的scanf和printf，不知为什么cin和cout过不去，可能因为保留的</p>
 <p>小数位数吧，就很离谱；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="number">8</span>*x*x*x*x+<span class="number">7</span>*x*x*x+<span class="number">2</span>*x*x+<span class="number">3</span>*x+<span class="number">6</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">double</span> l,r,m,n,mid;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">		l=<span class="number">0</span>,r=<span class="number">100</span>;</span><br><span class="line">		<span class="keyword">if</span>(f(<span class="number">0</span>)&gt;m||f(<span class="number">100</span>)&lt;m)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"No solution!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">while</span>(r-l &gt; <span class="number">0.000001</span>)</span><br><span class="line">			&#123;</span><br><span class="line">			   	mid = (l+r)/<span class="number">2</span>;</span><br><span class="line">			   	<span class="keyword">if</span>((f(mid)-m) &gt; <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">			   		r = mid;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					l = mid;</span><br><span class="line">				&#125; </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; setprecision(<span class="number">5</span>) &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<algorithm>
+#include<iomanip>
+using namespace std;
 
+double f(double x)
+{
+    return (8*x*x*x*x+7*x*x*x+2*x*x+3*x+6);
+}
+int main()
+{
+    int t;
+    double l,r,m,n,mid;
+    cin >> t;
+    while(t--)
+    {
+        cin >> m;
+        l=0,r=100;
+        if(f(0)>m||f(100)<m)
+        {
+            cout << "No solution!" << endl;
+        }
+        else
+        {
+            while(r-l > 0.000001)
+            {
+                   mid = (l+r)/2;
+                   if((f(mid)-m) > 0)
+                {
+                       r = mid;
+                }
+                else 
+                {
+                    l = mid;
+                } 
+            }
+            cout << setprecision(5) << r << endl;
+        }    
+    }
+}</code></pre>
 
             </div>
             <hr/>
@@ -734,35 +1033,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/03/05/algorithm/">
+                <a href="/2020/03/06/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Algorithm">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Algorithm</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这篇博客很早就想整理了，一直没有时间，今天上课，课余时间真的不多，那就来整理一波；
+                            Welcome to Hexo！！
+我是一名计算机小白，这是我的第一篇博客，不足之处，请多指教；
+学习语言最基本了解它大概长什么样子，下面通过打印Hello World！来了解了解；
 
 
-Unix时间戳讲算法之前，先说一个实用的东西——Unix时间戳；
-Unix时间戳是从1970年1月1日开始所经过的秒数，不考虑闰秒。
-这个是柠檬大佬给我
+打印”Hello World!”C#include 
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -771,12 +1069,11 @@ Unix时间戳是从1970年1月1日开始所经过的秒数，不考虑闰秒。
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/Testing/">
+                        <span class="chip bg-color">Testing</span>
                     </a>
                     
                 </div>
@@ -1020,7 +1317,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.8k</span>&nbsp;字
+                class="white-color">13.1k</span>&nbsp;字
             
             
             
