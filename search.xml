@@ -29,31 +29,6 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2020/03/06/hello-world/"/>
-      <url>/2020/03/06/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to Hexo！！</p><p>我是一名计算机小白，这是我的第一篇博客，不足之处，请多指教；</p><p>学习语言最基本了解它大概长什么样子，下面通过打印Hello World！来了解了解；</p><a id="more"></a><h4 id="打印”Hello-World-”"><a href="#打印”Hello-World-”" class="headerlink" title="打印”Hello World!”"></a>打印”Hello World!”</h4><h5 id="C"><a href="#C" class="headerlink" title="C"></a>C</h5><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><h5 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h5><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>using namespace std<span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><pre class=" language-Java"><code class="language-Java">public class HelloWorld {    public static void main(String[] args) {        System.out.println("Hello World!");    }}</code></pre><h5 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h5><pre class=" language-Python"><code class="language-Python">print("Hello World!");</code></pre><h5 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h5><pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span><span class="token keyword">echo</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span><span class="token delimiter">?></span></code></pre><h5 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h5><pre class=" language-c#"><code class="language-c#">using System;namespace HelloWorld{    class HelloWorld    {        static void Main(string[] args){            Console.WriteLine("Hello World!");        }    }}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Testing </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Testing </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Algorithm</title>
       <link href="/2020/03/05/algorithm/"/>
       <url>/2020/03/05/algorithm/</url>
@@ -321,6 +296,31 @@
         <tags>
             
             <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/02/14/hello-world/"/>
+      <url>/2020/02/14/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to Hexo！！</p><p>我是一名计算机小白，这是我的第一篇博客，不足之处，请多指教；</p><p>学习语言最基本了解它大概长什么样子，下面通过打印Hello World！来了解了解；</p><a id="more"></a><h4 id="打印”Hello-World-”"><a href="#打印”Hello-World-”" class="headerlink" title="打印”Hello World!”"></a>打印”Hello World!”</h4><h5 id="C"><a href="#C" class="headerlink" title="C"></a>C</h5><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><h5 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h5><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>using namespace std<span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><pre class=" language-Java"><code class="language-Java">public class HelloWorld {    public static void main(String[] args) {        System.out.println("Hello World!");    }}</code></pre><h5 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h5><pre class=" language-Python"><code class="language-Python">print("Hello World!");</code></pre><h5 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h5><pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span><span class="token keyword">echo</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span><span class="token delimiter">?></span></code></pre><h5 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h5><pre class=" language-c#"><code class="language-c#">using System;namespace HelloWorld{    class HelloWorld    {        static void Main(string[] args){            Console.WriteLine("Hello World!");        }    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Testing </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Testing </tag>
             
         </tags>
       
