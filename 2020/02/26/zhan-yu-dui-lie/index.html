@@ -472,7 +472,7 @@
 <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>栈是限定仅在表尾进行插入和删除操作的线性表；</p>
 <p>允许插入和删除的一端称为栈顶，另一端称为栈底，不含任何数据元素的栈称为空栈，栈又称为后进先出线性表，</p>
 <p>简称LIFO结构；</p>
-<h3 id="栈的抽象数据类型——基本操作-入栈-出栈"><a href="#栈的抽象数据类型——基本操作-入栈-出栈" class="headerlink" title="栈的抽象数据类型——基本操作( 入栈 出栈 )"></a>栈的抽象数据类型——基本操作( 入栈 出栈 )</h3><pre class=" language-c"><code class="language-c"><span class="token number">1</span>、<span class="token function">InitStack</span><span class="token punctuation">(</span><span class="token operator">*</span>S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化操作，建立一个空栈</span>
+<h3 id="栈的抽象数据类型——基本操作-入栈-出栈"><a href="#栈的抽象数据类型——基本操作-入栈-出栈" class="headerlink" title="栈的抽象数据类型——基本操作( 入栈 出栈 )"></a>栈的抽象数据类型——基本操作( 入栈 出栈 )</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token number">1</span>、<span class="token function">InitStack</span><span class="token punctuation">(</span><span class="token operator">*</span>S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化操作，建立一个空栈</span>
 
 <span class="token number">2</span>、<span class="token function">DestroyStack</span><span class="token punctuation">(</span><span class="token operator">*</span>S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若栈存在，则销毁它</span>
 
@@ -486,33 +486,33 @@
 
 <span class="token number">7</span>、<span class="token function">Pop</span><span class="token punctuation">(</span><span class="token operator">*</span>S<span class="token punctuation">,</span> <span class="token operator">*</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除栈S中栈顶元素，并用e返回其值</span>
 
-<span class="token number">8</span>、<span class="token function">StackLength</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//返回栈S的元素个数</span></code></pre>
-<h3 id="栈的顺序存储结构"><a href="#栈的顺序存储结构" class="headerlink" title="栈的顺序存储结构"></a>栈的顺序存储结构</h3><h4 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000</span>
+<span class="token number">8</span>、<span class="token function">StackLength</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//返回栈S的元素个数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="栈的顺序存储结构"><a href="#栈的顺序存储结构" class="headerlink" title="栈的顺序存储结构"></a>栈的顺序存储结构</h3><h4 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000</span>
 <span class="token keyword">typedef</span> <span class="token keyword">int</span> DataType<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span>
 <span class="token punctuation">{</span>
     DataType data<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈的元素最大个数</span>
     <span class="token keyword">int</span> top<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用于栈顶指针</span>
-<span class="token punctuation">}</span>SqStack<span class="token punctuation">;</span></code></pre>
-<h4 id="初始化栈"><a href="#初始化栈" class="headerlink" title="初始化栈"></a>初始化栈</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">InitStack</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化栈</span>
+<span class="token punctuation">}</span>SqStack<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="初始化栈"><a href="#初始化栈" class="headerlink" title="初始化栈"></a>初始化栈</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">InitStack</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化栈</span>
 <span class="token punctuation">{</span>
     S<span class="token operator">-></span>top <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//初始化栈为空</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="判断栈是否已满"><a href="#判断栈是否已满" class="headerlink" title="判断栈是否已满"></a>判断栈是否已满</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">StackFull</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断栈是否已满</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="判断栈是否已满"><a href="#判断栈是否已满" class="headerlink" title="判断栈是否已满"></a>判断栈是否已满</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">StackFull</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断栈是否已满</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>S<span class="token operator">-></span>top <span class="token operator">==</span> MaxSIZE <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">else</span>
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="判断栈是否为空"><a href="#判断栈是否为空" class="headerlink" title="判断栈是否为空"></a>判断栈是否为空</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">StackEmpty</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断栈是否为空</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="判断栈是否为空"><a href="#判断栈是否为空" class="headerlink" title="判断栈是否为空"></a>判断栈是否为空</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">StackEmpty</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断栈是否为空</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>S<span class="token operator">-></span>top <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token number">1</span>
     <span class="token keyword">else</span>
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="进栈"><a href="#进栈" class="headerlink" title="进栈"></a>进栈</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Push</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//进栈操作 插入元素e为新的栈顶元素</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进栈"><a href="#进栈" class="headerlink" title="进栈"></a>进栈</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Push</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//进栈操作 插入元素e为新的栈顶元素</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">StackFull</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//栈满</span>
     <span class="token punctuation">{</span>
@@ -521,8 +521,8 @@
     S<span class="token operator">-></span>top<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈顶指针增加1</span>
     S<span class="token operator">-></span>data<span class="token punctuation">[</span>S<span class="token operator">-></span>top<span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//新插入元素赋值给栈顶空间</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Pop</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//出栈操作 若栈不为空，则删除栈顶元素，用e返回其值</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Pop</span><span class="token punctuation">(</span>SqStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//出栈操作 若栈不为空，则删除栈顶元素，用e返回其值</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">StackEmpty</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//栈空</span>
     <span class="token punctuation">{</span>
@@ -531,35 +531,35 @@
     <span class="token operator">*</span>e <span class="token operator">=</span> S<span class="token operator">-></span>data<span class="token punctuation">[</span>S<span class="token operator">-></span>top<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将要删除的元素赋值给e</span>
     S<span class="token operator">-></span>top<span class="token operator">--</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈顶指针减少1</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="栈的链式存储结构"><a href="#栈的链式存储结构" class="headerlink" title="栈的链式存储结构"></a>栈的链式存储结构</h3><h4 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="栈的链式存储结构"><a href="#栈的链式存储结构" class="headerlink" title="栈的链式存储结构"></a>栈的链式存储结构</h3><h4 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span> StackNode
 <span class="token punctuation">{</span>
     DataType data<span class="token punctuation">;</span>
     <span class="token keyword">struct</span> StackNode<span class="token operator">*</span> next<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>LinkStack<span class="token punctuation">;</span></code></pre>
-<h4 id="初始化栈-1"><a href="#初始化栈-1" class="headerlink" title="初始化栈"></a>初始化栈</h4><pre class=" language-c"><code class="language-c">LinkStack<span class="token operator">*</span> <span class="token function">InitStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>LinkStack<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="初始化栈-1"><a href="#初始化栈-1" class="headerlink" title="初始化栈"></a>初始化栈</h4><pre class="line-numbers language-c"><code class="language-c">LinkStack<span class="token operator">*</span> <span class="token function">InitStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     LinkStack<span class="token operator">*</span> S<span class="token punctuation">;</span>
     S <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//初始化栈为空</span>
     <span class="token keyword">return</span> S<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="判断栈是否为空-1"><a href="#判断栈是否为空-1" class="headerlink" title="判断栈是否为空"></a>判断栈是否为空</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">EmptyStack</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="判断栈是否为空-1"><a href="#判断栈是否为空-1" class="headerlink" title="判断栈是否为空"></a>判断栈是否为空</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">EmptyStack</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>S <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">else</span>
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="进栈-1"><a href="#进栈-1" class="headerlink" title="进栈"></a>进栈</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Push</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="进栈-1"><a href="#进栈-1" class="headerlink" title="进栈"></a>进栈</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Push</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     LinkStack<span class="token operator">*</span> p <span class="token operator">=</span> <span class="token punctuation">(</span>LinkStack<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>LinkStack<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     p<span class="token operator">-></span>data <span class="token operator">=</span> e<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//e放入新节点的数据域</span>
     p<span class="token operator">-></span>next <span class="token operator">=</span> S<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//新节点插入链表表头之前</span>
     S <span class="token operator">=</span> p<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//新节点作为栈顶</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span></code></pre>
-<h4 id="出栈-1"><a href="#出栈-1" class="headerlink" title="出栈"></a>出栈</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Pop</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="出栈-1"><a href="#出栈-1" class="headerlink" title="出栈"></a>出栈</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Pop</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     LinkStack<span class="token operator">*</span> p<span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">EmptyStack</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -571,8 +571,8 @@
     S <span class="token operator">=</span> S<span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//原栈顶S指向其下一个节点</span>
     <span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//释放原栈顶空间</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="取栈顶元素"><a href="#取栈顶元素" class="headerlink" title="取栈顶元素"></a>取栈顶元素</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">GetTop</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="取栈顶元素"><a href="#取栈顶元素" class="headerlink" title="取栈顶元素"></a>取栈顶元素</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">GetTop</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">EmptyStack</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//栈为空</span>
     <span class="token punctuation">{</span>
@@ -580,8 +580,8 @@
     <span class="token punctuation">}</span>
     <span class="token operator">*</span>e <span class="token operator">=</span> S<span class="token operator">-></span>data<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈顶元素赋给变量e</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="遍历栈"><a href="#遍历栈" class="headerlink" title="遍历栈"></a>遍历栈</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ShowStack</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="遍历栈"><a href="#遍历栈" class="headerlink" title="遍历栈"></a>遍历栈</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ShowStack</span><span class="token punctuation">(</span>LinkStack<span class="token operator">*</span> S<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     LinkStack<span class="token operator">*</span> p <span class="token operator">=</span> S<span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
@@ -594,10 +594,10 @@
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> p<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
         p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>队列是只允许在一端进行插入操作，在另一端进行删除操作的线性表；</p>
 <p>队列是一种先进先出的线性表，简称FIFO；允许插入的一端称为队尾，允许删除的一端称为队头；</p>
-<h3 id="队列的抽象数据类型——基本操作"><a href="#队列的抽象数据类型——基本操作" class="headerlink" title="队列的抽象数据类型——基本操作"></a>队列的抽象数据类型——基本操作</h3><pre class=" language-c"><code class="language-c"><span class="token number">1</span>、<span class="token function">InitQueue</span><span class="token punctuation">(</span><span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化操作，建立一个空队列</span>
+<h3 id="队列的抽象数据类型——基本操作"><a href="#队列的抽象数据类型——基本操作" class="headerlink" title="队列的抽象数据类型——基本操作"></a>队列的抽象数据类型——基本操作</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token number">1</span>、<span class="token function">InitQueue</span><span class="token punctuation">(</span><span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化操作，建立一个空队列</span>
 
 <span class="token number">2</span>、<span class="token function">DestroyQueue</span><span class="token punctuation">(</span><span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若队列Q存在，则销毁</span>
 
@@ -611,7 +611,7 @@
 
 <span class="token number">7</span>、<span class="token function">DeQueue</span><span class="token punctuation">(</span><span class="token operator">*</span>Q<span class="token punctuation">,</span><span class="token operator">*</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 删除队列Q中队头元素，并用e返回其值</span>
 
-<span class="token number">8</span>、<span class="token function">QueueLength</span><span class="token punctuation">(</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//返回队列Q中元素个数</span></code></pre>
+<span class="token number">8</span>、<span class="token function">QueueLength</span><span class="token punctuation">(</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//返回队列Q中元素个数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><h4 id="队列顺序存储的不足"><a href="#队列顺序存储的不足" class="headerlink" title="队列顺序存储的不足"></a>队列顺序存储的不足</h4><p>与栈不同的是，队列的出列是在队头，那就意味着，队列的所有元素都得移动，以保证下标为0的位置不为空，此</p>
 <p>时间复杂度为O(n);</p>
 <p>为了避免当只有一个元素时，队头和队尾重合使处理变得麻烦，所以引入两个指针，front指针指向队头元素，</p>
@@ -622,25 +622,25 @@
 <p>队列满的条件为(rear+1) % QueueSize == front ;</p>
 <p>队空条件为front == rear ;</p>
 <p>队列长度计算公式为(rear-front+QueueSize) % QueueSize ; (自己推导式子很简单)</p>
-<h4 id="循环队列顺序存储结构"><a href="#循环队列顺序存储结构" class="headerlink" title="循环队列顺序存储结构"></a>循环队列顺序存储结构</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
+<h4 id="循环队列顺序存储结构"><a href="#循环队列顺序存储结构" class="headerlink" title="循环队列顺序存储结构"></a>循环队列顺序存储结构</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
 <span class="token keyword">typedef</span> <span class="token keyword">int</span> DataType<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span>
 <span class="token punctuation">{</span>
     DataType data<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> front<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//头指针</span>
     <span class="token keyword">int</span> rear<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//尾指针，若队列不变，指向队列尾元素的下一个位置</span>
-<span class="token punctuation">}</span>SqQueue<span class="token punctuation">;</span></code></pre>
-<h4 id="队列初始化"><a href="#队列初始化" class="headerlink" title="队列初始化"></a>队列初始化</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">InitQueue</span><span class="token punctuation">(</span>SqQueue <span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化一个对列</span>
+<span class="token punctuation">}</span>SqQueue<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="队列初始化"><a href="#队列初始化" class="headerlink" title="队列初始化"></a>队列初始化</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">InitQueue</span><span class="token punctuation">(</span>SqQueue <span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化一个对列</span>
 <span class="token punctuation">{</span>
     Q<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     Q<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="队列长度"><a href="#队列长度" class="headerlink" title="队列长度"></a>队列长度</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">QueueLength</span><span class="token punctuation">(</span>SqQueue Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//求队列长度</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="队列长度"><a href="#队列长度" class="headerlink" title="队列长度"></a>队列长度</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">QueueLength</span><span class="token punctuation">(</span>SqQueue Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//求队列长度</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>Q<span class="token punctuation">.</span>rear <span class="token operator">-</span> Q<span class="token punctuation">.</span>front <span class="token operator">+</span> MAXSIZE<span class="token punctuation">)</span> <span class="token operator">%</span> MAXSIZE<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="入队"><a href="#入队" class="headerlink" title="入队"></a>入队</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">EnQueue</span><span class="token punctuation">(</span>SqQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若队列未满则e入列</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="入队"><a href="#入队" class="headerlink" title="入队"></a>入队</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">EnQueue</span><span class="token punctuation">(</span>SqQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若队列未满则e入列</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>Q<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> MAXSIZE <span class="token operator">==</span> Q<span class="token operator">-></span>front<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//队列已满</span>
     <span class="token punctuation">{</span>
@@ -650,8 +650,8 @@
     Q<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token punctuation">(</span>Q<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> MAXSIZE<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//rear指针后移一个位置，若到最后则转到数组头部</span>
 
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="出队"><a href="#出队" class="headerlink" title="出队"></a>出队</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">DeQueue</span><span class="token punctuation">(</span>SqQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若队列不空则删除队头，并用e返回其值</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="出队"><a href="#出队" class="headerlink" title="出队"></a>出队</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">DeQueue</span><span class="token punctuation">(</span>SqQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若队列不空则删除队头，并用e返回其值</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>Q<span class="token operator">-></span>front <span class="token operator">==</span> Q<span class="token operator">-></span>near<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//队列为空</span>
     <span class="token punctuation">{</span>
@@ -662,9 +662,9 @@
 
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="队列的链式存储结构及实现"><a href="#队列的链式存储结构及实现" class="headerlink" title="队列的链式存储结构及实现"></a>队列的链式存储结构及实现</h3><p>队列的链式存储结构，其实就是线性表的单链表，只不过它只能尾进头出而已，我们把它简称为链队列；</p>
-<h4 id="链式队列存储结构"><a href="#链式队列存储结构" class="headerlink" title="链式队列存储结构"></a>链式队列存储结构</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">int</span> DataType<span class="token punctuation">;</span>
+<h4 id="链式队列存储结构"><a href="#链式队列存储结构" class="headerlink" title="链式队列存储结构"></a>链式队列存储结构</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">int</span> DataType<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span> qnode
 <span class="token punctuation">{</span>
     DataType data<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//节点的数据域</span>
@@ -673,8 +673,8 @@
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span>
 <span class="token punctuation">{</span>
     LinkListQ<span class="token operator">*</span> front<span class="token punctuation">,</span> <span class="token operator">*</span> rear<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//队列的队头和队尾指针</span>
-<span class="token punctuation">}</span>LinkQueue<span class="token punctuation">;</span></code></pre>
-<h4 id="队列初始化-1"><a href="#队列初始化-1" class="headerlink" title="队列初始化"></a>队列初始化</h4><pre class=" language-c"><code class="language-c">LinkQueue<span class="token operator">*</span> <span class="token function">InitQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//队列初始化</span>
+<span class="token punctuation">}</span>LinkQueue<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="队列初始化-1"><a href="#队列初始化-1" class="headerlink" title="队列初始化"></a>队列初始化</h4><pre class="line-numbers language-c"><code class="language-c">LinkQueue<span class="token operator">*</span> <span class="token function">InitQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//队列初始化</span>
 <span class="token punctuation">{</span>
     LinkQueue<span class="token operator">*</span> Q<span class="token punctuation">;</span>
     LinkListQ<span class="token operator">*</span> p<span class="token punctuation">;</span>
@@ -683,8 +683,8 @@
     Q<span class="token operator">-></span>front <span class="token operator">=</span> p<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Q指针所指的front指针指向p</span>
     Q<span class="token operator">-></span>rear <span class="token operator">=</span> p<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Q指针所指的rear指针指向p</span>
     <span class="token keyword">return</span> Q<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="入队-1"><a href="#入队-1" class="headerlink" title="入队"></a>入队</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">EnQueue</span><span class="token punctuation">(</span>LinkQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入e于队尾</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="入队-1"><a href="#入队-1" class="headerlink" title="入队"></a>入队</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">EnQueue</span><span class="token punctuation">(</span>LinkQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入e于队尾</span>
 <span class="token punctuation">{</span>
     LinkListQ<span class="token operator">*</span> s<span class="token punctuation">;</span>
     s <span class="token operator">=</span> <span class="token punctuation">(</span>LinkListQ<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>LinkListQ<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//分配内存空间</span>
@@ -694,8 +694,8 @@
     Q<span class="token operator">-></span>rear <span class="token operator">=</span> s<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//队尾指针指向队尾元素</span>
 
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="出队-1"><a href="#出队-1" class="headerlink" title="出队"></a>出队</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">DeQueue</span><span class="token punctuation">(</span>LinkQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除队头，用e返回其值</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="出队-1"><a href="#出队-1" class="headerlink" title="出队"></a>出队</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">DeQueue</span><span class="token punctuation">(</span>LinkQueue<span class="token operator">*</span> Q<span class="token punctuation">,</span> DataType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除队头，用e返回其值</span>
 <span class="token punctuation">{</span>
     LinkListQ<span class="token operator">*</span> p<span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>Q<span class="token operator">-></span>front <span class="token operator">==</span> Q<span class="token operator">-></span>rear<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//队空</span>
@@ -712,7 +712,7 @@
     <span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>对于循环队列和链队列的比较，可以从两方面，从时间上看，它们基本操作都是常数时间，都为O(1)，从空间看，</p>
 <p>循环队列必须有一个固定的长度，就有了存储元素个数和空间资源浪费的问题，而链队列不存在这个问题；尽管需</p>
 <p>要一个指针域，需要空间，但是可以接受，所以空间上链队列更加灵活；</p>
