@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    321
+                    373
                 </div>
                 
 
@@ -457,7 +457,25 @@
 <h4 id="我所了解的算法"><a href="#我所了解的算法" class="headerlink" title="我所了解的算法"></a>我所了解的算法</h4><p>第一个接触的算法叫做排序，分了很多种（桶，冒泡，归并，快速）；二分法，前缀和与差分法，枚举法，bfs，</p>
 <p>dfs，还有栈，队列等等；</p>
 <h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>在接下来的一些时间里，快速学习多种算法，达到速成的效果；</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -974,7 +992,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.6k</span>&nbsp;字
+                class="white-color">16.3k</span>&nbsp;字
             
             
             
@@ -1045,34 +1063,34 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <a href="https://github.com/WHloki" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
+    
 
 
+        
 
-    <a href="mailto:1845199691@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
+                
 
+                        
+                            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1845199691" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1845199691" data-position="top" data-delay="50">
+                                <i class="fab fa-qq"></i>
+                            </a>
+                            
 
+                                
+                                    <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
+                                        <i class="fab fa-weibo"></i>
+                                    </a>
+                                    
 
+                                        
 
+                                                
 
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1845199691" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1845199691" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-    <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
-        <i class="fab fa-weibo"></i>
-    </a>
-
-
-
-
-
-</div>
+                                                        
+                                                            <a href="mailto:1845199691@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                                                                <i class="fas fa-envelope-open"></i>
+                                                            </a>
+                                                            </div>
     </div>
 </footer>
 
@@ -1168,3 +1186,11 @@ $(function () {
 </body>
 
 </html>
+
+
+<!-- weather -->
+<div id="weather-view-he"></div>
+<script>
+WIDGET = {ID: 'YhTMOQDNVE'};
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>

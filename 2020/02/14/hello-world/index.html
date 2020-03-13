@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    134
+                    186
                 </div>
                 
 
@@ -484,7 +484,25 @@ namespace HelloWorld
         }
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -1002,7 +1020,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.6k</span>&nbsp;字
+                class="white-color">16.3k</span>&nbsp;字
             
             
             
@@ -1073,34 +1091,34 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <a href="https://github.com/WHloki" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
+    
 
 
+        
 
-    <a href="mailto:1845199691@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
+                
 
+                        
+                            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1845199691" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1845199691" data-position="top" data-delay="50">
+                                <i class="fab fa-qq"></i>
+                            </a>
+                            
 
+                                
+                                    <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
+                                        <i class="fab fa-weibo"></i>
+                                    </a>
+                                    
 
+                                        
 
+                                                
 
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1845199691" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1845199691" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-    <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
-        <i class="fab fa-weibo"></i>
-    </a>
-
-
-
-
-
-</div>
+                                                        
+                                                            <a href="mailto:1845199691@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                                                                <i class="fas fa-envelope-open"></i>
+                                                            </a>
+                                                            </div>
     </div>
 </footer>
 
@@ -1196,3 +1214,11 @@ $(function () {
 </body>
 
 </html>
+
+
+<!-- weather -->
+<div id="weather-view-he"></div>
+<script>
+WIDGET = {ID: 'YhTMOQDNVE'};
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
