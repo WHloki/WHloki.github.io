@@ -4,6 +4,85 @@
   
     
     <entry>
+      <title>HTML学习笔记</title>
+      <link href="/2020/03/13/html/"/>
+      <url>/2020/03/13/html/</url>
+      
+        <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>HTML今年入的两个坑，一个是CTF，这个暂且不说，另一个是Blog；</p><p>Blog这东西前面的文章也说了，很烦人其实，尤其是配置文件的时候，老是出错；最近看Hexo主题的时候又看上</p><p>了一个主题——Matery；这款主题页面清晰，画风很好，功能很多，想着就换了，但是因为不会前端的内容，里</p><p>面的好多东西，比如 JS 和 CSS 文件看不懂，导致博客页面老是出现bug，于是乎，哈哈哈，就有接下来的学了；</p><p>前端三件套 = HTML + CSS + JS；这些是web开发需要学的东西，非常好玩；</p><p>这篇博客就整理我的学习历程，先开始的HTML，所以先整理HTML；</p><h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>有人会问，编写前端这些代码需要什么IDE，其实这个不需要太大的IDE就行；最简单的是记事本，哈哈哈，没想</p><p>到吧；想着也是，把后缀改成html就行了，还可以用Notepad++，；当然这些都不推荐，我在网上找了几款，也</p><p>问了两个朋友，这里给大家推荐的是HBuilderX；</p><p>先说说它的好处，这款软件内存特别小，下载就几十MB，非常方便，它可以直接生成一个端口（应该算是），就</p><p>可以浏览你写的网页的样式；最重要的一个优点是，他可以代码补全，对于初学者来说，真的不错；</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML </category>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML学习笔记</title>
+      <link href="/2020/03/13/xctf/"/>
+      <url>/2020/03/13/xctf/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pwn工具的使用</title>
+      <link href="/2020/03/13/pwn/"/>
+      <url>/2020/03/13/pwn/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树—Tree</title>
       <link href="/2020/03/08/shu/"/>
       <url>/2020/03/08/shu/</url>
