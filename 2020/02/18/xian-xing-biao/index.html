@@ -26,8 +26,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
@@ -37,7 +36,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/6.png" class="logo-img" alt="LOGO">
+                    <img src="/images/loading.gif" data-original="/medias/6.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">HaoHao</span>
                 </a>
@@ -124,7 +123,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/6.png" class="logo-img circle responsive-img">
+        <img src="/images/loading.gif" data-original="/medias/6.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">HaoHao</div>
         <div class="logo-desc">
@@ -443,14 +442,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    13 分
                 </div>
                 
 
@@ -475,83 +474,83 @@
 <h3 id="前驱后继"><a href="#前驱后继" class="headerlink" title="前驱后继"></a>前驱后继</h3><p>若将线性表记为a1,a2,a3……ai-1,ai,ai+1……an,则称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当</p>
 <p>i=1,2,3…n-1时，ai有且仅有一个直接后继，当i=2,3,4…n时，ai有且仅有一个直接前驱；</p>
 <p>所以，线性表的元素的个数n(n≥0)定义为线性表的长度，当n=0时，称为空表；</p>
-<h3 id="线性表的抽象数据类型——基本操作-增-删-查-取-空-长"><a href="#线性表的抽象数据类型——基本操作-增-删-查-取-空-长" class="headerlink" title="线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )"></a>线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token number">1</span>、<span class="token function">InitList</span><span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化,建立一个新的线性表L；</span>
+<h3 id="线性表的抽象数据类型——基本操作-增-删-查-取-空-长"><a href="#线性表的抽象数据类型——基本操作-增-删-查-取-空-长" class="headerlink" title="线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )"></a>线性表的抽象数据类型——基本操作( 增 删 查 取 空 长 )</h3><pre><code class="c">1、InitList(*L) //初始化,建立一个新的线性表L；
 
-<span class="token number">2</span>、<span class="token function">ListEmpty</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//线性表为空，返回true，否则返回false；</span>
+2、ListEmpty(L) //线性表为空，返回true，否则返回false；
 
-<span class="token number">3</span>、<span class="token function">ListLength</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//求长度，返回线性表中元素的个数；</span>
+3、ListLength(L) //求长度，返回线性表中元素的个数；
 
-<span class="token number">4</span>、<span class="token function">GetElem</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span>i<span class="token punctuation">,</span><span class="token operator">*</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//将线性表L中第i个数据元素赋值给e；</span>
+4、GetElem(L,i,*e) //将线性表L中第i个数据元素赋值给e；
 
-<span class="token number">5</span>、<span class="token function">LocateElem</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功，否则，返回0表示失败；</span>
+5、LocateElem(L,e) //在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功，否则，返回0表示失败；
 
-<span class="token number">6</span>、<span class="token function">ListInsert</span><span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">,</span>i<span class="token punctuation">,</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//在线性表L中第i个位置插入新的数据e，表长+1；</span>
+6、ListInsert(*L,i,e) //在线性表L中第i个位置插入新的数据e，表长+1；
 
-<span class="token number">7</span>、<span class="token function">ListDelete</span><span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">,</span>i<span class="token punctuation">,</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除线性表L中第i个数据元素，e返回其值，表长-1；</span>
+7、ListDelete(*L,i,e) //删除线性表L中第i个数据元素，e返回其值，表长-1；
 
-<span class="token number">8</span>、<span class="token function">ClearList</span><span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//将线性表清空；</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+8、ClearList(*L) //将线性表清空；</code></pre>
 <h2 id="线性表的顺序存储结构——顺序表"><a href="#线性表的顺序存储结构——顺序表" class="headerlink" title="线性表的顺序存储结构——顺序表"></a>线性表的顺序存储结构——顺序表</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>线性表的顺序存储结构，指的是用一段地址连续的储存单元依次储存线性表的数据元素；</p>
 <h3 id="顺序储存方式"><a href="#顺序储存方式" class="headerlink" title="顺序储存方式"></a>顺序储存方式</h3><p>先来看看结构代码</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MaxSize 20  </span><span class="token comment" spellcheck="true">//储存空间初始分配量</span>
-<span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType<span class="token punctuation">;</span>
-<span class="token keyword">typedef</span> <span class="token keyword">struct</span>
-<span class="token punctuation">{</span>
-    ElemType data<span class="token punctuation">[</span>MaxSize<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> length<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//线性表当前长度</span>
-<span class="token punctuation">}</span>SqList<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="顺序表的操作"><a href="#顺序表的操作" class="headerlink" title="顺序表的操作"></a>顺序表的操作</h3><h4 id="获得元素操作"><a href="#获得元素操作" class="headerlink" title="获得元素操作"></a>获得元素操作</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">GetElem</span><span class="token punctuation">(</span>SqList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//获得元素——>e返回L中第i个数据元素的值</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> i<span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">||</span> i<span class="token operator">></span>L<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token operator">*</span>e <span class="token operator">=</span> L<span class="token punctuation">.</span>data<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListInsert</span><span class="token punctuation">(</span>SqList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入操作——>在L中第i个位置之前插入新的数据元素e，L的长度加1</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> k<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token operator">-></span>length <span class="token operator">==</span> MaxSize<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//线性表已满</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">||</span> i<span class="token operator">></span>L<span class="token operator">-></span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//i不在范围内</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> L<span class="token operator">-></span>length<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入的元素不在表尾</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> L<span class="token operator">-></span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">>=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            L<span class="token operator">-></span>data<span class="token punctuation">[</span>k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token operator">-></span>data<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    L<span class="token operator">-></span>data<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//新元素插入</span>
-    L<span class="token operator">-></span>length<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListDelete</span><span class="token punctuation">(</span>SqList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除操作</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> k<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token operator">-></span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//线性表为空</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">||</span> i<span class="token operator">></span>L<span class="token operator">-></span>length<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除位置不正确</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token operator">*</span>e <span class="token operator">=</span> L<span class="token operator">-></span>data<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> L<span class="token operator">-></span>length<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除不是最后位置</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> i<span class="token punctuation">;</span> k <span class="token operator">&lt;</span> L<span class="token operator">-></span>length<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除位置后继元素前移</span>
-        <span class="token punctuation">{</span>
-            L<span class="token operator">-></span>data<span class="token punctuation">[</span>k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token operator">-></span>data<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    L<span class="token operator">-></span>length<span class="token operator">--</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="c">#define MaxSize 20  //储存空间初始分配量
+typedef int ElemType;
+typedef struct
+{
+    ElemType data[MaxSize];
+    int length;  //线性表当前长度
+}SqList;</code></pre>
+<h3 id="顺序表的操作"><a href="#顺序表的操作" class="headerlink" title="顺序表的操作"></a>顺序表的操作</h3><h4 id="获得元素操作"><a href="#获得元素操作" class="headerlink" title="获得元素操作"></a>获得元素操作</h4><pre><code class="c">int GetElem(SqList L, int i, ElemType* e) //获得元素——&gt;e返回L中第i个数据元素的值
+{
+    if (L.length == 0 || i&lt;1 || i&gt;L.length)
+    {
+        return 0;
+    }
+    *e = L.data[i - 1];
+    return 1;
+}</code></pre>
+<h4 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h4><pre><code class="c">int ListInsert(SqList* L, int i, ElemType e) //插入操作——&gt;在L中第i个位置之前插入新的数据元素e，L的长度加1
+{
+    int k;
+    if (L-&gt;length == MaxSize) //线性表已满
+    {
+        return 0;
+    }
+    if (i&lt;1 || i&gt;L-&gt;length + 1) //i不在范围内
+    {
+        return 0;
+    }
+    if (i &lt;= L-&gt;length) //插入的元素不在表尾
+    {
+        for (k = L-&gt;length - 1; k &gt;= i - 1; i--)
+        {
+            L-&gt;data[k + 1] = L-&gt;data[k];
+        }
+    }
+    L-&gt;data[i - 1] = e; //新元素插入
+    L-&gt;length++;
+    return 1;
+}</code></pre>
+<h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><pre><code class="c">int ListDelete(SqList* L, int i, ElemType e) //删除操作
+{
+    int k;
+    if (L-&gt;length == 0) //线性表为空
+    {
+        return 0;
+    }
+    if (i&lt;1 || i&gt;L-&gt;length) //删除位置不正确
+    {
+        return 0;
+    }
+    *e = L-&gt;data[i - 1];
+    if (i &lt; L-&gt;length) //删除不是最后位置
+    {
+        for (k = i; k &lt; L-&gt;length; k++) //删除位置后继元素前移
+        {
+            L-&gt;data[k - 1] = L-&gt;data[k];
+        }
+    }
+    L-&gt;length--;
+    return 1;
+}</code></pre>
 <h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>1、优点：</p>
 <p>①无需为表中元素之间的逻辑关系增加额外的储存空间；</p>
 <p>②可以快速的存取表中任意位置的元素；</p>
@@ -561,117 +560,117 @@
 <p>③造成储存空间的“碎片”；</p>
 <h2 id="线性表的链式储存结构——链表"><a href="#线性表的链式储存结构——链表" class="headerlink" title="线性表的链式储存结构——链表"></a>线性表的链式储存结构——链表</h2><p>链表在之前的博客里面已经整理了一部分，在这里再整理一遍吧；</p>
 <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>先定义一个结构体</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> Node
-<span class="token punctuation">{</span>
-    ElemType data<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> Node <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
-<span class="token keyword">typedef</span> <span class="token keyword">struct</span> Node<span class="token operator">*</span> LinkList<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义LinkList</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">GetElem</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//用e返回L中第i个数据元素的值</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
-    LinkList p<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//声明指针p</span>
-    p <span class="token operator">=</span> L<span class="token operator">-></span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//p指向链表L的第一个节点</span>
-    j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//j为计数器</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>p <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//p不为空且计数器j还没有等于i时，循环继续</span>
-    <span class="token punctuation">{</span>
-        p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//p指向下一个节点</span>
-        <span class="token operator">++</span>j<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>p <span class="token operator">||</span> j <span class="token operator">></span> i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//第i个节点不存在</span>
-    <span class="token punctuation">}</span>
-    <span class="token operator">*</span>e <span class="token operator">=</span> p<span class="token operator">-></span>data<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//取第i个节点的数据</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="单链表的插入"><a href="#单链表的插入" class="headerlink" title="单链表的插入"></a>单链表的插入</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListInsert</span><span class="token punctuation">(</span>LinkList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//在L的第i个节点之前插入元素e，L的长度加1</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
-    LinkList p<span class="token punctuation">,</span>s<span class="token punctuation">;</span>
-    p <span class="token operator">=</span> <span class="token operator">*</span>L<span class="token punctuation">;</span>
-    j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>p <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//寻找第i-1个节点</span>
-    <span class="token punctuation">{</span>
-        p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-        <span class="token operator">++</span>j<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>p <span class="token operator">||</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//第i个节点不存在</span>
-    <span class="token punctuation">}</span>
-    s <span class="token operator">=</span> <span class="token punctuation">(</span>LinkList<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//生成新节点</span>
-    s<span class="token operator">-></span>data <span class="token operator">=</span> e<span class="token punctuation">;</span>
-    s<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//将p的后继节点赋值给s的后继</span>
-    p<span class="token operator">-></span>next <span class="token operator">=</span> s<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//将s赋值给p的后继</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="单链表的删除"><a href="#单链表的删除" class="headerlink" title="单链表的删除"></a>单链表的删除</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">LinkDelete</span><span class="token punctuation">(</span>LinkList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//删除L中的第i个节点，并用e返回其值，L的长度减1</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
-    LinkList p<span class="token punctuation">,</span> q<span class="token punctuation">;</span>
-    p <span class="token operator">=</span> <span class="token operator">*</span>L<span class="token punctuation">;</span>
-    j <span class="token operator">=</span> i<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>next <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//遍历寻找第i-1个节点</span>
-    <span class="token punctuation">{</span>
-        p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-        <span class="token operator">++</span>j<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>p<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token operator">||</span> j <span class="token operator">></span> i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//第i个节点不存在</span>
-    <span class="token punctuation">}</span>
-    q <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    p<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将q的后继赋值给p的后继</span>
-    <span class="token operator">*</span>e <span class="token operator">=</span> q<span class="token operator">-></span>data<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//将q节点中的数据给e</span>
-    <span class="token function">free</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="单链表的整表创建"><a href="#单链表的整表创建" class="headerlink" title="单链表的整表创建"></a>单链表的整表创建</h4><h5 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">CreateListHead</span><span class="token punctuation">(</span>LinkList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//随机产生n个元素的值，建立带表头节点的单链线性表L（头插法）</span>
-<span class="token punctuation">{</span>
-    LinkList o<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-    <span class="token function">srand</span><span class="token punctuation">(</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//初始化随机种子</span>
-    <span class="token operator">*</span>L <span class="token operator">=</span> <span class="token punctuation">(</span>LinkList<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span><span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//先建立一个带头结点的单链表</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        p <span class="token operator">=</span> <span class="token punctuation">(</span>LinkList<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//生成新节点</span>
-        p<span class="token operator">-></span>data <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//随机生成100以内的数字</span>
-        p<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span><span class="token operator">-></span>next<span class="token punctuation">;</span>
-        <span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span><span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//插入到表头</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">CreateListTail</span><span class="token punctuation">(</span>LinkList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//随机产生n个元素的值，建立带表头节点的单链线性表L（尾插法）</span>
-<span class="token punctuation">{</span>
-    LinkList p<span class="token punctuation">,</span> r<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-    <span class="token function">srand</span><span class="token punctuation">(</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">*</span>L <span class="token operator">=</span> <span class="token punctuation">(</span>LinkList<span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    r <span class="token operator">=</span> <span class="token operator">*</span>L<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        p <span class="token operator">=</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//生成新节点</span>
-        p<span class="token operator">-></span>data <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        r<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//将表尾终端节点的指针指向新节点</span>
-        r <span class="token operator">=</span> p<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//将当前的新节点定义为表尾终端节点</span>
-    <span class="token punctuation">}</span>
-    r<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//表示当前链表结束</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="清空链表"><a href="#清空链表" class="headerlink" title="清空链表"></a>清空链表</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ClearList</span><span class="token punctuation">(</span>LinkList<span class="token operator">*</span> L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//单链表的整表删除，将L置为空表</span>
-<span class="token punctuation">{</span>
-    LinkList p<span class="token punctuation">,</span> q<span class="token punctuation">;</span>
-    p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span><span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//p指向第一个节点</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//没到表尾</span>
-    <span class="token punctuation">{</span>
-        q <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-        <span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        p <span class="token operator">=</span> q<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span><span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//头结点指针域为空</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="c">typedef struct Node
+{
+    ElemType data;
+    struct Node *next;
+}Node;
+typedef struct Node* LinkList; //定义LinkList</code></pre>
+<h4 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h4><pre><code class="c">int GetElem(LinkList L, int i, ElemType* e) //用e返回L中第i个数据元素的值
+{
+    int j;
+    LinkList p;   //声明指针p
+    p = L-&gt;next;  //p指向链表L的第一个节点
+    j = 1;    //j为计数器
+    while (p &amp;&amp; j &lt; i) //p不为空且计数器j还没有等于i时，循环继续
+    {
+        p = p-&gt;next; //p指向下一个节点
+        ++j;
+    }
+    if (!p || j &gt; i)
+    {
+        return 0;  //第i个节点不存在
+    }
+    *e = p-&gt;data;  //取第i个节点的数据
+    return 1;
+}</code></pre>
+<h4 id="单链表的插入"><a href="#单链表的插入" class="headerlink" title="单链表的插入"></a>单链表的插入</h4><pre><code class="c">int ListInsert(LinkList* L, int i, ElemType e) //在L的第i个节点之前插入元素e，L的长度加1
+{
+    int j;
+    LinkList p,s;
+    p = *L;
+    j = 1;
+    while (p &amp;&amp; j &lt; i) //寻找第i-1个节点
+    {
+        p = p-&gt;next;
+        ++j;
+    }
+    if (!p || j &lt; i)
+    {
+        return 0;  //第i个节点不存在
+    }
+    s = (LinkList)malloc(sizeof(Node)); //生成新节点
+    s-&gt;data = e;
+    s-&gt;next = p-&gt;next;  //将p的后继节点赋值给s的后继
+    p-&gt;next = s;  //将s赋值给p的后继
+    return 1;
+}</code></pre>
+<h4 id="单链表的删除"><a href="#单链表的删除" class="headerlink" title="单链表的删除"></a>单链表的删除</h4><pre><code class="c">int LinkDelete(LinkList* L, int i, ElemType* e) //删除L中的第i个节点，并用e返回其值，L的长度减1
+{
+    int j;
+    LinkList p, q;
+    p = *L;
+    j = i;
+    while (p-&gt;next &amp;&amp; j &lt; i) //遍历寻找第i-1个节点
+    {
+        p = p-&gt;next;
+        ++j;
+    }
+    if (!(p-&gt;next) || j &gt; i)
+    {
+        return 0;  //第i个节点不存在
+    }
+    q = p-&gt;next;
+    p-&gt;next = q-&gt;next; //将q的后继赋值给p的后继
+    *e = q-&gt;data;   //将q节点中的数据给e
+    free(q);
+    return 1;
+}</code></pre>
+<h4 id="单链表的整表创建"><a href="#单链表的整表创建" class="headerlink" title="单链表的整表创建"></a>单链表的整表创建</h4><h5 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h5><pre><code class="c">void CreateListHead(LinkList* L, int n) //随机产生n个元素的值，建立带表头节点的单链线性表L（头插法）
+{
+    LinkList o;
+    int i;
+    srand(time(0));  //初始化随机种子
+    *L = (LinkList)malloc(sizeof(Node));
+    (*L)-&gt;next = NULL;   //先建立一个带头结点的单链表
+    for (i = 0; i &lt; n; i++)
+    {
+        p = (LinkList)malloc(sizeof(Node)); //生成新节点
+        p-&gt;data = rand() % 100 + 1;  //随机生成100以内的数字
+        p-&gt;next = (*L)-&gt;next;
+        (*L)-&gt;next = p;   //插入到表头
+    }
+}</code></pre>
+<h5 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h5><pre><code class="c">void CreateListTail(LinkList* L, int n)//随机产生n个元素的值，建立带表头节点的单链线性表L（尾插法）
+{
+    LinkList p, r;
+    int i;
+    srand(time(0));
+    *L = (LinkList)malloc(sizeof(Node));
+    r = *L;
+    for (i = 0; i &lt; n; i++)
+    {
+        p = (Node*)malloc(sizeof(Node));  //生成新节点
+        p-&gt;data = rand() % 100 + 1;
+        r-&gt;next = p;  //将表尾终端节点的指针指向新节点
+        r = p;  //将当前的新节点定义为表尾终端节点
+    }
+    r-&gt;next = NULL;  //表示当前链表结束
+}</code></pre>
+<h4 id="清空链表"><a href="#清空链表" class="headerlink" title="清空链表"></a>清空链表</h4><pre><code class="c">int ClearList(LinkList* L) //单链表的整表删除，将L置为空表
+{
+    LinkList p, q;
+    p = (*L)-&gt;next; //p指向第一个节点
+    while (p)  //没到表尾
+    {
+        q = p-&gt;next;
+        free(p);
+        p = q;
+    }
+    (*L)-&gt;next = NULL;  //头结点指针域为空
+    return 1;
+}
+</code></pre>
 <h4 id="单链表结构与顺序存储结构优缺点"><a href="#单链表结构与顺序存储结构优缺点" class="headerlink" title="单链表结构与顺序存储结构优缺点"></a>单链表结构与顺序存储结构优缺点</h4><p>1、存储分配方式</p>
 <p>​        ①顺序存储结构一般用一段连续的存储单元依次存储线性表的数据元素</p>
 <p>​        ②单链表采用链式存储结构，用一组任意的存储大单元存放线性表的元素</p>
@@ -690,93 +689,93 @@
 <p>data和cur；数据域data，用来存放数据元素,也就是通常我们要处理的数据；而cur相当于链表中的next指针，存</p>
 <p>放该元素的后继在数组中的下标，我们把cur叫做游标；</p>
 <p>小注：这里我理解的游标就是next那根链，元素的游标指向下一个数值的下标；;</p>
-<h4 id="静态链表存储结构"><a href="#静态链表存储结构" class="headerlink" title="静态链表存储结构"></a>静态链表存储结构</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000 </span><span class="token comment" spellcheck="true">// 假设链表最大长度是1k</span>
-<span class="token keyword">typedef</span> <span class="token keyword">struct</span>
-<span class="token punctuation">{</span>
-    ElemType data<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> cur<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//游标，为0时表示无指向</span>
-<span class="token punctuation">}</span>StaticLinkList<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="静态链表存储结构"><a href="#静态链表存储结构" class="headerlink" title="静态链表存储结构"></a>静态链表存储结构</h4><pre><code class="c">#define MAXSIZE 1000 // 假设链表最大长度是1k
+typedef struct
+{
+    ElemType data;
+    int cur; //游标，为0时表示无指向
+}StaticLinkList[MAXSIZE];</code></pre>
 <h4 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h4><p>0-998游标从1-999，最后一个游标为0</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">InitLink</span><span class="token punctuation">(</span>StaticLinkList space<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//将一位数组space中各分量链成一备用链表，space[0].cur为头指针，"0"表示空指针</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> MAXSIZE <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        space<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    space<span class="token punctuation">[</span>MAXSIZE <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//目前静态链表为空，最后一个元素的cur为0</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="c">int InitLink(StaticLinkList space) //将一位数组space中各分量链成一备用链表，space[0].cur为头指针，"0"表示空指针
+{
+    int i;
+    for (i = 0; i &lt; MAXSIZE - 1; i++)
+    {
+        space[i].cur = i + 1;
+    }
+    space[MAXSIZE - 1].cur = 0; //目前静态链表为空，最后一个元素的cur为0
+    return 1;
+}</code></pre>
 <p>注：</p>
 <p>​    我们通常把未使用的数组元素成为备用链表；</p>
 <p>​    数组的第一个元素，即下标为0的那个元素的cur就存放备用链表的第一个节点的下标；</p>
 <p>​    数组的最后一个元素，即下标为MAXSIZE-1的cur则存放第一个有数值的元素的下标，相当于头节点的作用；</p>
-<h4 id="获取链表中元素的个数"><a href="#获取链表中元素的个数" class="headerlink" title="获取链表中元素的个数"></a>获取链表中元素的个数</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListLength</span><span class="token punctuation">(</span>StaticLinkList L<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> i <span class="token operator">=</span> L<span class="token punctuation">[</span>MAXSIZE <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//最后一个元素的游标，从头循环计数</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//循环计数，找到空闲分量即停止循环</span>
-    <span class="token punctuation">{</span>
-        i <span class="token operator">=</span> L<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span> 
-        j<span class="token operator">++</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//计数</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> j<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="静态链表的插入操作"><a href="#静态链表的插入操作" class="headerlink" title="静态链表的插入操作"></a>静态链表的插入操作</h4><h5 id="获得空闲分量的下标"><a href="#获得空闲分量的下标" class="headerlink" title="获得空闲分量的下标"></a>获得空闲分量的下标</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">Malloc_SSL</span><span class="token punctuation">(</span>StaticLinkList space<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//若备用空间链表为空，则返回分配的节点下标，否则返回0</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> i <span class="token operator">=</span> space<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//当前数组第一个元素cur存的值，就是要返回的第一个备用空闲的下标</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>space<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        space<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> space<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 由于要拿出一个分量来使用，所以我们就得把它的下一个分量用来做备用</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> i<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListInsert</span><span class="token punctuation">(</span>StaticLinkList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 在L中第i个元素之前插入新的数据元素e</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> j<span class="token punctuation">,</span> k<span class="token punctuation">,</span> l<span class="token punctuation">;</span>
-    k <span class="token operator">=</span> MAXSIZE <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//k是最后一个元素的下标</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">||</span> i<span class="token operator">></span><span class="token function">Listlength</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    j <span class="token operator">=</span> <span class="token function">Malloc_SSL</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//获得空闲分量的下标</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        L<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>data <span class="token operator">=</span> e<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将数值赋值给此分量的data</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> l <span class="token operator">&lt;=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> l<span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//找到第i个元素之前的位置</span>
-        <span class="token punctuation">{</span>
-            k <span class="token operator">=</span> L<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        L<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> L<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//把第i个元素之前的cur赋值给新元素的cur</span>
-        L<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> j<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//把新元素的下标赋值给第i个元素之前元素的cur</span>
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="静态链表的删除操作"><a href="#静态链表的删除操作" class="headerlink" title="静态链表的删除操作"></a>静态链表的删除操作</h4><h5 id="回收节点"><a href="#回收节点" class="headerlink" title="回收节点"></a>回收节点</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Free_SSL</span><span class="token punctuation">(</span>StaticLinkList space<span class="token punctuation">,</span><span class="token keyword">int</span> k<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//将下标为k的空闲节点回收到备用链表</span>
-<span class="token punctuation">{</span>
-    space<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> space<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把第一个元素cur值赋给要删除的分量cur</span>
-    space<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> k<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把要删除的分量下标赋给第一个元素的cur</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListDelete</span><span class="token punctuation">(</span>StaticLinkList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 删除L中第i个元素e</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> j<span class="token punctuation">,</span> k<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">||</span> i<span class="token operator">></span><span class="token function">ListLength</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span>
-    <span class="token punctuation">}</span>
-    k <span class="token operator">=</span> MAXSIZE <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        k <span class="token operator">=</span> L<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">// j > k</span>
-    j <span class="token operator">=</span> L<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//L[k].cur指向删除元素的下标，赋值给j</span>
-    L<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cur <span class="token operator">=</span> L<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cur<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//被删除元素的游标赋值给前一个元素的游标，实现连接</span>
-    <span class="token function">Free_SSL</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//回收</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="获取链表中元素的个数"><a href="#获取链表中元素的个数" class="headerlink" title="获取链表中元素的个数"></a>获取链表中元素的个数</h4><pre><code class="c">int ListLength(StaticLinkList L)
+{
+    int j = 0;
+    int i = L[MAXSIZE - 1].cur; //最后一个元素的游标，从头循环计数
+    while (i) //循环计数，找到空闲分量即停止循环
+    {
+        i = L[i].cur; 
+        j++;  //计数
+    }
+    return j;
+}
+</code></pre>
+<h4 id="静态链表的插入操作"><a href="#静态链表的插入操作" class="headerlink" title="静态链表的插入操作"></a>静态链表的插入操作</h4><h5 id="获得空闲分量的下标"><a href="#获得空闲分量的下标" class="headerlink" title="获得空闲分量的下标"></a>获得空闲分量的下标</h5><pre><code class="c">int Malloc_SSL(StaticLinkList space) //若备用空间链表为空，则返回分配的节点下标，否则返回0
+{
+    int i = space[0].cur; //当前数组第一个元素cur存的值，就是要返回的第一个备用空闲的下标
+    if (space[0].cur)
+    {
+        space[0].cur = space[i].cur; // 由于要拿出一个分量来使用，所以我们就得把它的下一个分量用来做备用
+    }
+    return i;
+}</code></pre>
+<h5 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h5><pre><code class="c">int ListInsert(StaticLinkList L, int i, ElemType e) // 在L中第i个元素之前插入新的数据元素e
+{
+    int j, k, l;
+    k = MAXSIZE - 1;  //k是最后一个元素的下标
+    if (i&lt;1 || i&gt;Listlength(L) + 1)
+    {
+        return 0;
+    }
+    j = Malloc_SSL(L);  //获得空闲分量的下标
+    if (j)
+    {
+        L[j].data = e; //将数值赋值给此分量的data
+        for (l = 1; l &lt;= i - 1; l++)  //找到第i个元素之前的位置
+        {
+            k = L[k].cur;
+        }
+        L[j].cur = L[k].cur;  //把第i个元素之前的cur赋值给新元素的cur
+        L[k].cur = j;  //把新元素的下标赋值给第i个元素之前元素的cur
+        return 1;
+    }
+    return 0;
+}</code></pre>
+<h4 id="静态链表的删除操作"><a href="#静态链表的删除操作" class="headerlink" title="静态链表的删除操作"></a>静态链表的删除操作</h4><h5 id="回收节点"><a href="#回收节点" class="headerlink" title="回收节点"></a>回收节点</h5><pre><code class="c">void Free_SSL(StaticLinkList space,int k)//将下标为k的空闲节点回收到备用链表
+{
+    space[k].cur = space[0].cur; //把第一个元素cur值赋给要删除的分量cur
+    space[0].cur = k; //把要删除的分量下标赋给第一个元素的cur
+}</code></pre>
+<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5><pre><code class="c">int ListDelete(StaticLinkList L, int i) // 删除L中第i个元素e
+{
+    int j, k;
+    if (i&lt;1 || i&gt;ListLength(L))
+    {
+        return 0
+    }
+    k = MAXSIZE - 1;
+    for (j = 1; j &lt;= i - 1; j++)
+    {
+        k = L[k].cur;
+    }
+    // j &gt; k
+    j = L[k].cur;  //L[k].cur指向删除元素的下标，赋值给j
+    L[k].cur = L[j].cur;  //被删除元素的游标赋值给前一个元素的游标，实现连接
+    Free_SSL(L, j); //回收
+    return 1;
+}</code></pre>
 <h4 id="静态链表优缺点"><a href="#静态链表优缺点" class="headerlink" title="静态链表优缺点"></a>静态链表优缺点</h4><p>1、优点：</p>
 <p>​        ●在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了在顺序存储结构中的插入和删除操作</p>
 <p>需要移动大量元素的缺点</p>
@@ -789,12 +788,12 @@
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>循环链表中，从任一节点出发都可以访问到表中所有节点，在单链表中，必须从头指针开始，否则无法访问到该节</p>
 <p>点之前的其他节点；</p>
 <h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><h4 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h4><p>双向链表是在单链表的每个节点中，再设置一个指向其前驱节点的指针域，前驱后继方向都能遍历；</p>
-<h4 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> DulNode
-<span class="token punctuation">{</span>
-    ElemType data<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> DulNode<span class="token operator">*</span> prior<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//直接前驱指针</span>
-    <span class="token keyword">struct</span> DulNode<span class="token operator">*</span> next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//直接后继指针</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h4><pre><code class="c">typedef struct DulNode
+{
+    ElemType data;
+    struct DulNode* prior;  //直接前驱指针
+    struct DulNode* next;  //直接后继指针
+};</code></pre>
 <p>显然，与单链表相比，多了一个直接前驱；</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这一章节是线性表，线性表对于以后学习的数据结构会有很大作用；</p>
 <p>选择使用哪种线性表，结合情况再定，各有利弊；</p>
@@ -1013,10 +1012,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/z.png" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/images/loading.gif" data-original="/medias/reward/z.png" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/w.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/images/loading.gif" data-original="/medias/reward/w.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1056,7 +1055,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="栈与队列—Stack & Queue">
+                        <img src="/images/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="栈与队列—Stack & Queue">
                         
                         <span class="card-title">栈与队列—Stack & Queue</span>
                     </div>
@@ -1111,7 +1110,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="时间复杂度">
+                        <img src="/images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="时间复杂度">
                         
                         <span class="card-title">时间复杂度</span>
                     </div>
@@ -1335,7 +1334,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.4k</span>&nbsp;字
+                class="white-color">18.6k</span>&nbsp;字
             
             
             
@@ -1533,7 +1532,7 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 
 </html>
 
