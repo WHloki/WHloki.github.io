@@ -443,7 +443,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    707
+                    737
                 </div>
                 
 
@@ -487,30 +487,31 @@
 <p><strong><em>sudo apt-get install libffi-dev</em></strong><br><strong><em>sudo apt-get install libssl-dev</em></strong><br><strong><em>sudo apt-get install python</em></strong><br><strong><em>sudo apt-get install python-pip</em></strong><br><strong><em>sudo pip install pwntools</em></strong><br>注：安装过程可能会有更新pip等的提示，按照提示一步一步走就没问题，有问题请联系我；</p>
 <h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>安装完后，打开终端，输入<strong>python</strong>进入<strong>python</strong>命令，然后输入<strong><u>from pwn import *</u></strong> ，不报错即成功；</p>
 <h3 id="pwntools的简单使用"><a href="#pwntools的简单使用" class="headerlink" title="pwntools的简单使用"></a>pwntools的简单使用</h3><p>前面提到，pwntools是python的一个库，那么在写exp的时候，需要掌握以下几个基本语法：</p>
-<pre><code class="python">remote("一个域名或者ip地址", 端口) #会连接到我们指定的地址及端口，然后该函数会返回remote对象
+<pre class="line-numbers language-python"><code class="language-python">remote<span class="token punctuation">(</span><span class="token string">"一个域名或者ip地址"</span><span class="token punctuation">,</span> 端口<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#会连接到我们指定的地址及端口，然后该函数会返回remote对象</span>
 
-remote #对象主要用来进行对远程主机的输入输出,它有如下几个方法：
+remote <span class="token comment" spellcheck="true">#对象主要用来进行对远程主机的输入输出,它有如下几个方法：</span>
 
-send(payload) #发送payload
+send<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#发送payload</span>
 
-sendline(payload) #发送payload并进行换行（末尾\n）
+sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#发送payload并进行换行（末尾\n）</span>
 
-sendafter(some_string, payload) #接收到some_string后,发送你的 payload
+sendafter<span class="token punctuation">(</span>some_string<span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收到some_string后,发送你的 payload</span>
 
-recvn(N) #接受N(数字)字符
+recvn<span class="token punctuation">(</span>N<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接受N(数字)字符</span>
 
-recvline() #接收一行输出
+recvline<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收一行输出</span>
 
-recvlines(N) #接收N(数字)行输出
+recvlines<span class="token punctuation">(</span>N<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收N(数字)行输出</span>
 
-recvuntil(some_string) #接收到some_string为止
+recvuntil<span class="token punctuation">(</span>some_string<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收到some_string为止</span>
 
-c.sendline #将我们的payload发送到远程主机
+c<span class="token punctuation">.</span>sendline <span class="token comment" spellcheck="true">#将我们的payload发送到远程主机</span>
 
-c.interactive() #允许我们在终端里将命令传送到远程服务器,pwntools会自动接收输出并回显;
+c<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#允许我们在终端里将命令传送到远程服务器,pwntools会自动接收输出并回显;</span>
 
-#p32()可以让我们转换整数到小端序格式.p32转换4字节,p64和p16则分别转换8 bit和2 bit数字
-</code></pre>
+<span class="token comment" spellcheck="true">#p32()可以让我们转换整数到小端序格式.p32转换4字节,p64和p16则分别转换8 bit和2 bit数字</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>基础东西就这些（其实只用这些只能做 “栈溢出” 的题目），后面遇到在补充吧；</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -819,22 +820,23 @@ pwntools第一个需要学习的是pwntools，这个也是我刚开始入门就�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/13/xctf/">
+                <a href="/2020/03/13/html/">
                     <div class="card-image">
                         
                         
-                        <img src="/images/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="XCTF的wp">
+                        <img src="/images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="HTML学习笔记">
                         
-                        <span class="card-title">XCTF的wp</span>
+                        <span class="card-title">HTML学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            到目前为止，今年入的两个坑，一个是CTF，这个暂且不说，另一个是Blog；
+
+
+前篇Blog这东西前面的文章也说了，很烦人其实，尤其是配置文件的时候，老是出错；最近看Hexo主题的时候又看上
+了一个主题——Matery；这款主题页面清晰，画
                         
                     </div>
                     <div class="publish-info">
@@ -845,8 +847,12 @@ pwntools第一个需要学习的是pwntools，这个也是我刚开始入门就�
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/HTML/" class="post-category">
+                                    HTML
+                                </a>
+                            
+                            <a href="/categories/HTML/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -856,8 +862,12 @@ pwntools第一个需要学习的是pwntools，这个也是我刚开始入门就�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
@@ -1046,7 +1056,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.6k</span>&nbsp;字
+                class="white-color">18.1k</span>&nbsp;字
             
             
             
@@ -1244,8 +1254,21 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
+    <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+    </script>
+    
+
 <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 
 </html>
 
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<script src="/js/snow.js"></script>
+
+
+
+

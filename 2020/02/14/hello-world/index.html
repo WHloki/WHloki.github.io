@@ -443,7 +443,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    189
+                    186
                 </div>
                 
 
@@ -471,32 +471,32 @@
 <p>学习语言最基本了解它大概长什么样子，下面通过打印Hello World！来了解了解；</p>
 <a id="more"></a>
 
-<h4 id="打印”Hello-World-”"><a href="#打印”Hello-World-”" class="headerlink" title="打印”Hello World!”"></a>打印”Hello World!”</h4><h5 id="C"><a href="#C" class="headerlink" title="C"></a>C</h5><pre><code class="c">#include &lt;stdio.h&gt;
+<h4 id="打印”Hello-World-”"><a href="#打印”Hello-World-”" class="headerlink" title="打印”Hello World!”"></a>打印”Hello World!”</h4><h5 id="C"><a href="#C" class="headerlink" title="C"></a>C</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 
-int main()
-{
-    printf("Hello World!\n");
-    return 0;
-}</code></pre>
-<h5 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h5><pre><code class="c">#include &lt;iostream&gt;
-using namespace std;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using namespace std<span class="token punctuation">;</span>
 
-int main()
-{
-    cout &lt;&lt; "Hello World!" &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
-<h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><pre><code class="Java">public class HelloWorld {
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><pre class="line-numbers language-Java"><code class="language-Java">public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
-}</code></pre>
-<h5 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h5><pre><code class="Python">print("Hello World!");</code></pre>
-<h5 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h5><pre><code class="php">&lt;?php
-echo "Hello World!";
-?&gt;</code></pre>
-<h5 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h5><pre><code class="c#">using System;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h5><pre class="line-numbers language-Python"><code class="language-Python">print("Hello World!");<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h5><pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">echo</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span>
+<span class="token delimiter">?></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h5><pre class="line-numbers language-c#"><code class="language-c#">using System;
 namespace HelloWorld
 {
     class HelloWorld
@@ -505,7 +505,7 @@ namespace HelloWorld
             Console.WriteLine("Hello World!");
         }
     }
-}</code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1042,7 +1042,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.6k</span>&nbsp;字
+                class="white-color">18.1k</span>&nbsp;字
             
             
             
@@ -1240,8 +1240,21 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
+    <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+    </script>
+    
+
 <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 
 </html>
 
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<script src="/js/snow.js"></script>
+
+
+
+

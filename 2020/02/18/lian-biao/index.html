@@ -491,385 +491,385 @@
 <p>函数比较多，先声明一下，便于阅读；</p>
 <p>结构体先设一个成员，根据自己情况来设；</p>
 <p>设全局变量的话，写各个操作函数的时候就省了一个形参；</p>
-<h5 id="头文件（根据使用的语言自行修改）"><a href="#头文件（根据使用的语言自行修改）" class="headerlink" title="头文件（根据使用的语言自行修改）"></a>头文件（根据使用的语言自行修改）</h5><pre><code class="c">#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;</code></pre>
-<h5 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h5><pre><code class="c">//函数声明 链表的增、删、查、改；
-void AddTail(int n); //创建链表，在链表中增加一个数据，尾添加
-void AddHead(int n); //创建链表，在链表中增加一个数据，头添加
-void AddList(int index, int n); //在数字index后面添加数字a
+<h5 id="头文件（根据使用的语言自行修改）"><a href="#头文件（根据使用的语言自行修改）" class="headerlink" title="头文件（根据使用的语言自行修改）"></a>头文件（根据使用的语言自行修改）</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//函数声明 链表的增、删、查、改；</span>
+<span class="token keyword">void</span> <span class="token function">AddTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//创建链表，在链表中增加一个数据，尾添加</span>
+<span class="token keyword">void</span> <span class="token function">AddHead</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//创建链表，在链表中增加一个数据，头添加</span>
+<span class="token keyword">void</span> <span class="token function">AddList</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//在数字index后面添加数字a</span>
 
-void DeleteHead(); //头删除
-void DeleteTail(); //尾删除
-void DeleteNode(int n); //删除指定节点 
+<span class="token keyword">void</span> <span class="token function">DeleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//头删除</span>
+<span class="token keyword">void</span> <span class="token function">DeleteTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//尾删除</span>
+<span class="token keyword">void</span> <span class="token function">DeleteNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//删除指定节点 </span>
 
-void SeekList(); //遍历链表——&gt;查
-struct Node* SearchNode(int n); //查询指定节点
+<span class="token keyword">void</span> <span class="token function">SeekList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//遍历链表——>查</span>
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//查询指定节点</span>
 
-void ChangeNode(int index, int n); //将index改为 n  
+<span class="token keyword">void</span> <span class="token function">ChangeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将index改为 n  </span>
 
-void FreeList(); //链表清空</code></pre>
-<h5 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h5><pre><code class="c">//节点结构体
-struct Node
-{
-    int a;
-    struct Node* next; //指向下一个节点的指针
-};</code></pre>
-<h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><pre><code class="c">//链表头尾指针（全局变量）
-struct Node* head = NULL;
-struct Node* tail = NULL;</code></pre>
-<h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><h5 id="头添加"><a href="#头添加" class="headerlink" title="头添加"></a>头添加</h5><pre><code class="c">void AddHead(int n) //创建链表，在链表中增加一个数据，头添加
-{
-    //创建一个节点
-    struct Node* pTemp = (struct Node*)malloc(sizeof(struct Node));
+<span class="token keyword">void</span> <span class="token function">FreeList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//链表清空</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//节点结构体</span>
+<span class="token keyword">struct</span> Node
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指向下一个节点的指针</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//链表头尾指针（全局变量）</span>
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> tail <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><h5 id="头添加"><a href="#头添加" class="headerlink" title="头添加"></a>头添加</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">AddHead</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//创建链表，在链表中增加一个数据，头添加</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//创建一个节点</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    //节点数据进行赋值
-    pTemp-&gt;a = n;
-    pTemp-&gt;next = NULL;
+    <span class="token comment" spellcheck="true">//节点数据进行赋值</span>
+    pTemp<span class="token operator">-></span>a <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    pTemp<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-    //接在链表上
-    if (head == NULL)//链表为空，新节点既是头也是尾巴
-    {
-        head = pTemp;
-        tail = pTemp;
-    }
-    else
-    {
-        pTemp-&gt;next = head; //新节点的下一个指向头
-        head = pTemp;//新节点就是头了
-    }
-}</code></pre>
-<h5 id="尾添加"><a href="#尾添加" class="headerlink" title="尾添加"></a>尾添加</h5><pre><code class="c">void AddTail(int n) //创建链表，在链表中增加一个数据，尾添加
-{
-    //创建一个节点
-    struct Node* pTemp = (struct Node*)malloc(sizeof(struct Node));
+    <span class="token comment" spellcheck="true">//接在链表上</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//链表为空，新节点既是头也是尾巴</span>
+    <span class="token punctuation">{</span>
+        head <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+        tail <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        pTemp<span class="token operator">-></span>next <span class="token operator">=</span> head<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//新节点的下一个指向头</span>
+        head <span class="token operator">=</span> pTemp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//新节点就是头了</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="尾添加"><a href="#尾添加" class="headerlink" title="尾添加"></a>尾添加</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">AddTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//创建链表，在链表中增加一个数据，尾添加</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//创建一个节点</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    //节点数据进行赋值
-    pTemp-&gt;a = n;
-    pTemp-&gt;next = NULL;
+    <span class="token comment" spellcheck="true">//节点数据进行赋值</span>
+    pTemp<span class="token operator">-></span>a <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    pTemp<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-    //链接
-    if (head == NULL || tail == NULL)//空链表，既是头，又是尾
-    {
-        head = pTemp;
-    }
-    else //不为空，往尾巴上添加
-    {
-        tail-&gt;next = pTemp;
-    }
-    tail = pTemp;// 尾巴一直指向最后一个节点
-}</code></pre>
-<h5 id="任意位置添加"><a href="#任意位置添加" class="headerlink" title="任意位置添加"></a>任意位置添加</h5><pre><code class="c">void AddList(int index, int n)//在数字index后面添加数字n
-{
-    if (head == NULL)
-    {
-        printf("链表为空，没有节点\n");
-        return;
-    }
-    struct Node* fp = SearchNode(index);
-    if (fp == NULL)
-    {
-        printf("没有指定的节点\n");
-        return;
-    }
-    //有此节点，给a创建节点
-    struct Node* pTemp = (struct Node*)malloc(sizeof(struct Node));
-    pTemp-&gt;a = n;
-    pTemp-&gt;next = NULL;
+    <span class="token comment" spellcheck="true">//链接</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> tail <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//空链表，既是头，又是尾</span>
+    <span class="token punctuation">{</span>
+        head <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token comment" spellcheck="true">//不为空，往尾巴上添加</span>
+    <span class="token punctuation">{</span>
+        tail<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    tail <span class="token operator">=</span> pTemp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 尾巴一直指向最后一个节点</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="任意位置添加"><a href="#任意位置添加" class="headerlink" title="任意位置添加"></a>任意位置添加</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">AddList</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//在数字index后面添加数字n</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表为空，没有节点\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> fp <span class="token operator">=</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"没有指定的节点\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//有此节点，给a创建节点</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pTemp<span class="token operator">-></span>a <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    pTemp<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
 
-    if (fp == tail)//链接到链表上
-    {
-        tail-&gt;next = pTemp; //尾巴的下一个，指向新的节点
-        tail = pTemp;  //新节点是最后一个，变成尾巴
-    }
-    else
-    {
-        pTemp-&gt;next = fp-&gt;next;//先连
-        fp-&gt;next = pTemp;      //后断
-    }
-}</code></pre>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><h5 id="头删除"><a href="#头删除" class="headerlink" title="头删除"></a>头删除</h5><pre><code class="c">void DeleteHead() //头删除
-{
-    if (head == NULL)//检查链表是否为空
-    {
-        printf("链表为NULL，无需释放!\n");
-        return;
-    }
-    if (head == tail)
-    {
-        free(head);
-        head = NULL;
-        tail = NULL;
-    }
-    else
-    {
-        struct Node* pTemp = head;//记住旧的头
-        head = head-&gt;next; //头的下一个节点变成新的头
-        free(pTemp); //释放旧的头
-    }
-}</code></pre>
-<h5 id="尾删除"><a href="#尾删除" class="headerlink" title="尾删除"></a>尾删除</h5><pre><code class="c">void DeleteTail() //尾删除
-{
-    if (head == NULL)//检查链表是否为空
-    {
-        printf("链表为NULL，无需释放!\n");
-        return;
-    }
-    //链表不为空 有一个节点
-    if (head == tail)
-    {
-        free(head);
-        head = NULL;
-        tail = NULL;
-    }
-    else
-    {
-        //找尾巴前一个节点
-        struct Node* pTemp = head;
-        while (pTemp-&gt;next != tail)
-        {
-            pTemp = pTemp-&gt;next;
-        }
-        //找到尾巴 删除并释放
-        free(tail);  //释放尾巴
-        tail = pTemp;//移动尾巴
-        tail-&gt;next = NULL;//尾巴的下一个指针赋值为NULL
-    }
-}</code></pre>
-<h5 id="任意位置删除"><a href="#任意位置删除" class="headerlink" title="任意位置删除"></a>任意位置删除</h5><pre><code class="c">void DeleteNode(int n)//删除指定节点 
-{
-    if (head == NULL)//检查链表是否为空
-    {
-        printf("链表为NULL，无需释放!\n");
-        return;
-    }
-    //链表有东西，找此节点
-    struct Node* pTemp = SearchNode(n);
-    if (pTemp == NULL)
-    {
-        printf("查无此节点\n");
-        return;
-    }
-    //找到了
-    if (pTemp == head) //只有一个节点
-    {
-        DeleteHead();
-    }
-    else if (pTemp == tail)//有两个节点
-    {
-        DeleteTail();
-    }
-    else//有多个节点
-    {
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fp <span class="token operator">==</span> tail<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//链接到链表上</span>
+    <span class="token punctuation">{</span>
+        tail<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//尾巴的下一个，指向新的节点</span>
+        tail <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//新节点是最后一个，变成尾巴</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        pTemp<span class="token operator">-></span>next <span class="token operator">=</span> fp<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先连</span>
+        fp<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//后断</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><h5 id="头删除"><a href="#头删除" class="headerlink" title="头删除"></a>头删除</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">DeleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//头删除</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//检查链表是否为空</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表为NULL，无需释放!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> tail<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        tail <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//记住旧的头</span>
+        head <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//头的下一个节点变成新的头</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>pTemp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//释放旧的头</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="尾删除"><a href="#尾删除" class="headerlink" title="尾删除"></a>尾删除</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">DeleteTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//尾删除</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//检查链表是否为空</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表为NULL，无需释放!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//链表不为空 有一个节点</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> tail<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        tail <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//找尾巴前一个节点</span>
+        <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>pTemp<span class="token operator">-></span>next <span class="token operator">!=</span> tail<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            pTemp <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//找到尾巴 删除并释放</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>tail<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//释放尾巴</span>
+        tail <span class="token operator">=</span> pTemp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//移动尾巴</span>
+        tail<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//尾巴的下一个指针赋值为NULL</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="任意位置删除"><a href="#任意位置删除" class="headerlink" title="任意位置删除"></a>任意位置删除</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">DeleteNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//删除指定节点 </span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//检查链表是否为空</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表为NULL，无需释放!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//链表有东西，找此节点</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"查无此节点\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//找到了</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> head<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//只有一个节点</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">DeleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> tail<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//有两个节点</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">DeleteTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token comment" spellcheck="true">//有多个节点</span>
+    <span class="token punctuation">{</span>
 
-        struct Node* fp = head;
-        while (fp-&gt;next != pTemp)
-        {
-            fp = fp-&gt;next;
-        }
-        //找到了
-        fp-&gt;next = pTemp-&gt;next;//连接
-        free(pTemp); //释放
-    }
-}</code></pre>
-<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><pre><code class="c">void SeekList() //遍历链表——&gt;查
-{
-    struct Node* pTemp = head;
-    while (pTemp != NULL)
-    {
-        printf("%d  ",pTemp-&gt;a);
-        pTemp = pTemp-&gt;next;
-    }
-    printf("\n");
-}</code></pre>
-<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><pre><code class="c">struct Node* SearchNode(int n) //查询指定节点
-{
-    struct Node* pTemp = head;
-    int num = 1;
-    while (pTemp != NULL)
-    {
-        if (n == pTemp-&gt;a)
-        {
-            printf("第%d个数为%d\n", num, pTemp-&gt;a);
-            //return pTemp;
-        }
-        pTemp = pTemp-&gt;next;
-        num++;
-    }
-    return NULL; //没找到
-}</code></pre>
-<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><pre><code class="c">void ChangeNode(int index, int n)//将index改为 n  
-{
-    struct Node* fp = head-&gt;next;
-    while (fp != NULL)
-    {
-        if (fp-&gt;a == index)
-        {
-            fp-&gt;a = n;
-            return;
-        }
-        fp = fp-&gt;next;
-    }
-}</code></pre>
-<h4 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h4><pre><code class="c">void FreeList() //链表清空
-{
-    struct Node* pTemp = head; //记录头，防止头被修改，丢内存
-    while (pTemp != NULL)
-    {
-        struct Node* fp = pTemp;
-        pTemp = pTemp-&gt;next;
-        free(fp);
-    }
-    //头尾清空
-    head = NULL;
-    tail = NULL;
-}</code></pre>
+        <span class="token keyword">struct</span> Node<span class="token operator">*</span> fp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>fp<span class="token operator">-></span>next <span class="token operator">!=</span> pTemp<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            fp <span class="token operator">=</span> fp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//找到了</span>
+        fp<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//连接</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>pTemp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//释放</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">SeekList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//遍历链表——>查</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>pTemp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d  "</span><span class="token punctuation">,</span>pTemp<span class="token operator">-></span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pTemp <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//查询指定节点</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>pTemp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> pTemp<span class="token operator">-></span>a<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"第%d个数为%d\n"</span><span class="token punctuation">,</span> num<span class="token punctuation">,</span> pTemp<span class="token operator">-></span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//return pTemp;</span>
+        <span class="token punctuation">}</span>
+        pTemp <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        num<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//没找到</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ChangeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//将index改为 n  </span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> fp <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>fp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>fp<span class="token operator">-></span>a <span class="token operator">==</span> index<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            fp<span class="token operator">-></span>a <span class="token operator">=</span> n<span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        fp <span class="token operator">=</span> fp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">FreeList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//链表清空</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//记录头，防止头被修改，丢内存</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>pTemp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> Node<span class="token operator">*</span> fp <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+        pTemp <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//头尾清空</span>
+    head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    tail <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="空头链表"><a href="#空头链表" class="headerlink" title="空头链表"></a>空头链表</h3><p>空头链表和无空头链表其实本质区别不大，空头链表就是头结点为空（有头指针，但是没有数值域）在进行某些操</p>
 <p>作的时候就比较简单；</p>
 <p>空头链表和无空头链表相似度很高，部分操作相同，就不一一列举了；</p>
-<h4 id="头文件-函数声明-结构体-全局变量-1"><a href="#头文件-函数声明-结构体-全局变量-1" class="headerlink" title="头文件+函数声明+结构体+全局变量"></a>头文件+函数声明+结构体+全局变量</h4><h5 id="头文件（根据使用的语言自行修改）-1"><a href="#头文件（根据使用的语言自行修改）-1" class="headerlink" title="头文件（根据使用的语言自行修改）"></a>头文件（根据使用的语言自行修改）</h5><pre><code class="c">#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;</code></pre>
-<h5 id="函数声明-1"><a href="#函数声明-1" class="headerlink" title="函数声明"></a>函数声明</h5><pre><code class="c">struct Node* CreateNode(int n);//创建节点
-void NewList();//空头链表初始化
+<h4 id="头文件-函数声明-结构体-全局变量-1"><a href="#头文件-函数声明-结构体-全局变量-1" class="headerlink" title="头文件+函数声明+结构体+全局变量"></a>头文件+函数声明+结构体+全局变量</h4><h5 id="头文件（根据使用的语言自行修改）-1"><a href="#头文件（根据使用的语言自行修改）-1" class="headerlink" title="头文件（根据使用的语言自行修改）"></a>头文件（根据使用的语言自行修改）</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="函数声明-1"><a href="#函数声明-1" class="headerlink" title="函数声明"></a>函数声明</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">CreateNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建节点</span>
+<span class="token keyword">void</span> <span class="token function">NewList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//空头链表初始化</span>
 
-void AddHead(int n); // 头添加
-void AddTail(int n); //尾添加
-void AddRand(int index, int n);//在数字index后面添加数字a
+<span class="token keyword">void</span> <span class="token function">AddHead</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 头添加</span>
+<span class="token keyword">void</span> <span class="token function">AddTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//尾添加</span>
+<span class="token keyword">void</span> <span class="token function">AddRand</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在数字index后面添加数字a</span>
 
-void DeleteHead();//删除头
-void DeleteTail();//删除尾
-void DeleteNode(int n);//删除指定节点
+<span class="token keyword">void</span> <span class="token function">DeleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除头</span>
+<span class="token keyword">void</span> <span class="token function">DeleteTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除尾</span>
+<span class="token keyword">void</span> <span class="token function">DeleteNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除指定节点</span>
 
-void SeekList(); //遍历
-struct Node* SearchNode(int n); //查找指定节点，并返回节点地址
+<span class="token keyword">void</span> <span class="token function">SeekList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//遍历</span>
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//查找指定节点，并返回节点地址</span>
 
-void FreeList();//释放链表</code></pre>
-<h5 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体"></a>结构体</h5><pre><code class="c">//节点结构体
-struct Node
-{
-    int a;
-    struct Node* next; //指向下一个节点的指针
-};</code></pre>
-<h5 id="全局变量-1"><a href="#全局变量-1" class="headerlink" title="全局变量"></a>全局变量</h5><pre><code class="c">//链表头尾指针（全局变量）
-struct Node* head = NULL;
-struct Node* tail = NULL;</code></pre>
-<h4 id="空头链表初始化"><a href="#空头链表初始化" class="headerlink" title="空头链表初始化"></a>空头链表初始化</h4><pre><code class="c">void NewList()//空头链表初始化
-{
-    //链表空头
-    head = (struct Node*)malloc(sizeof(struct Node));
-    head-&gt;next = NULL;
-    tail = head;
-}</code></pre>
-<h4 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h4><pre><code class="c">struct Node* CreateNode(int n)//创建节点
-{
-    struct Node* pTemp = (struct Node*)malloc(sizeof(struct Node));//创建一个节点
-    if (pTemp == NULL)//创建失败
-    {
-        return NULL;
-    }
+<span class="token keyword">void</span> <span class="token function">FreeList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//释放链表</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体"></a>结构体</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//节点结构体</span>
+<span class="token keyword">struct</span> Node
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指向下一个节点的指针</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="全局变量-1"><a href="#全局变量-1" class="headerlink" title="全局变量"></a>全局变量</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//链表头尾指针（全局变量）</span>
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> tail <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="空头链表初始化"><a href="#空头链表初始化" class="headerlink" title="空头链表初始化"></a>空头链表初始化</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">NewList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//空头链表初始化</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//链表空头</span>
+    head <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    head<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    tail <span class="token operator">=</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">CreateNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//创建节点</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建一个节点</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//创建失败</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    pTemp-&gt;a = n; //节点成员赋值
-    pTemp-&gt;next = NULL;
-    return pTemp;//返回节点
-}</code></pre>
-<h4 id="添加-1"><a href="#添加-1" class="headerlink" title="添加"></a>添加</h4><h5 id="头添加-1"><a href="#头添加-1" class="headerlink" title="头添加"></a>头添加</h5><pre><code class="c">void AddHead(int n) // 头添加
-{
-    struct Node* pTemp = CreateNode(n);//创建一个节点
+    pTemp<span class="token operator">-></span>a <span class="token operator">=</span> n<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//节点成员赋值</span>
+    pTemp<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> pTemp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回节点</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="添加-1"><a href="#添加-1" class="headerlink" title="添加"></a>添加</h4><h5 id="头添加-1"><a href="#头添加-1" class="headerlink" title="头添加"></a>头添加</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">AddHead</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 头添加</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token function">CreateNode</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建一个节点</span>
 
-    if (pTemp == NULL)//创建失败
-    {
-        printf("内存不足\n");// 一般不会申请失败，除非内存不足
-        return;
-    }
-    //连接
-    pTemp-&gt;next = head-&gt;next;
-    head-&gt;next = pTemp;
-}</code></pre>
-<h5 id="尾添加-1"><a href="#尾添加-1" class="headerlink" title="尾添加"></a>尾添加</h5><pre><code class="c">void AddTail(int n) //尾添加
-{
-    struct Node* pTemp = CreateNode(n);//创建一个节点
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//创建失败</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"内存不足\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 一般不会申请失败，除非内存不足</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//连接</span>
+    pTemp<span class="token operator">-></span>next <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    head<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="尾添加-1"><a href="#尾添加-1" class="headerlink" title="尾添加"></a>尾添加</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">AddTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//尾添加</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token function">CreateNode</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建一个节点</span>
 
-    if (pTemp == NULL)//创建失败
-    {
-        printf("内存不足\n");// 一般不会申请失败，除非内存不足
-        return;
-    }
-    //连接
-    tail-&gt;next = pTemp;
-    tail = pTemp;
-}</code></pre>
-<h5 id="任意位置添加-1"><a href="#任意位置添加-1" class="headerlink" title="任意位置添加"></a>任意位置添加</h5><pre><code class="c">void AddRand(int index,int n)//在数字index后面添加数字a
-{
-    if (head-&gt;next == NULL)//判断链表有没有东西
-    {
-        printf("链表无节点\n");
-        return;
-    }
-    //找index节点
-    struct Node* pTemp = SearchNode(index);
-    if (pTemp == NULL)
-    {
-        printf("查无此节点\n");
-        return;
-    }
-    //找到节点,连接到指定位置
-    //创建节点
-    struct Node* pNode = CreateNode(n);
-    //连接
-    if (pTemp == tail)
-    {
-        AddTail(n);
-    }
-    else
-    {
-        pNode-&gt;next = pTemp-&gt;next;
-        pTemp-&gt;next = pNode;
-    }
-}</code></pre>
-<h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><h5 id="头删除-1"><a href="#头删除-1" class="headerlink" title="头删除"></a>头删除</h5><pre><code class="c">void DeleteHead()//删除头
-{
-    if (head-&gt;next == NULL)//判断链表有没有东西
-    {
-        printf("链表无头"); 
-        return;
-    }
-    //有节点 ——&gt; 删除  
-    struct Node* pTemp = head-&gt;next; //记录头
-    head-&gt;next = head-&gt;next-&gt;next;  //变头
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//创建失败</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"内存不足\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 一般不会申请失败，除非内存不足</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//连接</span>
+    tail<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+    tail <span class="token operator">=</span> pTemp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="任意位置添加-1"><a href="#任意位置添加-1" class="headerlink" title="任意位置添加"></a>任意位置添加</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">AddRand</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//在数字index后面添加数字a</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判断链表有没有东西</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表无节点\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//找index节点</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"查无此节点\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//找到节点,连接到指定位置</span>
+    <span class="token comment" spellcheck="true">//创建节点</span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pNode <span class="token operator">=</span> <span class="token function">CreateNode</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//连接</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pTemp <span class="token operator">==</span> tail<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">AddTail</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        pNode<span class="token operator">-></span>next <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        pTemp<span class="token operator">-></span>next <span class="token operator">=</span> pNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><h5 id="头删除-1"><a href="#头删除-1" class="headerlink" title="头删除"></a>头删除</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">DeleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//删除头</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判断链表有没有东西</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表无头"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//有节点 ——> 删除  </span>
+    <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//记录头</span>
+    head<span class="token operator">-></span>next <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//变头</span>
 
-    free(pTemp);//释放
-}</code></pre>
-<h5 id="尾删除-1"><a href="#尾删除-1" class="headerlink" title="尾删除"></a>尾删除</h5><pre><code class="c">void DeleteTail()//删除尾
-{ 
-    if (head-&gt;next == NULL)//判断链表有没有东西
-    {
-        printf("链表无尾");
-        return;
-    }
-    //有一个节点 ——&gt; 删除
-    if (head-&gt;next == tail)
-    {
-        free(tail);
-        head-&gt;next = NULL;
-        tail = head;
-    }
-    else
-    {
-        struct Node* pTemp = head-&gt;next;
-        while (pTemp != NULL)
-        {
-            if(pTemp-&gt;next == tail)
-            { 
-                break;
-            }
-            pTemp = pTemp-&gt;next;
-        }
-        //pTemp就是尾巴的前一个
+    <span class="token function">free</span><span class="token punctuation">(</span>pTemp<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//释放</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="尾删除-1"><a href="#尾删除-1" class="headerlink" title="尾删除"></a>尾删除</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">DeleteTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//删除尾</span>
+<span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判断链表有没有东西</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表无尾"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//有一个节点 ——> 删除</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token operator">-></span>next <span class="token operator">==</span> tail<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>tail<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        head<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        tail <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> Node<span class="token operator">*</span> pTemp <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>pTemp <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pTemp<span class="token operator">-></span>next <span class="token operator">==</span> tail<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span> 
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            pTemp <span class="token operator">=</span> pTemp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//pTemp就是尾巴的前一个</span>
 
-        free(tail); //释放尾巴
-        tail = pTemp; //更新尾巴
-        tail-&gt;next = NULL; //尾巴下一个赋值为NULL
-    }
-}</code></pre>
+        <span class="token function">free</span><span class="token punctuation">(</span>tail<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//释放尾巴</span>
+        tail <span class="token operator">=</span> pTemp<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//更新尾巴</span>
+        tail<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//尾巴下一个赋值为NULL</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>到这里，剩下的操作和无空头的没啥区别，这里就不多说了</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1405,7 +1405,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.6k</span>&nbsp;字
+                class="white-color">18.1k</span>&nbsp;字
             
             
             
@@ -1603,8 +1603,21 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
+    <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+    </script>
+    
+
 <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 
 </html>
 
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<script src="/js/snow.js"></script>
+
+
+
+
