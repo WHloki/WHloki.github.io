@@ -436,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-16
+                    2020-03-17
                 </div>
                 
 
@@ -520,11 +520,11 @@
 <span class="token number">8</span>、<span class="token function">ClearList</span><span class="token punctuation">(</span><span class="token operator">*</span>L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//将线性表清空；</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="线性表的顺序存储结构——顺序表"><a href="#线性表的顺序存储结构——顺序表" class="headerlink" title="线性表的顺序存储结构——顺序表"></a>线性表的顺序存储结构——顺序表</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>线性表的顺序存储结构，指的是用一段地址连续的储存单元依次储存线性表的数据元素；</p>
 <h3 id="顺序储存方式"><a href="#顺序储存方式" class="headerlink" title="顺序储存方式"></a>顺序储存方式</h3><p>先来看看结构代码</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MaxSize 20  </span><span class="token comment" spellcheck="true">//储存空间初始分配量</span>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000  </span><span class="token comment" spellcheck="true">//储存空间初始分配量</span>
 <span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span>
 <span class="token punctuation">{</span>
-    ElemType data<span class="token punctuation">[</span>MaxSize<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    ElemType data<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> length<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//线性表当前长度</span>
 <span class="token punctuation">}</span>SqList<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="顺序表的操作"><a href="#顺序表的操作" class="headerlink" title="顺序表的操作"></a>顺序表的操作</h3><h4 id="获得元素操作"><a href="#获得元素操作" class="headerlink" title="获得元素操作"></a>获得元素操作</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">GetElem</span><span class="token punctuation">(</span>SqList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType<span class="token operator">*</span> e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//获得元素——>e返回L中第i个数据元素的值</span>
@@ -539,7 +539,7 @@
 <h4 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">ListInsert</span><span class="token punctuation">(</span>SqList<span class="token operator">*</span> L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入操作——>在L中第i个位置之前插入新的数据元素e，L的长度加1</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> k<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token operator">-></span>length <span class="token operator">==</span> MaxSize<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//线性表已满</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token operator">-></span>length <span class="token operator">==</span> MAXSIZE<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//线性表已满</span>
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -547,9 +547,9 @@
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> L<span class="token operator">-></span>length<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入的元素不在表尾</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> L<span class="token operator">-></span>length<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//插入的元素不在表尾 (可加if可不加)</span>
     <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> L<span class="token operator">-></span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">>=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> L<span class="token operator">-></span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">>=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> k<span class="token operator">--</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
             L<span class="token operator">-></span>data<span class="token punctuation">[</span>k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token operator">-></span>data<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
@@ -892,7 +892,7 @@
     S<span class="token operator">-></span>top<span class="token operator">--</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈顶指针减少1</span>
     <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="栈的链式存储结构"><a href="#栈的链式存储结构" class="headerlink" title="栈的链式存储结构"></a>栈的链式存储结构</h2><h3 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
+<h2 id="栈的链式存储结构"><a href="#栈的链式存储结构" class="headerlink" title="栈的链式存储结构"></a>栈的链式存储结构</h2><h3 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span> StackNode
 <span class="token punctuation">{</span>
     DataType data<span class="token punctuation">;</span>
@@ -983,7 +983,7 @@
 <p>队列满的条件为(rear+1) % QueueSize == front ;</p>
 <p>队空条件为front == rear ;</p>
 <p>队列长度计算公式为(rear-front+QueueSize) % QueueSize ; (自己推导式子很简单)</p>
-<h3 id="循环队列顺序存储结构"><a href="#循环队列顺序存储结构" class="headerlink" title="循环队列顺序存储结构"></a>循环队列顺序存储结构</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
+<h3 id="循环队列顺序存储结构"><a href="#循环队列顺序存储结构" class="headerlink" title="循环队列顺序存储结构"></a>循环队列顺序存储结构</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000</span>
 <span class="token keyword">typedef</span> <span class="token keyword">int</span> DataType<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span>
 <span class="token punctuation">{</span>
@@ -1110,7 +1110,7 @@
 
 <span class="token number">13</span>、<span class="token function">DispStr</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//显示串S的所有字符</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h2><p>串的存储结构也是分为顺序存储结构和链式存储结构，重点讲顺序存储结构，即定长顺序串；</p>
-<h3 id="结构代码-2"><a href="#结构代码-2" class="headerlink" title="结构代码"></a>结构代码</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 100</span>
+<h3 id="结构代码-2"><a href="#结构代码-2" class="headerlink" title="结构代码"></a>结构代码</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">char</span> ch<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
