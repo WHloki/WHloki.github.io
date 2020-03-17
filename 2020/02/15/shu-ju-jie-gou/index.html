@@ -443,14 +443,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.4k
+                    8.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    35 分
                 </div>
                 
 
@@ -811,12 +811,7 @@
 <p>2、缺点：</p>
 <p>​        ●没有解决连续存储分配带来的表长难以确定的问题</p>
 <p>​        ●失去了顺序存储结构随机存取的特性</p>
-<h2 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><p>循环链表——首尾相连的链表；</p>
-<p>将单链表中终端节点的指针端由空指针改为指向头节点，就使整个单链表形成一个环。这种头尾相接的单链表称为</p>
-<p>单循环链表，简称循环链表；</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>循环链表中，从任一节点出发都可以访问到表中所有节点，在单链表中，必须从头指针开始，否则无法访问到该节</p>
-<p>点之前的其他节点；</p>
-<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><h3 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h3><p>双向链表是在单链表的每个节点中，再设置一个指向其前驱节点的指针域，前驱后继方向都能遍历；</p>
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><p>双向链表是在单链表的每个节点中，再设置一个指向其前驱节点的指针域，前驱后继方向都能遍历；</p>
 <h3 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> DulNode
 <span class="token punctuation">{</span>
     ElemType data<span class="token punctuation">;</span>
@@ -824,6 +819,12 @@
     <span class="token keyword">struct</span> DulNode<span class="token operator">*</span> next<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//直接后继指针</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>显然，与单链表相比，多了一个直接前驱；</p>
+<h2 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h2><h3 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h3><p>循环链表——首尾相连的链表；</p>
+<p>将单链表中终端节点的指针端由空指针改为指向头节点，就使整个单链表形成一个环。这种头尾相接的单链表称为</p>
+<p>单循环链表，简称循环链表；</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>循环链表中，从任一节点出发都可以访问到表中所有节点，在单链表中，必须从头指针开始，否则无法访问到该节</p>
+<p>点之前的其他节点；</p>
+<p>循环链表好像用处不太大，就不多说了；</p>
 <h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>这一章节是线性表，线性表对于以后学习的数据结构会有很大作用；选择使用哪种线性表，结合情况再定，各有利</p>
 <p>弊；   // 下一章学习栈，不见不散；</p>
 <p>Bye~~</p>
@@ -1083,7 +1084,6 @@
 <h2 id="定义-7"><a href="#定义-7" class="headerlink" title="定义"></a>定义</h2><p>串是由零个或多个字符组成的有限序列，又名叫字符串；</p>
 <p>串中的字符数目n称为串的长度；</p>
 <p>零个字符的串称为空串，可以用两双引号””表示，也可以用希腊字母Ø表示；</p>
-<h2 id="串的比较"><a href="#串的比较" class="headerlink" title="串的比较"></a>串的比较</h2><p>这里串的比较在C语言也学过了，strcmp()函数，一会会讲到，就不多说；</p>
 <h2 id="串的抽象数据类型"><a href="#串的抽象数据类型" class="headerlink" title="串的抽象数据类型"></a>串的抽象数据类型</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token number">1</span>、<span class="token function">StrAssign</span><span class="token punctuation">(</span>S<span class="token punctuation">,</span> <span class="token operator">*</span>chars<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//生成一个值等于chars的串S</span>
 
 <span class="token number">2</span>、<span class="token function">StrCopy</span><span class="token punctuation">(</span>S<span class="token punctuation">,</span>T<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//串T复制得串S</span>
@@ -1302,10 +1302,62 @@
 <h2 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h2><p>串这部分内容呢比较简单，后面还有广义表和KMP算法，这里先不讲了；下周直接学非线性结构；</p>
 <p>Bye Bye~</p>
 <h1 id="树—Tree"><a href="#树—Tree" class="headerlink" title="树—Tree"></a>树—Tree</h1><p>早就对 ”树“ 有所耳闻了，今日一会，果然**；</p>
-<h2 id="定义-8"><a href="#定义-8" class="headerlink" title="定义"></a>定义</h2><p>树（Tree）是n（n≥0）个结点的有限集；n=0时称为空树；在任意一棵非空树中：</p>
+<h2 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h2><h3 id="定义-8"><a href="#定义-8" class="headerlink" title="定义"></a>定义</h3><p>树（Tree）是n（n≥0）个结点的有限集；n=0时称为空树；在任意一棵非空树中：</p>
 <p>(1) 有且仅有一个特定的称为根（Root）的结点；</p>
 <p>(2) 当n&gt;1时，其余结点可分为m（m&gt;0）个互不相交的有限集T1、T2、……、Tm，其中每一个集合本身又是一棵</p>
 <p>树，并且称为根的子树（SubTree）；</p>
+<h3 id="树的表示方法"><a href="#树的表示方法" class="headerlink" title="树的表示方法"></a>树的表示方法</h3><p>1、树形表示法：使用一棵倒置的树表示，如下图（1）所示；</p>
+<p>2、嵌套集合表示法：使用集合以及集合的包含关系描述树结构，如图（2）所示；</p>
+<p>3、凹入表表示法：使用线段的伸缩关系描述树的结构，如图（3）所示；</p>
+<p>4、广义表表示法：将树的根结点写在括号的左边 ，除根结点外的其余结点写在括号内并用逗号间隔来描述树的结</p>
+<p>构，如图（4）所示；</p>
+<p><img src="/images/loading.gif" data-original="D:%5Cblog%5Csource%5Cimages%5C%E6%A0%91%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95.png" alt="树的表示方法"></p>
+<h3 id="树的基本术语"><a href="#树的基本术语" class="headerlink" title="树的基本术语"></a>树的基本术语</h3><p>(１) 结点———树的结点包含一个数据元素及若干指向其子树的分支；  </p>
+<p>(２) 结点的度———结点所拥有的分支数目或后继结点个数称为该结点的度； </p>
+<p>(３) 树的度———树中各结点度的最大值称为该树的度；</p>
+<p>(４) 叶结点 (终端结点) ———度为零的结点称为叶结点；</p>
+<p>(５) 分支结点 (非终端结点) ———度不为零的结点称为分支结点；</p>
+<p>(６) 孩子、双亲结点———一个结点的子树的根称为该结点的孩子；该结点称为孩子的双亲；</p>
+<p>(7) 兄弟结点———同一双亲结点下的孩子结点互称为兄弟结点；</p>
+<p>(8) 堂兄弟———双亲互为兄弟的两个结点互称为堂兄弟；</p>
+<p>(9) 子孙结点———一个结点的所有子树中的结点称之为该结点的子孙结点；</p>
+<p>(10) 祖先结点———从树根结点到达一个结点的路径上的所有结点称为该结点的祖先结点；</p>
+<p>(11) 结点的层次———树的根结点的层次为１，其余结点的层次等于它双亲结点的层次加１；（某结点在第L层，</p>
+<p>它的子树的根就在L+1层）；</p>
+<p>(12) 树的深度———树中结点的最大层次称为树的深度 (或高度)；</p>
+<p>(13) 有序树和无序树———如果一棵树中的结点的各子树从左到右是有次序的， 即若交换了某结点各子树的相对</p>
+<p>位置， 则构成了不同的树， 称这样的树为有序树，反之， 则为 无序树；</p>
+<p>(14) 森林———ｍ (ｍ≥０) 棵互不相交树的集合称为森林；</p>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="二叉树定义"><a href="#二叉树定义" class="headerlink" title="二叉树定义"></a>二叉树定义</h3><p>二叉树（Binary Tree）是有n（n≥0）个结点的有限集合；该集合或者为空集（称为空二叉树），或者由一个根结</p>
+<p>点和两颗互不相交的、分别称为根结点的左子树和右子树的二叉树组成；</p>
+<h3 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h3><p>1、每个结点最多有两棵子树，所以二叉树中不存在度大于2的结点；</p>
+<p>2、左子树和右子树是有顺序的，次序不能任意颠倒；</p>
+<p>3、即使树中某结点只有一颗子树，也要区分它是左子树还是右子树；</p>
+<h3 id="二叉树的基本形态"><a href="#二叉树的基本形态" class="headerlink" title="二叉树的基本形态"></a>二叉树的基本形态</h3><p>二叉树具有5种基本形态：</p>
+<p>1、空二叉树</p>
+<p>2、只要一个根结点</p>
+<p>3、根结点只有左子树</p>
+<p>4、根结点只有右子树</p>
+<p>5、根结点既有左子树又有右子树</p>
+<h3 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h3><h4 id="斜树"><a href="#斜树" class="headerlink" title="斜树"></a>斜树</h4><h5 id="定义-9"><a href="#定义-9" class="headerlink" title="定义"></a>定义</h5><p>所有的结点都是只有左子树的二叉树叫做左斜树，所有的结点都是只有右子树的二叉树叫做右斜树；这两者统称为</p>
+<p>斜树；</p>
+<h5 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h5><p>每一层都只有一个结点，结点的个数与二叉树的深度相同；</p>
+<h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><h5 id="定义-10"><a href="#定义-10" class="headerlink" title="定义"></a>定义</h5><p>在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二</p>
+<p>叉树；</p>
+<h5 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h5><p>满二叉树很符合强迫症患者，其特点有：</p>
+<p>1、叶子只能出现在最下一层，出现在其它层就不可能达成平衡 ；</p>
+<p>2、非叶子结点的度一定是2，否则就是“缺胳膊少腿”了；</p>
+<p>3、在同样的深度的二叉树中，满二叉树的结点个数最多，叶子数最多；</p>
+<h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h4><h5 id="定义-11"><a href="#定义-11" class="headerlink" title="定义"></a>定义</h5><p>对一棵具有n个结点的二叉树按层序编号，如果编号为i（1≤i≤n）的结点与同样深度的满二叉树中编号为i的结点在</p>
+<p>二叉树中位置完全相同，则这课二叉树称为完全二叉树；</p>
+<h5 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h5><p>1、叶子结点只能出现在最下两层；</p>
+<p>2、最下面的叶子一定集中在左部连续位置；</p>
+<p>3、倒数二层，若有叶子结点，一定都在右部连续位置；</p>
+<p>4、如果结点度为1，则该结点只有左孩子，即不存在只有右孩子的情况；</p>
+<p>5、同样结点数的二叉树，完全二叉树的深度最小；</p>
+<p>//</p>
+<p>判断某二叉树是否为完全二叉树：给每个结点按照满二叉树的结构逐层顺序编号，如果编号出现空档，就说明不是</p>
+<p>完全二叉树，否则就是；</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1841,7 +1893,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.5k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             
