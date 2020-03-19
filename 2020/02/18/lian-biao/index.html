@@ -436,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-09
+                    2020-03-19
                 </div>
                 
 
@@ -471,7 +471,7 @@
 <a id="more"></a>
 
 <p>链表种类很多种，有单向链表，双向链表，空头链表，非空头链表，循环链表，非循环链表；</p>
-<p>这里小浩只学了单向空头和单向非空头链表，先整理这两种，以后学完再添加；</p>
+<p>这里我只学了单向空头和单向非空头链表，先整理这两种，以后学完再添加；</p>
 <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>链表实际上是线性表的链式存储结构，与数组不同的是，它是用一组任意的存储单元来存储线性表中的数据，存储</p>
 <p>单元不一定是连续的；</p>
 <p>且链表的长度不是固定的，链表数据的这一特点使其可以非常的方便地实现节点的插入和删除操作；</p>
@@ -495,19 +495,24 @@
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h5 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//函数声明 链表的增、删、查、改；</span>
 <span class="token keyword">void</span> <span class="token function">AddTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//创建链表，在链表中增加一个数据，尾添加</span>
+
 <span class="token keyword">void</span> <span class="token function">AddHead</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//创建链表，在链表中增加一个数据，头添加</span>
+
 <span class="token keyword">void</span> <span class="token function">AddList</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//在数字index后面添加数字a</span>
 
 <span class="token keyword">void</span> <span class="token function">DeleteHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//头删除</span>
+
 <span class="token keyword">void</span> <span class="token function">DeleteTail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//尾删除</span>
+
 <span class="token keyword">void</span> <span class="token function">DeleteNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//删除指定节点 </span>
 
 <span class="token keyword">void</span> <span class="token function">SeekList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//遍历链表——>查</span>
-<span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//查询指定节点</span>
 
 <span class="token keyword">void</span> <span class="token function">ChangeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将index改为 n  </span>
 
-<span class="token keyword">void</span> <span class="token function">FreeList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//链表清空</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">void</span> <span class="token function">FreeList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//链表清空</span>
+
+<span class="token keyword">struct</span> Node<span class="token operator">*</span> <span class="token function">SearchNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//查询指定节点</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h5><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//节点结构体</span>
 <span class="token keyword">struct</span> Node
 <span class="token punctuation">{</span>
@@ -1192,8 +1197,7 @@
 一个个去尝试，先整理一波；
 
 
-整理这个其实是因为收藏夹满了，工具堆叠太多（噗哈哈哈），话不多说直接上网址；
-密码之前就喜欢密码
+整理这个是因为收藏夹满了，工具堆叠太多（噗哈哈哈，其实因为自己太懒，不想做题的时候再去搜），话不
                         
                     </div>
                     <div class="publish-info">
