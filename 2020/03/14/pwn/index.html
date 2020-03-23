@@ -1119,6 +1119,40 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                                                                     </script>
                                                                     
                                                                         <br>
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script> 
+            <script type="text/javascript">  
+            document.write('欢迎来自:' + returnCitySN["cname"]+'的朋友' + ",您的IP:" + returnCitySN["cip"] + ",浏览器版本:"+getBrowserInfo());
+        function getBrowserInfo()
+{
+    var agent = navigator.userAgent.toLowerCase() ;
+    var regStr_ie = /msie [\d.]+;/gi ;
+    var regStr_ff = /firefox\/[\d.]+/gi
+    var regStr_chrome = /chrome\/[\d.]+/gi ;
+    var regStr_saf = /safari\/[\d.]+/gi ;
+    //IE
+    if(agent.indexOf("msie") > 0)
+    {
+        return agent.match(regStr_ie) ;
+    }
+    //firefox
+    if(agent.indexOf("firefox") > 0)
+    {
+        return agent.match(regStr_ff) ;
+    }
+    //Chrome
+    if(agent.indexOf("chrome") > 0)
+    {
+        return agent.match(regStr_chrome) ;
+    }
+    //Safari
+    if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+    {
+        return agent.match(regStr_saf) ;
+    }
+}
+</script> 
+
+
                                                                         
                     </div>
                     <div class="col s12 m4 l4 social-link social-statis">
