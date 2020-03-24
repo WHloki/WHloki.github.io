@@ -443,14 +443,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -469,7 +469,7 @@
                 <p>历经36小时的第二届BJDCTF终于结束了，现在现在离21点还差不到半小时，正好可以写完就上线，美滋滋；</p>
 <a id="more"></a>
 
-<p>这次的比赛，算是学到了许多知识，黄老师说得对—不能不学习；</p>
+<h1 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h1><p>这次的比赛，算是学到了许多知识，黄老师说得对—不能不学习；</p>
 <p>先看看这个比赛个人成绩吧（惨不忍睹）：</p>
 <table>
 <thead>
@@ -555,7 +555,22 @@ MIH{cwdp0t_Mfed3_u0fa3_sF_geqcgeqc_ZQ_Af4aw}</code></pre><p>一看便知，只�
 <p>想来想去想不出来，最后卓哥提示——”outguess“</p>
 <p>百度了一波outguess，最后在Linux里面安装了一波工具，用下面这条指令：</p>
 <pre><code>$ outguess -k "gemlove" -r sheng_huo_zhao_zhao.jpg  hidden.txt</code></pre><p><strong><em>flag：BJD{wdnmd_misc_1s_so_Fuck1ng_e@sy}</em></strong></p>
-<h3 id="A-Beautiful-Picture"><a href="#A-Beautiful-Picture" class="headerlink" title="A_Beautiful_Picture"></a>A_Beautiful_Picture</h3><h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><script>
+<h3 id="A-Beautiful-Picture"><a href="#A-Beautiful-Picture" class="headerlink" title="A_Beautiful_Picture"></a>A_Beautiful_Picture</h3><p>打开附件，是一张jpg：</p>
+<p><img src="/images/beayt.png" alt="A_beautiful_picture"></p>
+<p>貌似么有发现什么，怀疑是一道隐写，丢进WinHex：</p>
+<p><img src="/images/beautiful_flag.png" alt="A_beautiful_picture"></p>
+<p>把这里03改为05，保存后打开：</p>
+<p><img src="/images/Abeautiful_Flag.png" alt="beautiful_Flag"></p>
+<p><strong><em>flag：BJD{PnG_He1ghT_1s_WR0ng}</em></strong></p>
+<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><h3 id="guessgame"><a href="#guessgame" class="headerlink" title="guessgame"></a>guessgame</h3><p>这是一道逆向签到题，本来逆向题不会做，但是解答出来的人数非常多，就尝试着做了做</p>
+<p>附件是一个64位的.exe，丢进ida查看了一波：</p>
+<p><img src="/images/guessnum.png" alt="guessnum_flag"></p>
+<p>直接发现flag：</p>
+<p><strong><em>flag：BJD{S1mple_ReV3r5e_W1th_0D_0r_IDA}</em></strong></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>由于我不是web选手，不会做web题目，所以web爆零，另外的Blockchain和Programming也不会做；</p>
+<p>这篇wp把会做的整理了吧，后面补完题目，继续整理 <del>_</del></p>
+<p>实力就这样，技不如人，甘拜下风！</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -823,14 +838,13 @@ MIH{cwdp0t_Mfed3_u0fa3_sF_geqcgeqc_ZQ_Af4aw}</code></pre><p>一看便知，只�
                             历经36小时的第二届BJDCTF终于结束了，现在现在离21点还差不到半小时，正好可以写完就上线，美滋滋；
 
 
-这次的比赛，算是学到了许多知识，黄老师说得对—不能不学习；
+Start这次的比赛，算是学到了许多知识，黄老师说得对—不能不学习；
 先看看这个比赛个人成绩吧（惨不忍睹）：
 
 
 
 Pwn
 Web
-Misc
                         
                     </div>
                     <div class="publish-info">
@@ -1106,7 +1120,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">21.2k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">21.4k</span>&nbsp;字
                             
                                 
                                     
