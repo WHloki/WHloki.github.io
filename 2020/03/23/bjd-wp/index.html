@@ -436,21 +436,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-03-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    510
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -498,26 +498,64 @@
 <p>真的是，技术不行，尽力做了已经；接下来把我做出来的整理一下：</p>
 <p><strong><em>说明一下，因为打比赛的时候没有及时整理记录，正好校外赛在BUU，所以用了里面的题目写这篇Blog</em></strong></p>
 <p><strong><em>注：想刷题、想提高，就上<a href="https://buuoj.cn" target="_blank" rel="noopener">BUUCTF</a> // 绝对没打广告 ^_^</em></strong></p>
-<h1 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h1><h2 id="r2t3"><a href="#r2t3" class="headerlink" title="r2t3"></a>r2t3</h2><h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="y1ng"><a href="#y1ng" class="headerlink" title="y1ng"></a>y1ng</h2><p><img src="/images/%E7%AD%BE%E5%88%B0.png" alt="y1ng"></p>
+<h1 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h1><h3 id="r2t3"><a href="#r2t3" class="headerlink" title="r2t3"></a>r2t3</h3><h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h3 id="y1ng"><a href="#y1ng" class="headerlink" title="y1ng"></a>y1ng</h3><p>题目有如下信息：<strong>“QkpEe1czbGMwbWVfVDBfQkpEQ1RGfQ==”</strong></p>
 <p>这是一道签到题目，观察可知Base64加密，直接扔进网站即可</p>
 <p>附上网址：<a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a></p>
 <p>解出来就可以了：</p>
-<p><strong><em>flag:BJD{W3lc0me_T0_BJDCTF}</em></strong></p>
-<h2 id="cat-flag"><a href="#cat-flag" class="headerlink" title="cat_flag"></a>cat_flag</h2><p><img src="/images/cat.png" alt="cat_flag"></p>
-<p>话不多说下载附件，打开如下：</p>
+<p><strong><em>flag：BJD{W3lc0me_T0_BJDCTF}</em></strong></p>
+<h3 id="cat-flag"><a href="#cat-flag" class="headerlink" title="cat_flag"></a>cat_flag</h3><p>话不多说下载附件，打开如下：</p>
 <p><img src="/images/cat.gif" alt="cat.gif"></p>
 <p>是一张动态图，本来以为是图片隐写，但是发现不是，想来想去好像是“010101”，对了，把”鸡腿“看成1，把“米</p>
 <p>饭”看成0，每一行一个2进制数，然后转换成10进制，10进制对应的ASCII码应该就是了；尝试一波从上到下的10</p>
 <p>进制数是：66 74 68 123 77 33 97 48 126 125 ——然后对应的ASCII解出来即可；</p>
-<p><strong><em>flag:BJD{M!a0~}</em></strong></p>
-<h2 id="老文盲了"><a href="#老文盲了" class="headerlink" title="老文盲了"></a>老文盲了</h2><p><img src="/images/%E8%80%81%E6%96%87%E7%9B%B2.png" alt="老文盲了"></p>
-<p>打开附件，<u>发现如下一句话</u></p>
+<p><strong><em>flag：BJD{M!a0~}</em></strong></p>
+<h3 id="老文盲了"><a href="#老文盲了" class="headerlink" title="老文盲了"></a>老文盲了</h3><p>打开附件，<u>发现如下一句话</u></p>
 <p><img src="/images/%E6%96%87%E7%9B%B21.png" alt="老文盲1"></p>
 <p>哇！我惊了，都不认识啊，没关系，新华字典，你值得拥有，咳咳咳，我才不会查字典呢，复制到浏览机查一下，结果如下：</p>
 <p><img src="/images/%E6%96%87%E7%9B%B22.png" alt="老文盲2"></p>
 <p>这就很明显了吧，直接写吧（其实我试了10几次提交 ， 呜呜呜）</p>
 <p><strong><em>flag：BJD{淛匶襫黼瀬鎶軄鶛驕鳓哵}</em></strong></p>
-<h2 id="燕言燕语"><a href="#燕言燕语" class="headerlink" title="燕言燕语"></a>燕言燕语</h2><h2 id="灵能精通"><a href="#灵能精通" class="headerlink" title="灵能精通"></a>灵能精通</h2><h2 id="Y1nglish-y1ng"><a href="#Y1nglish-y1ng" class="headerlink" title="Y1nglish-y1ng"></a>Y1nglish-y1ng</h2><h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><script>
+<h3 id="燕言燕语"><a href="#燕言燕语" class="headerlink" title="燕言燕语"></a>燕言燕语</h3><p>这个题目有如下信息：</p>
+<p><strong>“79616E7A69205A4A517B78696C7A765F6971737375686F635F73757A6A677D20”</strong></p>
+<p>观察发现应该是十六进制，不多说，直接扔进网站—&gt;<a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">16进制转文本</a></p>
+<p>得到了—&gt; <strong>yanzi ZJQ{xilzv_iqssuhoc_suzjg}</strong> </p>
+<p>看起来很像凯撒密码，经过了一轮解密后发现好像不对emmm</p>
+<p>后经卓哥的提示，灵光一闪：</p>
+<p>首先 <strong>BJD —&gt; ZJQ</strong>，这是经过某种变化得来的，没错，就是前面的<strong>“yanzi”</strong>做了一个“周期”转换；实际上不难发</p>
+<p>现，<strong>‘y’ , ‘a’ , ‘n’ , ‘z’ , ‘i’</strong>这5个字母在倒过来的字母表中的顺序，也就是 <strong>‘z’</strong> 是<strong>1</strong>，<strong>‘y’</strong> 是<strong>2</strong>…..这样推过来，<strong>‘a’</strong>  是26，</p>
+<p> <strong>‘n’</strong> 是<strong>13</strong>， <strong>‘i’</strong> 是<strong>18</strong>，然后把16进制转换后的字符串用<strong>“yanzi”</strong>推出来的数字当做需要移动的个数来做“<strong>变异凯撒</strong>”… </p>
+<p>解出来如下：</p>
+<p><strong><em>flag：BJD{yanzi_jiushige_shabi}</em></strong></p>
+<h3 id="灵能精通"><a href="#灵能精通" class="headerlink" title="灵能精通"></a>灵能精通</h3><p>题目是一张图片，打开看一下：</p>
+<p><img src="/images/%E7%81%B5%E8%83%BD.png" alt="灵能精通"></p>
+<p>本来听说的是这是个猪圈密码，但时百度了一波，没有与题目相同的图案，然后花了100“块钱”买了一个Hint，上</p>
+<p>面写着“星际争霸2，神族，后面自己百度”，心想着没玩过啊，记得堆堆和泽辰好像之前打过，就把Hint发到群里</p>
+<p>了，但时他们最后也没想出来，第二天下午，邵波发来了一张图，说是圣堂武士密码：</p>
+<p><img src="/images/%E5%9C%A3%E5%A0%82%E6%AD%A6%E5%A3%AB%E5%AF%86%E7%A0%81.png" alt="圣堂武士密码"></p>
+<p>对照着密码表，解出flag</p>
+<p><strong><em>flag：BJD{IMKNIGHTSTEMPLAR}</em></strong></p>
+<h3 id="Y1nglish-y1ng"><a href="#Y1nglish-y1ng" class="headerlink" title="Y1nglish-y1ng"></a>Y1nglish-y1ng</h3><p>这道题目是最有意思的题目了，先打开文件：</p>
+<pre><code>Nkbaslk ds sef aslckdqdqst. Sef aslckdqdqst qo lzqtbw usf ufkoplkt zth oscpslsfko. Dpkfk 
+zfk uqjk dwcko su dscqao qt dpqo aslckdqdqst, kzap su npqap qo jkfw mzoqa. Qu wse zfk qtdkfkodkh qt tkdnsfw okaefqdw, nkbaslk ds czfdqaqczdk. Bkd lk dkbb wse z odsfw.
+Q nzo pzjqtv hqttkf zd z fkodzefztd npkt Pzffw Odkkbk azlk qt, pk qo z Izcztkok ufsl Izczt med tsn pk qo tsd bqjqtv qt Izczt, lzwmk Pzffw qot'd z Izcztkok tzlk med pk qo fkzbbw z Izcztkok. Pzffw nsfwkh qt z bznwkf'o suuqak wkzfo zvs, med pk qo tsn nsfwqtv zd z mztw. Pk vkdo z vssh ozbzfw, med pk zbnzwo msffsno lstkw ufsl pqo ufqktho zth tkjkf czwo qd mzaw. Pzffw ozn lk zth azlk zthozdzd dpk ozlk dzmbk. Pk pzo tkjkf msffsnkh lstkw ufsl lk. Npqbk pk nzo kzdqtv, Q zowkh pql ds bkth lk &amp;2. Ds lw oefcfqok, pk vzjk lk dpk lstkw qllkhqzdkbw. 'Q pzjk tkjkf msfffsnkh ztw lstkw ufsl wse,' Pzffw ozqh,'os tsn wse azt czw usf lw hqttkf!' Tsn q nqbb vqjk wse npzd wse nztd.
+
+MIH{cwdp0t_Mfed3_u0fa3_sF_geqcgeqc_ZQ_Af4aw}</code></pre><p>一看便知，只要解出来每个字母原来的字母就可以了，这里会出现很多问题，作为一名英语弱鸡，硬生生地解了几个小时：</p>
+<p><strong><em>flag：BJD{pyth0n_Brut3_f0rc3_oR_quipquip_AI_Cr4ck}</em></strong></p>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h3 id="小姐姐-y1ng"><a href="#小姐姐-y1ng" class="headerlink" title="小姐姐-y1ng"></a>小姐姐-y1ng</h3><p>这个题目看了好久嘞（我可没说是看小姐姐的啊）</p>
+<p><img src="/images/xjj.png" alt="小姐姐"></p>
+<p>打开图片（哎呀你就别乱看了，赶紧做题），发现箭头的地方有错位，放入WinHex，搜索BJD发现：</p>
+<p><img src="/images/xjjflag.png" alt="XJJ_Flag"></p>
+<p>得到flag：</p>
+<p><strong><em>flag：BJD{haokanma_xjj}</em></strong></p>
+<h3 id="圣火昭昭"><a href="#圣火昭昭" class="headerlink" title="圣火昭昭"></a>圣火昭昭</h3><p><img src="/images/%E5%9C%A3%E7%81%AB.png" alt="圣火昭昭"></p>
+<p>图片好像看不出来，按照常规看了下图片属性，里面藏了一句密文：</p>
+<pre><code>新佛曰：諸壽隸僧壽降吽壽諸壽陀壽摩隸僧缽薩願心壽咤壽囉寂壽闍諸壽哆壽慧壽聞壽色吽愍壽所壽蜜如</code></pre><p>去<a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">新约佛论禅</a> 解密可得：</p>
+<p><strong><em>“gemlovecom”</em></strong> 根据提示可知去掉com，得到了<strong><em>”gemlove“</em></strong></p>
+<p>又买了一个Hint：”你猜啊，你倒是猜啊，guess“，气死我了，这句话看不出来啊？</p>
+<p>想来想去想不出来，最后卓哥提示——”outguess“</p>
+<p>百度了一波outguess，最后在Linux里面安装了一波工具，用下面这条指令：</p>
+<pre><code>$ outguess -k "gemlove" -r sheng_huo_zhao_zhao.jpg  hidden.txt</code></pre><p><strong><em>flag：BJD{wdnmd_misc_1s_so_Fuck1ng_e@sy}</em></strong></p>
+<h3 id="A-Beautiful-Picture"><a href="#A-Beautiful-Picture" class="headerlink" title="A_Beautiful_Picture"></a>A_Beautiful_Picture</h3><h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -862,8 +900,8 @@ Misc
                                     CTF
                                 </a>
                             
-                            <a href="/categories/CTF/Diary/" class="post-category">
-                                    Diary
+                            <a href="/categories/CTF/NUL/" class="post-category">
+                                    NUL
                                 </a>
                             
                             
@@ -877,8 +915,8 @@ Misc
                         <span class="chip bg-color">CTF</span>
                     </a>
                     
-                    <a href="/tags/Diary/">
-                        <span class="chip bg-color">Diary</span>
+                    <a href="/tags/NUL/">
+                        <span class="chip bg-color">NUL</span>
                     </a>
                     
                 </div>
@@ -1068,7 +1106,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">20.4k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">21.2k</span>&nbsp;字
                             
                                 
                                     
@@ -1182,10 +1220,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                 
 
                         
-                            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1845199691" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1845199691" data-position="top" data-delay="50">
-                                <i class="fab fa-qq"></i>
-                            </a>
-                            
 
                                 
                                     <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
