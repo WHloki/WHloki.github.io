@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="XCTF--wp, HaoHao">
+    <meta name="keywords" content="Pwn从入门到放弃, HaoHao">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>XCTF--wp | HaoHao</title>
+    <title>Pwn从入门到放弃 | HaoHao</title>
     <link rel="icon" type="image/png" href="/1.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.1/css/all.css">
@@ -552,12 +552,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">XCTF--wp</h1>
+                    <h1 class="description center-align post-title">Pwn从入门到放弃</h1>
                 </div>
             </div>
         </div>
@@ -674,8 +674,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/XCTF/">
-                                <span class="chip bg-color">XCTF</span>
+                            <a href="/tags/CTF/">
+                                <span class="chip bg-color">CTF</span>
+                            </a>
+                        
+                            <a href="/tags/Pwn/">
+                                <span class="chip bg-color">Pwn</span>
                             </a>
                         
                     </div>
@@ -690,10 +694,6 @@
                                 CTF
                             </a>
                         
-                            <a href="/categories/CTF/WP/" class="post-category">
-                                WP
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -703,28 +703,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-13
+                    2020-03-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-03-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    85
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -740,10 +740,91 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这篇博客呢，就记录一些平时在XCTF刷的题目的wp，可能整理不开，会分支放；</p>
+                <p>我是一名CTF小白，主学习pwn，初学不久，几乎刚入门，现在说说如何“从入门到放弃”：</p>
 <a id="more"></a>
 
-<h1 id="level2"><a href="#level2" class="headerlink" title="level2"></a>level2</h1><p>这道题</p>
+<h1 id="pwntools的介绍"><a href="#pwntools的介绍" class="headerlink" title="pwntools的介绍"></a>pwntools的介绍</h1><p>首先需要学习的是pwntools，这个也是我刚开始入门就学的东西；那么先来了解一下pwntools：</p>
+<h3 id="什么是pwntools？"><a href="#什么是pwntools？" class="headerlink" title="什么是pwntools？"></a>什么是pwntools？</h3><p>pwntools是一个二进制利用框架，是CTF框架和漏洞利用开发库，用Python开发，能够更快速的编写exp；</p>
+<p>emm这样可能不好理解，简单来讲，就是Python的一个库，在Linux下使用；</p>
+<h3 id="安装pwntools"><a href="#安装pwntools" class="headerlink" title="安装pwntools"></a>安装pwntools</h3><p>先来说说怎么安装吧：</p>
+<h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><p>现在大多数人都是使用Windows或者Mac，但是pwntools需要安装在Linux环境中，这里推荐使用虚拟机；</p>
+<p>虚拟机也有很多种，推荐使用VMware，我也给大家准备好了，点击这里下载<a href="https://pan.baidu.com/s/1t2psjlLidp00Cf1k3_-EQQ" target="_blank" rel="noopener">VMware15</a>  提取码：4nu6；当然肯</p>
+<p>定需要镜像，点击这里下载<a href="https://pan.baidu.com/s/1DXDk2uRe4CprrkUqmWbeOA" target="_blank" rel="noopener">Ubuntu16.04</a>  提取码：az58；这个镜像是64位的，当然也可以去官网下载32位的，</p>
+<p>看自己需要吧；       // 如果遇到问题，请联系我，首页有我的联系方式，嘿嘿嘿，随时可以call我；</p>
+<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>安装pwntools需要下面几个环境：</p>
+<p><strong>python</strong></p>
+<p><strong>pip</strong></p>
+<p><strong>libssl-dev</strong></p>
+<p><strong>libffi-dev</strong></p>
+<h4 id="pwntools的安装"><a href="#pwntools的安装" class="headerlink" title="pwntools的安装"></a>pwntools的安装</h4><p>安装需要以下几步：</p>
+<p><strong><em>sudo apt-get install libffi-dev</em></strong><br><strong><em>sudo apt-get install libssl-dev</em></strong><br><strong><em>sudo apt-get install python</em></strong><br><strong><em>sudo apt-get install python-pip</em></strong><br><strong><em>sudo pip install pwntools</em></strong><br>注：安装过程可能会有更新pip等的提示，按照提示一步一步走就没问题，有问题请联系我；</p>
+<h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>安装完后，打开终端，输入<strong>python</strong>进入<strong>python</strong>命令，然后输入<strong><u>from pwn import *</u></strong> ，不报错即成功；</p>
+<h3 id="pwntools的简单使用"><a href="#pwntools的简单使用" class="headerlink" title="pwntools的简单使用"></a>pwntools的简单使用</h3><p>前面提到，pwntools是python的一个库，那么在写exp的时候，需要掌握以下几个基本语法：</p>
+<h4 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+a <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">'ip'</span><span class="token punctuation">,</span>port<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#a = process("./文件名")</span>
+
+a<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">'..'</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+a<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通常来说，基本框架就这么多，但是远远不止，慢慢学；</p>
+<p>下面介绍这些语句是什么意思</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token comment" spellcheck="true">#导入pwntools模块</span>
+
+remote<span class="token punctuation">(</span><span class="token string">'ip'</span><span class="token punctuation">,</span>port<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#远程连接</span>
+
+process<span class="token punctuation">(</span><span class="token string">'./文件名'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#本地连接</span>
+
+recvn<span class="token punctuation">(</span>N<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接受N(数字)字符</span>
+
+recvline<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收一行输出</span>
+
+recvlines<span class="token punctuation">(</span>N<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收N(数字)行输出</span>
+
+recvuntil<span class="token punctuation">(</span>some_string<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收到some_string为止</span>
+
+send<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#发送payload</span>
+
+sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#发送payload并进行换行（末尾\n）</span>
+
+sendafter<span class="token punctuation">(</span>some_string<span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#接收到some_string后,发送你的 payload</span>
+
+interactive<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#回显</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>基本框架就这些，再来看其他的：</p>
+<h4 id="Context设置"><a href="#Context设置" class="headerlink" title="Context设置"></a>Context设置</h4><p>context是pwntools用来设置环境的；二进制文件情况特殊，我们可能需要设置一些环境才可以正常运行exp，不然可能会出现错误；</p>
+<pre class="line-numbers language-python"><code class="language-python">context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>说明：</p>
+<p>1、os设置系统为Linux，因为pwntools需要在Linux中运行；</p>
+<p>2、arch = ‘amd64/i386’，分别表示程序是64位和32位；</p>
+<p>3、log_level=’debug’,这句话一般调试的时候会加上，这样会看到程序运行完整的过程；</p>
+<h4 id="数据打包"><a href="#数据打包" class="headerlink" title="数据打包"></a>数据打包</h4><p>数据打包就是将一个整数值转换成32位或者64位地址一样的表示方式，构造payload的时候非常方便，其用法如下：</p>
+<p>● p32/p64：打包一个整数，转换成 32位或者64位</p>
+<p>● u32/u64：解包一个字符串，变成一个整数</p>
+<h4 id="ELF模块"><a href="#ELF模块" class="headerlink" title="ELF模块"></a>ELF模块</h4><p>ELF模块用于获取ELF文件的信息，首先使用ELF()获取这个文件的句柄，然后使用这个句柄调用函数，和IO模块很</p>
+<p>相似。用法如下：</p>
+<pre class="line-numbers language-python"><code class="language-python">elf <span class="token operator">=</span> ELF<span class="token punctuation">(</span><span class="token string">'./文件名'</span><span class="token punctuation">)</span>
+
+put_addr <span class="token operator">=</span> elf<span class="token punctuation">.</span>symbols<span class="token punctuation">[</span><span class="token string">'put'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#函数地址</span>
+
+put_got <span class="token operator">=</span> elf<span class="token punctuation">.</span>got<span class="token punctuation">[</span><span class="token string">'put'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#GOT表的地址</span>
+
+put_plt <span class="token operator">=</span> elf<span class="token punctuation">.</span>plt<span class="token punctuation">[</span><span class="token string">'put'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#PLT表的地址</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="shellcode生成器"><a href="#shellcode生成器" class="headerlink" title="shellcode生成器"></a>shellcode生成器</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span>arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span>log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>
+
+shellcode <span class="token operator">=</span> asm<span class="token punctuation">(</span>shellcraft<span class="token punctuation">.</span>sh<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="检查-elf的安全性"><a href="#检查-elf的安全性" class="headerlink" title="检查.elf的安全性"></a>检查.elf的安全性</h1><p>通常拿到一个.elf文件后，首先对它进行检查，具体方法如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ checksec .elf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>RELRO：RELRO会有Partial RELRO和FULL RELRO，如果开启FULL RELRO，意味着我们无法修改got表；</p>
+<p>Stack：如果栈中开启了Canary found，就不能通过直接溢出的方法覆盖栈中的访问地址，需要绕过</p>
+<p>NX：NX enabled，如果这个保护开启就是意味着栈中的数据没有执行权限，但是可以利用rop绕过</p>
+<p>PIE：PIE enabled，如果程序开启这个地址随机化选项，那么意味着程序每次运行的时候地址都会变化，而如果没有开PIE的话就是No PIE (address)，括号内的数据就是程序的基地址 </p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -787,7 +868,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://whloki.gitee.io/2020/03/13/xctf/">http://whloki.gitee.io/2020/03/13/xctf/</a>
+                    <a href="http://whloki.gitee.io/2020/03/27/pwn/">http://whloki.gitee.io/2020/03/27/pwn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -825,8 +906,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/XCTF/">
-                                    <span class="chip bg-color">XCTF</span>
+                                <a href="/tags/CTF/">
+                                    <span class="chip bg-color">CTF</span>
+                                </a>
+                            
+                                <a href="/tags/Pwn/">
+                                    <span class="chip bg-color">Pwn</span>
                                 </a>
                             
                         </div>
@@ -992,58 +1077,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/13/html/">
+                <a href="/2020/03/27/pwn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="HTML学习笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Pwn从入门到放弃">
                         
-                        <span class="card-title">HTML学习笔记</span>
+                        <span class="card-title">Pwn从入门到放弃</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            到目前为止，今年入的两个坑，一个是CTF，这个暂且不说，另一个是Blog；
+                            我是一名CTF小白，主学习pwn，初学不久，几乎刚入门，现在说说如何“从入门到放弃”：
 
 
-前篇Blog这东西前面的文章也说了，很烦人其实，尤其是配置文件的时候，老是出错；最近看Hexo主题的时候又看上
-了一个主题——Matery；这款主题页面清晰，画
+pwntools的介绍首先需要学习的是pwntools，这个也是我刚开始入门就学的东西；那么先来了解一下pwntools：
+什么是pwntools？
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HTML/" class="post-category">
-                                    HTML
-                                </a>
-                            
-                            <a href="/categories/HTML/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/CTF/" class="post-category">
+                                    CTF
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
                     </a>
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/Pwn/">
+                        <span class="chip bg-color">Pwn</span>
                     </a>
                     
                 </div>
@@ -1057,35 +1140,35 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/05/algorithm/">
+                <a href="/2020/03/27/emoji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Algorithm">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="emoji的一些使用">
                         
-                        <span class="card-title">Algorithm</span>
+                        <span class="card-title">emoji的一些使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这篇博客很早就想整理了，一直没有时间，今天上课，课余时间真的不多，那就来整理一波；
+                            之前看堆堆的blog有emoji，感觉能给博客增加一份光彩，我也整个一个；嘿嘿嘿 \(^o^)/😂
 
 
-算法前言算法（Algorithm）是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法
-描述解决问题的策略机制；简单来讲，
+首先来配置一个插件：
+这个主题新增了对emoji表情的支持，使用到了 hexo-filter-github-emojis 的 Hexo
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/" class="post-category">
+                                    花里胡哨
                                 </a>
                             
                             
@@ -1095,8 +1178,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Algorithm/">
-                        <span class="chip bg-color">Algorithm</span>
+                    <a href="/tags/emoji/">
+                        <span class="chip bg-color">emoji</span>
                     </a>
                     
                 </div>
