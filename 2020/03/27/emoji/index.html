@@ -713,7 +713,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    240
                 </div>
                 
 
@@ -740,8 +740,6 @@
 <a id="more"></a>
 
 <p>首先来配置一个插件：</p>
-<p>这个主题新增了对<code>emoji</code>表情的支持，使用到了 <code>hexo-filter-github-emojis</code> 的 Hexo 插件来支持 <code>emoji</code>表情</p>
-<p>的生成，把对应的<code>markdown emoji</code>语法（<code>::</code>,例如：<code>:smile:</code>）转变成会跳跃的<code>emoji</code>表情，安装命令如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后在Hexo的根目录下的<code>_config.yml</code>中，新增一下的配置项：</p>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">githubEmojis</span><span class="token punctuation">:</span>
@@ -750,6 +748,7 @@
   <span class="token key atrule">inject</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">styles</span><span class="token punctuation">:</span>
   customEmojis<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样之后，就可以输入：：（中间填写英文），就能打出来表情</p>
 <p>但是吧，似乎blog有点问题，用：：打出来的和copy的不一样：</p>
 <p><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">😄</span>  这个是：smile：的</p>
 <p>😄  这个是直接 copy 的 smile</p>
