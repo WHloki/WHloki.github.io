@@ -4,7 +4,36 @@
   
     
     <entry>
-      <title>XCTF-—WP</title>
+      <title>烧脑的密码——花里胡哨</title>
+      <link href="/2020/04/02/crypto/"/>
+      <url>/2020/04/02/crypto/</url>
+      
+        <content type="html"><![CDATA[<p>最近学习pwn，又累又自闭=_=我觉得还得抓抓crypto才行，主打pwn，副业crypto，perfect ！！😊</p><p>这篇博文就对crypto做个小总结吧，会不定时的更新，毕竟现在学的也不都多，学无止境哈哈哈；</p><a id="more"></a><h1 id="16进制—-gt-文本"><a href="#16进制—-gt-文本" class="headerlink" title="16进制—>文本"></a>16进制—&gt;文本</h1><p>这个是我做题以来，用到的最多的一种</p><p>解密网站：<a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">16进制文本转换</a>   </p><h1 id="Base"><a href="#Base" class="headerlink" title="Base"></a>Base</h1><p>先来个简单的Base加密</p><p>Base是一个大家族，有Base16，Base32，Base64…多种加密，常用的是Base64加密，通常Base64有个特征：</p><p>由于它的加密方法问题，常常以 <code>"= ="</code> 结尾</p><p>解密网站：<a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a> </p><h1 id="Morse"><a href="#Morse" class="headerlink" title="Morse"></a>Morse</h1><p>摩斯密码，很多人都听说过吧应该，就是由 <code>"."</code> 和 <code>"-"</code> 组成</p><p>e.g.    <code>-.-./-/..-.</code>  ——&gt;  <code>CTF</code></p><p>解密网站：<a href="https://tool.lu/morse/" target="_blank" rel="noopener">Morse</a></p><h1 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h1><p>凯撒密码，这个原理也很简单，就是每一个字母往后移动相同的位数</p><p>解密网站： <a href="https://www.qqxiuzi.cn/bianma/kaisamima.php" target="_blank" rel="noopener">Caesar</a></p><h1 id="ROT13"><a href="#ROT13" class="headerlink" title="ROT13"></a>ROT13</h1><p>ROT13，每个字母回转13位</p><p>解密网站：<a href="https://www.jisuan.mobi/puzzm6z1B1HH6yXW.html" target="_blank" rel="noopener">ROT13</a> </p><h1 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h1><p>md5，这个不好解释，直接放网站吧</p><p>解密网站：<a href="https://pmd5.com/" target="_blank" rel="noopener">MD5</a></p><h1 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h1><p>培根密码，由<code>A(a)</code>，<code>B(b)</code>组成，代表的是数学中的0和1</p><p>解密网站：<a href="https://tool.bugku.com/peigen/" target="_blank" rel="noopener">培根密码</a></p><h1 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h1><p>栅栏密码，把明文分为N个一组，把每一组的第一个字符组合，第二个字符组合…第N个字符组合，然后连起来就</p><p>是一段栅栏密码了</p><p>e.g.   （以2栏栅栏为例：）</p><pre><code>明文：I Love CTF 去空格：ILoveCTF分组：IL ov eC TF第一组：IoeT第二组：LvCF密文：IoeTLvCF</code></pre><p>解密网站：<a href="https://www.qqxiuzi.cn/bianma/zhalanmima.php" target="_blank" rel="noopener">栅栏密码</a>   </p><p>还有一种栅栏密码叫做<code>W型栅栏密码</code> 解密网站：<a href="http://www.atoolbox.net/Tool.php?Id=777" target="_blank" rel="noopener">W型栅栏密码</a></p><h1 id="Ook-amp-Brainfuck"><a href="#Ook-amp-Brainfuck" class="headerlink" title="Ook &amp; Brainfuck"></a>Ook &amp; Brainfuck</h1><p>Ook，这个很有意思😂，形如：<code>Ook. Ook! Ook?</code> 这样的就是Ook加密</p><p>Brainfuck，这个也很有意思，形如：<code>++++[ -&gt;+++ +&lt;]&gt;+ +++.&lt; +++[- &gt;---&lt; ]&gt;--- .---- .&lt;+++ ++++[</code></p><p>这样的就是Brainfuck加密😁</p><p>解密网站： <a href="https://tool.bugku.com/brainfuck/?wafcloud=1" target="_blank" rel="noopener">Ook &amp; Brainfuck</a> </p><h1 id="quipqiup"><a href="#quipqiup" class="headerlink" title="quipqiup"></a>quipqiup</h1><p>quipqiup，这个是把一段英文，每个字母替换为另一个指定的字母的加密</p><p>解密网站：<a href="https://quipqiup.com/" target="_blank" rel="noopener">quipqiup</a> </p><h1 id="与佛论禅"><a href="#与佛论禅" class="headerlink" title="与佛论禅"></a>与佛论禅</h1><p>这个没什么好解释的</p><p>解密网站：</p><p><a href="http://keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">与佛论禅</a></p><p><a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">新约佛论禅</a></p><h1 id="键盘密码"><a href="#键盘密码" class="headerlink" title="键盘密码"></a>键盘密码</h1><p>键盘密码，更没法说，把密文在键盘上找到位置，有时候连成的轨迹是一个字母，有时候是围着一个字母</p><p>还有手机9键密码，比如666，就是键盘”6“上的第三个字母”O“ …根据情况定吧，变化很多~</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>这里放一些不知道原理，只会根据题目来解的加密：</p><p><a href="https://www.sojson.com/encrypt_aes.html" target="_blank" rel="noopener">AES</a>  <a href="https://www.sojson.com/encrypt_rabbit.html" target="_blank" rel="noopener">Rabbit</a>  <a href="http://serpent.online-domain-tools.com/" target="_blank" rel="noopener">serpent</a>   <a href="http://web.chacuo.net/charsetquotedprintable" target="_blank" rel="noopener">Quoted-printable</a>   <a href="http://code.mcdvisa.com" target="_blank" rel="noopener">中文电码</a> </p><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><p><a href="http://www.atoolbox.net/Category.php?Id=27" target="_blank" rel="noopener">加密解密工具</a></p><p><a href="https://blog.csdn.net/weixin_42037232/article/details/89018997?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">密码积累网站</a></p><p><a href="https://www.sojson.com/qr/deqr.html" target="_blank" rel="noopener">二维码</a></p><p><a href="https://app.xunjiepdf.com/pdf2word/" target="_blank" rel="noopener">PDF转-&gt;**</a></p><p><a href="http://ctf.ssleye.com/?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">CTF在线工具</a></p><p><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">CTF资源库</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+          <category> 花里胡哨 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> Crypto </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>XCTF——WP</title>
       <link href="/2020/03/30/xctf/"/>
       <url>/2020/03/30/xctf/</url>
       
@@ -15,12 +44,12 @@
           
           <category> CTF </category>
           
-          <category> WP </category>
-          
       </categories>
       
       
         <tags>
+            
+            <tag> CTF </tag>
             
             <tag> WP </tag>
             
@@ -46,12 +75,12 @@
           
           <category> CTF </category>
           
-          <category> WP </category>
-          
       </categories>
       
       
         <tags>
+            
+            <tag> CTF </tag>
             
             <tag> WP </tag>
             
@@ -118,7 +147,7 @@
     
     
     <entry>
-      <title>第二届BJDCTF-WP</title>
+      <title>第二届BJDCTF——WP</title>
       <link href="/2020/03/23/bjd-wp/"/>
       <url>/2020/03/23/bjd-wp/</url>
       
@@ -129,14 +158,14 @@
           
           <category> CTF </category>
           
-          <category> WP </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> BJDCTF </tag>
+            
+            <tag> CTF </tag>
             
             <tag> WP </tag>
             
@@ -147,7 +176,7 @@
     
     
     <entry>
-      <title>BJDCTF-赛后总结</title>
+      <title>BJDCTF——赛后总结</title>
       <link href="/2020/03/23/bjd/"/>
       <url>/2020/03/23/bjd/</url>
       
@@ -163,9 +192,11 @@
       
         <tags>
             
-            <tag> NUL </tag>
-            
             <tag> BJDCTF </tag>
+            
+            <tag> CTF </tag>
+            
+            <tag> NUL </tag>
             
         </tags>
       
@@ -280,7 +311,7 @@
       <link href="/2020/02/17/ctf-gong-ju/"/>
       <url>/2020/02/17/ctf-gong-ju/</url>
       
-        <content type="html"><![CDATA[<p>假期做了很多CTF的题目，刚学没多久，只会简单的MISC和CRYPTO，网上搜集各种解密类型，</p><p>一个个去尝试，先整理一波；</p><a id="more"></a><p>整理这个是因为收藏夹满了，工具堆叠太多（噗哈哈哈，其实因为自己太懒，不想做题的时候再去搜），话不多说</p><p>直接上网址；</p><h4 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h4><p>之前就喜欢密码学，了解的不是很多，但是感觉超厉害！！！Very Good！！！</p><p>做了题目知道了很多密码：Base64，ROT13，摩斯密码，凯撒密码，栅栏密码，幂数加密（计算就可以，或者写</p><p>个脚本），RSA加密（到现在还没看懂原理emmm）</p><p><a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a>    <a href="https://tool.lu/morse/" target="_blank" rel="noopener">Morse</a>   <a href="https://www.qqxiuzi.cn/bianma/kaisamima.php" target="_blank" rel="noopener">Caesar</a>   <a href="https://www.jisuan.mobi/puzzm6z1B1HH6yXW.html" target="_blank" rel="noopener">ROT13</a>   <a href="http://www.atoolbox.net/Tool.php?Id=777" target="_blank" rel="noopener">W型栅栏密码</a>   <a href="https://www.sojson.com/encrypt_aes.html" target="_blank" rel="noopener">AES</a>   <a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">16进制文本转换</a>   </p><p><a href="https://www.sojson.com/encrypt_rabbit.html" target="_blank" rel="noopener">Rabbit</a>   <a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">Ook</a>   <a href="https://tool.bugku.com/brainfuck/?wafcloud=1" target="_blank" rel="noopener">Brainfuck</a>   <a href="http://serpent.online-domain-tools.com/" target="_blank" rel="noopener">serpent</a>   <a href="http://web.chacuo.net/charsetquotedprintable" target="_blank" rel="noopener">Quoted-printable</a>   <a href="https://pmd5.com/" target="_blank" rel="noopener">MD5</a></p><p><a href="http://www.atoolbox.net/Category.php?Id=27" target="_blank" rel="noopener">加密解密工具</a> <a href="http://code.mcdvisa.com" target="_blank" rel="noopener">中文电码</a> <a href="https://quipqiup.com/" target="_blank" rel="noopener">quipqiup</a> </p><p><a href="https://blog.csdn.net/weixin_42037232/article/details/89018997?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">密码积累</a></p><h4 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h4><p>杂项题目更头疼，五花八门的解密方法，确实让人头疼。还得精通ps（真是佩服），有一道p二维码的题，p了一</p><p>个晚上；</p><p><a href="https://www.sojson.com/qr/deqr.html" target="_blank" rel="noopener">二维码</a></p><p><a href="https://app.xunjiepdf.com/pdf2word/" target="_blank" rel="noopener">PDF转-&gt;</a></p><p><a href="http://keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">与佛论禅</a></p><p><a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">新约佛论禅</a></p><h4 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h4><p><a href="http://ctf.ssleye.com/?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">CTF在线工具</a></p><p><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">CTF资源库</a></p><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>CTF是个很好玩的“游戏”，现在虽然是个小白，但是我要努力成为大佬，题目越做越多，后面再进行整理。</p><p>Fighting！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<p>假期做了很多CTF的题目，刚学没多久，只会简单的MISC和CRYPTO，网上搜集各种解密类型，</p><p>一个个去尝试，先整理一波；</p><a id="more"></a><p>整理这个是因为收藏夹满了，工具堆叠太多（噗哈哈哈，其实因为自己太懒，不想做题的时候再去搜），话不多说</p><p>直接上网址；</p><h4 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h4><p>之前就喜欢密码学，了解的不是很多，但是感觉超厉害！！！Very Good！！！</p><p>做了题目知道了很多密码：Base64，ROT13，摩斯密码，凯撒密码，栅栏密码，幂数加密（计算就可以，或者写</p><p>个脚本），RSA加密（到现在还没看懂原理emmm）</p><p><a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">16进制文本转换</a>   </p><p><a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a>    </p><p><a href="https://tool.lu/morse/" target="_blank" rel="noopener">Morse</a>  </p><p><a href="https://www.qqxiuzi.cn/bianma/kaisamima.php" target="_blank" rel="noopener">Caesar</a> </p><p><a href="https://www.jisuan.mobi/puzzm6z1B1HH6yXW.html" target="_blank" rel="noopener">ROT13</a> </p><p><a href="http://www.atoolbox.net/Tool.php?Id=777" target="_blank" rel="noopener">W型栅栏密码</a>  </p><p><a href="https://www.sojson.com/encrypt_aes.html" target="_blank" rel="noopener">AES</a> </p><p><a href="https://www.sojson.com/encrypt_rabbit.html" target="_blank" rel="noopener">Rabbit</a>   </p><p><a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">Ook</a> </p><p><a href="https://tool.bugku.com/brainfuck/?wafcloud=1" target="_blank" rel="noopener">Brainfuck</a>  </p><p><a href="http://serpent.online-domain-tools.com/" target="_blank" rel="noopener">serpent</a>  </p><p><a href="http://web.chacuo.net/charsetquotedprintable" target="_blank" rel="noopener">Quoted-printable</a>  </p><p><a href="https://pmd5.com/" target="_blank" rel="noopener">MD5</a></p><p><a href="http://code.mcdvisa.com" target="_blank" rel="noopener">中文电码</a></p><p><a href="https://quipqiup.com/" target="_blank" rel="noopener">quipqiup</a> </p><p><a href="http://www.atoolbox.net/Category.php?Id=27" target="_blank" rel="noopener">加密解密工具</a></p><p><a href="https://blog.csdn.net/weixin_42037232/article/details/89018997?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">密码积累</a></p><h4 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h4><p>杂项题目更头疼，五花八门的解密方法，确实让人头疼。还得精通ps（真是佩服），有一道p二维码的题，p了一</p><p>个晚上；</p><p><a href="https://www.sojson.com/qr/deqr.html" target="_blank" rel="noopener">二维码</a></p><p><a href="https://app.xunjiepdf.com/pdf2word/" target="_blank" rel="noopener">PDF转-&gt;</a></p><p><a href="http://keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">与佛论禅</a></p><p><a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">新约佛论禅</a></p><h4 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h4><p><a href="http://ctf.ssleye.com/?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">CTF在线工具</a></p><p><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">CTF资源库</a></p><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>CTF是个很好玩的“游戏”，现在虽然是个小白，但是我要努力成为大佬，题目越做越多，后面再进行整理。</p><p>Fighting！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>

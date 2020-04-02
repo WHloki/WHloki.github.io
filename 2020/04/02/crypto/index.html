@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="BJDCTF——赛后总结, 浩浩の家园">
+    <meta name="keywords" content="烧脑的密码——花里胡哨, 浩浩の家园">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>BJDCTF——赛后总结 | 浩浩の家园</title>
+    <title>烧脑的密码——花里胡哨 | 浩浩の家园</title>
     <link rel="icon" type="image/png" href="/1.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.1/css/all.css">
@@ -489,12 +489,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">BJDCTF——赛后总结</h1>
+                    <h1 class="description center-align post-title">烧脑的密码——花里胡哨</h1>
                 </div>
             </div>
         </div>
@@ -611,16 +611,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/BJDCTF/">
-                                <span class="chip bg-color">BJDCTF</span>
-                            </a>
-                        
                             <a href="/tags/CTF/">
                                 <span class="chip bg-color">CTF</span>
                             </a>
                         
-                            <a href="/tags/NUL/">
-                                <span class="chip bg-color">NUL</span>
+                            <a href="/tags/Crypto/">
+                                <span class="chip bg-color">Crypto</span>
                             </a>
                         
                     </div>
@@ -635,6 +631,10 @@
                                 CTF
                             </a>
                         
+                            <a href="/categories/CTF/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/" class="post-category">
+                                花里胡哨
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -644,7 +644,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-04-02
                 </div>
                 
 
@@ -658,14 +658,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    990
+                    716
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -681,75 +681,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这篇blog应该是昨天晚上写的，但是昨晚很累，打了三把游戏就去睡觉了2333</p>
+                <p>最近学习pwn，又累又自闭=_=我觉得还得抓抓crypto才行，主打pwn，副业crypto，perfect ！！😊</p>
+<p>这篇博文就对crypto做个小总结吧，会不定时的更新，毕竟现在学的也不都多，学无止境哈哈哈；</p>
 <a id="more"></a>
 
-<p>3月21日上午9点——3月22日晚上9点进行了第二届<strong><em>BJDCTF</em></strong>线上赛，说的是萌新赛，又是七校联盟（<strong>HUT</strong>… …七所</p>
-<p>学校），我们就跟着参加了…</p>
-<p><strong>// 下面是我这两天的“悲惨”经历 =_=</strong></p>
-<h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><p>第一天早上早早起来（8点多才下床），早饭没吃，就坐在电脑前面准备9点开始比赛，我怀着激动的心情，毕竟</p>
-<p>第一次参加个人赛（之前跟着战队参加过团队赛），开机，打开Chrome、Opera，打开VMware检查网络（断过</p>
-<p>1,2,3…次的网，数不清555），接着就水水群等着9点；</p>
-<p>9点一到，一刷新页面。。。“404”。等到刷新好，签到题一血已经没了，然后我就观察了一波题目，当时题目只有</p>
-<p>一部分，因为这个赛制，有些题目需要做出来另外的题目解锁（我快烦死）；不知如何下手当时，就直接开始从</p>
-<p>pwn开始，第一个pwn题目（忍不住哇的一下就哭了）我到第二天晚上才会，也不能叫会，被大佬指引了一下方</p>
-<p>向；感觉自己好菜好菜，自闭ing！</p>
-<p>下午的时候仍然是做题不顺利，主要是一点思路都没有，Misc真的无能为力，只能抠一抠Crypto（本来主要学的</p>
-<p>pwn) ….好难过啊啊啊</p>
-<p>晚上的时候看了看排行榜，我惊了！！！，前十的选手几乎都没做pwn和web，都在做Misc  //这委屈谁受得了</p>
-<p>最搞笑的是，有人还在群里说，求求前十的大佬，做做pwn和web吧，哈哈哈哈笑了我半天；</p>
-<p>临睡觉的时候看了看排名，前40，感觉不错，明天继续加油<del>~</del></p>
-<h1 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h1><p>这天6点半就起来了，因为昨晚队友们都解答出了一道pwn/game的题目——贪吃蛇，据说玩游戏就可以有答案，</p>
-<p>我没下床就开始玩，哈哈哈，找到了以前玩贪吃蛇的感觉了，但是玩了一局什么也没发现，就去看源码，喔喔，原</p>
-<p>来如此（笑容逐渐 **）就做出来了，好开心；</p>
-<p>然后接着又去网站做那道音乐题目，我卡，那道题真的是神仙题目，我现在脑子还在回放，循环听了几十遍，哎</p>
-<p>呀，真的无语啊； // 感觉学音乐的一下子就能做出来；结果：结束比赛知道答案也弹不出来；</p>
-<p>比赛还剩几个小时的时候，突然题目全部放出来了，太好了，正好有道题目我会，直接拿到了哈哈哈；</p>
-<p>晚上8点钟的时候，我就没做了，自闭了做到最后，身心疲惫，直接去峡谷逛了几圈（/斜眼笑）</p>
-<h1 id="结局"><a href="#结局" class="headerlink" title="结局"></a>结局</h1><p>比赛结束了，发挥得一般般吧，做出来的如下：（rank：14）</p>
-<table>
-<thead>
-<tr>
-<th align="center"><strong>Pwn</strong></th>
-<th align="center">2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>Web</strong></td>
-<td align="center"><strong>0</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>Misc</strong></td>
-<td align="center"><strong>3</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>Crypto</strong></td>
-<td align="center"><strong>6</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>Reverse</strong></td>
-<td align="center"><strong>1</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>Total</strong></td>
-<td align="center"><strong>12</strong></td>
-</tr>
-</tbody></table>
-<h1 id="总结与收获"><a href="#总结与收获" class="headerlink" title="总结与收获"></a>总结与收获</h1><p>总的来说，这次比赛收获巨大，首先想说的是：出题人在哪，我给他们寄刀片….开个玩笑嘿嘿</p>
-<p>还是自己太菜了，被出题人按在地上锤，┭┮﹏┭┮    自闭式打法可还行；</p>
-<p>pwn题都是Linux？？！！好好的pwn你来个什么Linux，还在学习中不会做，也是，不能怪出题人，归根结底是</p>
-<p>怪自己水平不够，没得办法；</p>
-<p>Misc &amp; Crypto挺有意思，以后可以发展发展；</p>
-<p>接下来有了学习目标了：</p>
-<p><strong>1、尽快学堆</strong></p>
-<p><strong>2、学隐写</strong></p>
-<p><strong>3、继续学Crypto</strong></p>
-<p><strong>4、还是得学Linux ，跑不了了</strong></p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>长路漫漫，谁都想做大佬，继续加油，Fighting！！！</p>
+<h1 id="16进制—-gt-文本"><a href="#16进制—-gt-文本" class="headerlink" title="16进制—>文本"></a>16进制—&gt;文本</h1><p>这个是我做题以来，用到的最多的一种</p>
+<p>解密网站：<a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">16进制文本转换</a>   </p>
+<h1 id="Base"><a href="#Base" class="headerlink" title="Base"></a>Base</h1><p>先来个简单的Base加密</p>
+<p>Base是一个大家族，有Base16，Base32，Base64…多种加密，常用的是Base64加密，通常Base64有个特征：</p>
+<p>由于它的加密方法问题，常常以 <code>"= ="</code> 结尾</p>
+<p>解密网站：<a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a> </p>
+<h1 id="Morse"><a href="#Morse" class="headerlink" title="Morse"></a>Morse</h1><p>摩斯密码，很多人都听说过吧应该，就是由 <code>"."</code> 和 <code>"-"</code> 组成</p>
+<p>e.g.    <code>-.-./-/..-.</code>  ——&gt;  <code>CTF</code></p>
+<p>解密网站：<a href="https://tool.lu/morse/" target="_blank" rel="noopener">Morse</a></p>
+<h1 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h1><p>凯撒密码，这个原理也很简单，就是每一个字母往后移动相同的位数</p>
+<p>解密网站： <a href="https://www.qqxiuzi.cn/bianma/kaisamima.php" target="_blank" rel="noopener">Caesar</a></p>
+<h1 id="ROT13"><a href="#ROT13" class="headerlink" title="ROT13"></a>ROT13</h1><p>ROT13，每个字母回转13位</p>
+<p>解密网站：<a href="https://www.jisuan.mobi/puzzm6z1B1HH6yXW.html" target="_blank" rel="noopener">ROT13</a> </p>
+<h1 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h1><p>md5，这个不好解释，直接放网站吧</p>
+<p>解密网站：<a href="https://pmd5.com/" target="_blank" rel="noopener">MD5</a></p>
+<h1 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h1><p>培根密码，由<code>A(a)</code>，<code>B(b)</code>组成，代表的是数学中的0和1</p>
+<p>解密网站：<a href="https://tool.bugku.com/peigen/" target="_blank" rel="noopener">培根密码</a></p>
+<h1 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h1><p>栅栏密码，把明文分为N个一组，把每一组的第一个字符组合，第二个字符组合…第N个字符组合，然后连起来就</p>
+<p>是一段栅栏密码了</p>
+<p>e.g.   （以2栏栅栏为例：）</p>
+<pre><code>明文：I Love CTF 
+去空格：ILoveCTF
+分组：IL ov eC TF
+第一组：IoeT
+第二组：LvCF
+密文：IoeTLvCF</code></pre><p>解密网站：<a href="https://www.qqxiuzi.cn/bianma/zhalanmima.php" target="_blank" rel="noopener">栅栏密码</a>   </p>
+<p>还有一种栅栏密码叫做<code>W型栅栏密码</code> 解密网站：<a href="http://www.atoolbox.net/Tool.php?Id=777" target="_blank" rel="noopener">W型栅栏密码</a></p>
+<h1 id="Ook-amp-Brainfuck"><a href="#Ook-amp-Brainfuck" class="headerlink" title="Ook &amp; Brainfuck"></a>Ook &amp; Brainfuck</h1><p>Ook，这个很有意思😂，形如：<code>Ook. Ook! Ook?</code> 这样的就是Ook加密</p>
+<p>Brainfuck，这个也很有意思，形如：<code>++++[ -&gt;+++ +&lt;]&gt;+ +++.&lt; +++[- &gt;---&lt; ]&gt;--- .---- .&lt;+++ ++++[</code></p>
+<p>这样的就是Brainfuck加密😁</p>
+<p>解密网站： <a href="https://tool.bugku.com/brainfuck/?wafcloud=1" target="_blank" rel="noopener">Ook &amp; Brainfuck</a> </p>
+<h1 id="quipqiup"><a href="#quipqiup" class="headerlink" title="quipqiup"></a>quipqiup</h1><p>quipqiup，这个是把一段英文，每个字母替换为另一个指定的字母的加密</p>
+<p>解密网站：<a href="https://quipqiup.com/" target="_blank" rel="noopener">quipqiup</a> </p>
+<h1 id="与佛论禅"><a href="#与佛论禅" class="headerlink" title="与佛论禅"></a>与佛论禅</h1><p>这个没什么好解释的</p>
+<p>解密网站：</p>
+<p><a href="http://keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">与佛论禅</a></p>
+<p><a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">新约佛论禅</a></p>
+<h1 id="键盘密码"><a href="#键盘密码" class="headerlink" title="键盘密码"></a>键盘密码</h1><p>键盘密码，更没法说，把密文在键盘上找到位置，有时候连成的轨迹是一个字母，有时候是围着一个字母</p>
+<p>还有手机9键密码，比如666，就是键盘”6“上的第三个字母”O“ …根据情况定吧，变化很多~</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>这里放一些不知道原理，只会根据题目来解的加密：</p>
+<p><a href="https://www.sojson.com/encrypt_aes.html" target="_blank" rel="noopener">AES</a>  <a href="https://www.sojson.com/encrypt_rabbit.html" target="_blank" rel="noopener">Rabbit</a>  <a href="http://serpent.online-domain-tools.com/" target="_blank" rel="noopener">serpent</a>   <a href="http://web.chacuo.net/charsetquotedprintable" target="_blank" rel="noopener">Quoted-printable</a>   <a href="http://code.mcdvisa.com" target="_blank" rel="noopener">中文电码</a> </p>
+<h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><p><a href="http://www.atoolbox.net/Category.php?Id=27" target="_blank" rel="noopener">加密解密工具</a></p>
+<p><a href="https://blog.csdn.net/weixin_42037232/article/details/89018997?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">密码积累网站</a></p>
+<p><a href="https://www.sojson.com/qr/deqr.html" target="_blank" rel="noopener">二维码</a></p>
+<p><a href="https://app.xunjiepdf.com/pdf2word/" target="_blank" rel="noopener">PDF转-&gt;**</a></p>
+<p><a href="http://ctf.ssleye.com/?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">CTF在线工具</a></p>
+<p><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">CTF资源库</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -793,7 +775,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://whloki.gitee.io/2020/03/23/bjd/">http://whloki.gitee.io/2020/03/23/bjd/</a>
+                    <a href="http://whloki.gitee.io/2020/04/02/crypto/">http://whloki.gitee.io/2020/04/02/crypto/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -831,16 +813,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/BJDCTF/">
-                                    <span class="chip bg-color">BJDCTF</span>
-                                </a>
-                            
                                 <a href="/tags/CTF/">
                                     <span class="chip bg-color">CTF</span>
                                 </a>
                             
-                                <a href="/tags/NUL/">
-                                    <span class="chip bg-color">NUL</span>
+                                <a href="/tags/Crypto/">
+                                    <span class="chip bg-color">Crypto</span>
                                 </a>
                             
                         </div>
@@ -1006,38 +984,96 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/23/bjd-wp/">
+                <a href="/2020/04/02/crypto/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第二届BJDCTF——WP">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="烧脑的密码——花里胡哨">
                         
-                        <span class="card-title">第二届BJDCTF——WP</span>
+                        <span class="card-title">烧脑的密码——花里胡哨</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            历经36小时的第二届BJDCTF终于结束了，现在距离21点还差不到半小时，正好可以写完就上线，美滋滋；
+                            最近学习pwn，又累又自闭=_=我觉得还得抓抓crypto才行，主打pwn，副业crypto，perfect ！！😊
+这篇博文就对crypto做个小总结吧，会不定时的更新，毕竟现在学的也不都多，学无止境哈哈哈；
 
 
-Start这次的比赛，算是学到了许多知识，黄老师说得对—不能不学习；
-先看看这个比赛个人成绩吧（惨不忍睹）：
-
-
-
-Pwn
-Web
-
+16进制—&gt;文本
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                            
+                            <a href="/categories/CTF/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/" class="post-category">
+                                    花里胡哨
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                    <a href="/tags/Crypto/">
+                        <span class="chip bg-color">Crypto</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/03/30/xctf/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="XCTF——WP">
+                        
+                        <span class="card-title">XCTF——WP</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这篇博客呢，就记录一些平时在XCTF刷的题目的wp，可能整理不开，会分支放；
+
+
+Hello_pwn这个算是第一篇wp了吧，不足之处，还请多多指教；
+拿到题目，按照惯例，先查看保护机制：
+
+可以看到，开了NX，未开canary，丢进ida查
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1053,10 +1089,6 @@ Web
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/BJDCTF/">
-                        <span class="chip bg-color">BJDCTF</span>
-                    </a>
-                    
                     <a href="/tags/CTF/">
                         <span class="chip bg-color">CTF</span>
                     </a>
@@ -1065,60 +1097,12 @@ Web
                         <span class="chip bg-color">WP</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/13/html/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="HTML学习笔记">
-                        
-                        <span class="card-title">HTML学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            到目前为止，今年入的两个坑，一个是CTF，这个暂且不说，另一个是Blog；
-
-
-前篇Blog这东西前面的文章也说了，很烦人其实，尤其是配置文件的时候，老是出错；最近看Hexo主题的时候又看上
-了一个主题——Matery；这款主题页面清晰，画
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/Pwn/">
+                        <span class="chip bg-color">Pwn</span>
                     </a>
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/XCTF/">
+                        <span class="chip bg-color">XCTF</span>
                     </a>
                     
                 </div>
