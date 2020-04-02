@@ -643,21 +643,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.2k
+                    11.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    45 分
+                    47 分
                 </div>
                 
 
@@ -1824,7 +1824,34 @@
 <h2 id="树、森林与二叉树的转换"><a href="#树、森林与二叉树的转换" class="headerlink" title="树、森林与二叉树的转换"></a>树、森林与二叉树的转换</h2><p>前面已经见过树的定义和存储结构，对于树来讲，可以是任意形状，一个结点可以有很多孩子，复杂很多，于是引</p>
 <p>入了二叉树，这个就方便很多了；二叉树只有左右两个孩子，这样的话，面对的变化就少了，如果所有的树都能变</p>
 <p>成二叉树就好了😅别说，还真可以：</p>
-<script>
+<h3 id="树转换为二叉树"><a href="#树转换为二叉树" class="headerlink" title="树转换为二叉树"></a>树转换为二叉树</h3><p>一般来讲，树转换为二叉树有以下几步：</p>
+<p>1、加线：在所有兄弟结点之间加一条线；</p>
+<p>2、去线：对树中的每个结点，只保留它与第一个孩子结点之间的连线，删除它与其他孩子结点之间的连线；</p>
+<p>3、旋转：以树的根节点为轴心，将整棵树顺时针旋转45°，使之成为二叉树；</p>
+<p><strong>如图所示：</strong></p>
+<p><img src="/images/%E6%A0%91%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="树转换为二叉树"></p>
+<h3 id="森林转换为二叉树"><a href="#森林转换为二叉树" class="headerlink" title="森林转换为二叉树"></a>森林转换为二叉树</h3><p>森林是由若干棵树组成的，所以完全可以理解为，森林中的每一棵树都是兄弟，可以按照兄弟的处理办法来操作，方法如下：</p>
+<p>1、把每棵树转换成二叉树；</p>
+<p>2、第一棵二叉树不动，从第二棵二叉树开始，依次把后一棵二叉树的根结点作为前一棵树的根结点的右孩子，用</p>
+<p>线连接起来，当所有的二叉树连接起来后就得到了由森林转换来的二叉树；</p>
+<p><strong>如图所示：</strong></p>
+<p><img src="/images/%E6%A3%AE%E6%9E%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="森林转换为二叉树"></p>
+<h3 id="二叉树还原为树"><a href="#二叉树还原为树" class="headerlink" title="二叉树还原为树"></a>二叉树还原为树</h3><p>二叉树还原为树就是树转换为二叉树的逆过程，直接反过来做就可以</p>
+<p>步骤如下：</p>
+<p>1、加线：若某结点的左孩子结点存在，则将这个左孩子的右孩子结点，右孩子的右孩子结点，右孩子的右孩子的</p>
+<p>右孩子结点….哈哈，就是左孩子的n个右孩子结点都作为结点的孩子，将该结点与这些右孩子结点用线连接起来；</p>
+<p>2、去线：删除原二叉树中所有结点与其右孩子结点的连线；</p>
+<p>3、旋转：旋转得到树</p>
+<p><strong>如图所示：</strong></p>
+<p><img src="/images/%E4%BA%8C%E5%8F%89%E6%A0%91%E8%BF%98%E5%8E%9F%E4%B8%BA%E6%A0%91.png" alt="二叉树还原为树"></p>
+<h3 id="二叉树还原为森林"><a href="#二叉树还原为森林" class="headerlink" title="二叉树还原为森林"></a>二叉树还原为森林</h3><p>判断一棵二叉树能够转换成树还是森林，很简单，只要看这棵二叉树的根结点有没有右孩子，有就是森林，没有就</p>
+<p>是一棵树，如果是森林，步骤如下：</p>
+<p>1、从根结点开始，若右孩子存在，则把它与右孩子结点的连线删除，再查看分离后的二叉树，若右孩子存在，则</p>
+<p>连线删除……，直到所有右孩子连线都删除为止，得到分离的二叉树；</p>
+<p>2、再将每棵分离后的二叉树转换为树即可；</p>
+<p><strong>如图所示：</strong></p>
+<p><img src="/images/%E4%BA%8C%E5%8F%89%E6%A0%91%E8%BF%98%E5%8E%9F%E4%B8%BA%E6%A3%AE%E6%9E%97.png" alt="二叉树还原为森林"></p>
+<h2 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -2358,7 +2385,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
                         <br>
                         
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">26.2k</span>&nbsp;字
+                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">26.8k</span>&nbsp;字
                             
                                 
                                     
