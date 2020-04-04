@@ -190,11 +190,11 @@
       
         <tags>
             
-            <tag> NUL </tag>
-            
             <tag> BJDCTF </tag>
             
             <tag> CTF </tag>
+            
+            <tag> summary </tag>
             
         </tags>
       
@@ -271,7 +271,9 @@
       
         <tags>
             
-            <tag> NUL </tag>
+            <tag> Diary </tag>
+            
+            <tag> summary </tag>
             
         </tags>
       
