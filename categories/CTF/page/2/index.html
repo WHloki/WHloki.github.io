@@ -389,7 +389,7 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友链</span>
+      <span>友情链接</span>
     </a>
     
   </li>
@@ -491,7 +491,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			友链
+			友情链接
 		</a>
           
         </li>
@@ -908,6 +908,16 @@ $(function () {
 
     <!-- Baidu Analytics -->
 
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f232c81a592075e7022b081ac095f17e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
     <!-- Baidu Push -->
 
 <script>
@@ -957,7 +967,26 @@ $(function () {
     
 
 
-</body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'your_domain' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+href+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script></body>
 
 </html>
 
