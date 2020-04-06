@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Discrete Math的学习历程</title>
+      <link href="/2020/04/06/chi-san-shu-xue/"/>
+      <url>/2020/04/06/chi-san-shu-xue/</url>
+      
+        <content type="html"><![CDATA[<p>大一下的课程真的好多，连水课都无；学个离散还晕头转向的，上直播课根本听不进去😭，所以还得占用周末时</p><p>间补习功课，这篇博客就整理一些离散数学用的比较多的公式呀，定理呀……什么的，嘿嘿嘿</p><a id="more"></a><h1 id="等值式"><a href="#等值式" class="headerlink" title="等值式"></a>等值式</h1><p><strong>1、双重否定律：</strong></p><p>​        <strong><em>┐┐A ⇔ A</em></strong></p><p><strong>2、幂等律：</strong></p><p>​        <strong><em>A∧A ⇔ A</em></strong></p><p>​        <strong><em>A∨A ⇔ A</em></strong></p><p><strong>3、交换律：</strong></p><p>​        <strong><em>A∨B ⇔ B∨A</em></strong></p><p>​        <strong><em>A∧B ⇔ B∧A</em></strong></p><p><strong>4、结合律：</strong></p><p>​        <strong><em>(A∧B)∧ C ⇔ A ∧（B∧C）</em></strong></p><p>​        <strong><em>(A∨B)∨ C ⇔ A ∨（B∨C）</em></strong></p><p><strong>5、分配律：</strong></p><p>​        <strong><em>A ∨（B∧C）⇔（A∨B）∧（A∨C）</em></strong></p><p>​        <strong><em>A ∧（B∨C）⇔（A∧B）∨（A∧C）</em></strong></p><p><strong>6、德摩根律：</strong></p><p>​        <strong><em>┐（A∨B）⇔ ┐A ∧ ┐B</em></strong></p><p>​        <strong><em>┐（A∧B）⇔ ┐A ∨ ┐B</em></strong></p><p><strong>7、吸收律：</strong></p><p>​        <strong><em>A ∨（A∧B）⇔ A</em></strong></p><p>​        <strong><em>A ∧（A∨B）⇔ A</em></strong></p><p><strong>8、零律：</strong></p><p>​        <strong><em>A ∨ 1 ⇔ 1</em></strong></p><p>​        <strong><em>A ∧ 0 ⇔ 0</em></strong></p><p><strong>9、同一律：</strong></p><p>​        <strong><em>A ∨ 0 ⇔ A</em></strong></p><p>​        <strong><em>A ∧ 1 ⇔ A</em></strong></p><p><strong>10、排中律：</strong></p><p>​        <strong><em>A ∨ ┐A ⇔ 1</em></strong></p><p><strong>11、矛盾律：</strong></p><p>​        <strong><em>A ∧ ┐A ⇔ 0</em></strong></p><p><strong>12、蕴涵等值式：</strong></p><p>​        <strong><em>A→B ⇔ ┐A∨B</em></strong></p><p><strong>13、等价等值式：</strong></p><p>​        <strong><em>A↔B ⇔（A→B）∧（B→A）</em></strong></p><p><strong>14、假言易位：</strong></p><p>​        <strong><em>A→B ⇔ ┐B→┐A</em></strong></p><p><strong>15、等价否定等值式：</strong></p><p>​        <strong><em>A↔B ⇔ ┐A↔┐B</em></strong></p><p><strong>16、归谬论：</strong></p><p>​        <strong><em>(A→B) ∧ (A→┐B) ⇔ ┐A</em></strong></p><h1 id="极大、极小项"><a href="#极大、极小项" class="headerlink" title="极大、极小项"></a>极大、极小项</h1><p><img src="/images/%E6%9E%81%E5%A4%A7%E6%9E%81%E5%B0%8F%E9%A1%B9.png" alt="极大、极小项"></p><h1 id="推理定律"><a href="#推理定律" class="headerlink" title="推理定律"></a>推理定律</h1><p><strong>1、附加律</strong></p><p>​                <strong><em>A ⇒（A∨B）</em></strong></p><p><strong>2、化简律</strong></p><p>​        <strong><em>（A∧B）⇒ A</em></strong></p><p><strong>3、假言推理</strong></p><p>​        <strong><em>（A→B）∧ A ⇒ B</em></strong></p><p><strong>4、拒取式</strong></p><p>​        <strong><em>（A→B）∧ ┐B ⇒ ┐A</em></strong></p><p><strong>5、析取三段论</strong></p><p>​        <strong><em>（A∨B）∧ B ⇒ A</em></strong></p><p><strong>6、假言三段论</strong></p><p>​        <strong><em>（A→B）∧（B→C）⇒（A→C）</em></strong></p><p><strong>7、等价三段论</strong></p><p>​        <strong><em>（A↔B）∧（B↔C）⇒（A↔C）</em></strong></p><p><strong>8、构造性二难</strong></p><p>​        <strong><em>（A→B）∧（C→D）∧（A∨C）⇒（B∨D）</em></strong></p><p>​        <strong><em>（A→B）∧（┐A→B）⇒ B（特殊形式）</em></strong></p><p><strong>9、破坏性二难</strong></p><p>​        <strong><em>（A→B）∧（C→D）∧（┐B∨┐D）⇒（┐A∨┐C）</em></strong></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 离散数学 </tag>
+            
+            <tag> study </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>烧脑的密码——花里胡哨</title>
       <link href="/2020/04/03/crypto/"/>
       <url>/2020/04/03/crypto/</url>
