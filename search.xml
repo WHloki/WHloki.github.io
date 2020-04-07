@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>模式匹配算法——KMP的从理解到懵逼到再会的历程</title>
+      <title>模式匹配算法——KMP的从理解到不懂到再会的历程</title>
       <link href="/2020/04/07/bf-kmp/"/>
       <url>/2020/04/07/bf-kmp/</url>
       
@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 数据结构 </category>
+          <category> study </category>
           
       </categories>
       
@@ -23,6 +23,8 @@
             <tag> Algorithm </tag>
             
             <tag> 数据结构 </tag>
+            
+            <tag> study </tag>
             
         </tags>
       
