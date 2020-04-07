@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="emoji的一些使用, 浩浩の家园">
+    <meta name="keywords" content="记一次有趣的东西及数据结构作业, 浩浩の家园">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>emoji的一些使用 | 浩浩の家园</title>
+    <title>记一次有趣的东西及数据结构作业 | 浩浩の家园</title>
     <link rel="icon" type="image/png" href="/1.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.1/css/all.css">
@@ -521,12 +521,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">emoji的一些使用</h1>
+                    <h1 class="description center-align post-title">记一次有趣的东西及数据结构作业</h1>
                 </div>
             </div>
         </div>
@@ -643,8 +643,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/emoji/">
-                                <span class="chip bg-color">emoji</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                            <a href="/tags/study/">
+                                <span class="chip bg-color">study</span>
                             </a>
                         
                     </div>
@@ -655,8 +659,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/" class="post-category">
-                                花里胡哨
+                            <a href="/categories/study/" class="post-category">
+                                study
                             </a>
                         
                     </div>
@@ -668,28 +672,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-04-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-04
+                    2020-04-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    240
+                    931
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -705,33 +709,193 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前看堆堆的blog有emoji，感觉能给博客增加一份光彩，我也整个一个；嘿嘿嘿 <del>\(^o^)/</del>😂</p>
+                <p>最近复习数据结构，发现了一些有趣的东西，哈哈哈，记录一下；</p>
 <a id="more"></a>
 
-<p>首先来配置一个插件：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后在Hexo的根目录下的<code>_config.yml</code>中，新增一下的配置项：</p>
-<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">githubEmojis</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">className</span><span class="token punctuation">:</span> github<span class="token punctuation">-</span>emoji
-  <span class="token key atrule">inject</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">styles</span><span class="token punctuation">:</span>
-  customEmojis<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这样之后，就可以输入：：（中间填写英文），就能打出来表情</p>
-<p>但是吧，似乎blog有点问题，用：：打出来的和copy的不一样：</p>
-<p><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">😄</span>  这个是：smile：的</p>
-<p>😄  这个是直接 copy 的 smile</p>
-<p>以后还是直接copy比较好😊</p>
-<p>·</p>
-<p>·</p>
-<p>不得不说，今天才发现微软的输入法真的好用，emoji和颜文字都很方便，看来要从sougou转过来了(●ˇ∀ˇ●)</p>
-<p>下面贴几个emoji  ○( ＾ω＾)っHiahiahia…(●ˇ∀ˇ●) ノ</p>
-<p>😀 😘 😍 😁 😜 😄 😝 😉 🤩 😆</p>
-<p>👈 👉 ✌ 🤞 🤙 🖐 👌 👍 ✍ 👐 💪</p>
-<p>👨 👩 🧑 👧 👦  🧒  👶 👵 👴 🧓</p>
-<p>🍕 🍔 🍟 🌭 🥓 🥞  🥙 🥪  🎂 🧀</p>
-<p>⚽ 🏀 🎱 ⚾ 🏐 🎳 🏉  🏈 🥌 🎯</p>
-<p>🎆 🎇 ✨ 🎉 🎊  🎃 🎄  🎋  🎍 🎑</p>
+<h1 id="汉诺塔"><a href="#汉诺塔" class="headerlink" title="汉诺塔"></a>汉诺塔</h1><p>汉诺塔相信大家都略有耳闻，这里就不多解释；</p>
+<p>数据结构课上，讲到了汉诺塔问题——“利用递归求解移动过程”，那我就不得不拿出来以前的代码（不，还是自己</p>
+<p>回忆写一下比较好😄），这个其实早就学过了，之前刷acm的题目，做过好几道汉诺塔问题，但是没这么简单😭</p>
+<p>话不多说，直接上code：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//全局变量，计数</span>
+<span class="token keyword">int</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token keyword">char</span> x<span class="token punctuation">,</span><span class="token keyword">char</span> y<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c->%c\n"</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//x柱拿一个圆盘移动到y柱</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">hanoi</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">char</span> a<span class="token punctuation">,</span><span class="token keyword">char</span> b<span class="token punctuation">,</span><span class="token keyword">char</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//只有一个圆盘</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">move</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//直接从a移动到c</span>
+        count <span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">hanoi</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span>c<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//n-1个圆盘从a借助c移动到b</span>
+        <span class="token function">move</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//a中剩下的一个圆盘移动到c</span>
+        count <span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token function">hanoi</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span>b<span class="token punctuation">,</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//移动到b的n-1个圆盘从b借助a移动到c</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入圆盘数："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">hanoi</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n需要移动的次数为：%d"</span><span class="token punctuation">,</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>汉诺塔问题算是纯递归的啦，很简单呐😜</p>
+<h1 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h1><h3 id="队列实现"><a href="#队列实现" class="headerlink" title="队列实现"></a>队列实现</h3><p>这个是老师留的作业，哇，好难写，这真够我写一晚上的啦</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MAXSIZE 1000 </span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span>
+<span class="token punctuation">{</span>
+    ElemType data<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> front<span class="token punctuation">,</span>rear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Queue<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">InitQueue</span><span class="token punctuation">(</span>Queue <span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化队列</span>
+<span class="token punctuation">{</span>
+    Q<span class="token operator">-></span>front <span class="token operator">=</span> Q<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">EmptyQueue</span><span class="token punctuation">(</span>Queue <span class="token operator">*</span>Q<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断队列是否为空</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Q<span class="token operator">-></span>rear <span class="token operator">==</span> Q<span class="token operator">-></span>front<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">EnQueue</span><span class="token punctuation">(</span>Queue <span class="token operator">*</span>Q<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//入队 </span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>Q<span class="token operator">-></span>rear <span class="token operator">==</span> MAXSIZE<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    Q<span class="token operator">-></span>data<span class="token punctuation">[</span>Q<span class="token operator">-></span>rear<span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
+    Q<span class="token operator">-></span>rear <span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">DeQueue</span><span class="token punctuation">(</span>Queue <span class="token operator">*</span>Q<span class="token punctuation">,</span>ElemType <span class="token operator">*</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//出队</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>Q<span class="token operator">-></span>rear <span class="token operator">==</span> Q<span class="token operator">-></span>front<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">*</span>e <span class="token operator">=</span> Q<span class="token operator">-></span>data<span class="token punctuation">[</span>Q<span class="token operator">-></span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    Q<span class="token operator">-></span>front <span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">GetHeadData</span><span class="token punctuation">(</span>Queue <span class="token operator">*</span>Q<span class="token punctuation">,</span>ElemType <span class="token operator">*</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//获取队头元素</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">EmptyQueue</span><span class="token punctuation">(</span>Q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token operator">*</span>e <span class="token operator">=</span> Q<span class="token operator">-></span>data<span class="token punctuation">[</span>Q<span class="token operator">-></span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">yanghui</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//杨辉三角实现函数</span>
+<span class="token punctuation">{</span>
+    Queue Q<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span>x<span class="token punctuation">,</span>e<span class="token punctuation">,</span>k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"   "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//单独打印第一行数字1 ，需要控制格式 </span>
+    <span class="token punctuation">}</span>   
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"1\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// print(1) </span>
+
+    <span class="token function">InitQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EnQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EnQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EnQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//队列初始化 </span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">++</span>k<span class="token operator">&lt;</span>n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出后n-1行 </span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token operator">-</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"   "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//控制格式，采取"3的倍数格式控制" </span>
+        <span class="token punctuation">}</span>
+        <span class="token function">EnQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//入队0，为while和if判断 </span>
+        e <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>e<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">DeQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span><span class="token operator">&amp;</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">GetHeadData</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span><span class="token operator">&amp;</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%-6d"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">EnQueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Q<span class="token punctuation">,</span>x<span class="token operator">+</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//入队->每个数等于它上方两数之和 </span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入需要打印的行数："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">yanghui</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：</p>
+<p><img src="/images/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92_%E9%98%9F%E5%88%97.png" alt="杨辉三角_队列"></p>
+<h3 id="C语言实现"><a href="#C语言实现" class="headerlink" title="C语言实现"></a>C语言实现</h3><p>杨辉三角用C语言打印更简单！！🙃</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>k<span class="token punctuation">,</span>a<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入需要打印的行数："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//每一行第一个和最后一个数字为1 </span>
+    <span class="token punctuation">}</span> 
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//这里从第三行开始，因为前两行全部是数字1，已经赋值完毕 </span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>i<span class="token number">-1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//每一行从第二个数字开始 </span>
+        <span class="token punctuation">{</span>
+            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>a<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//每个数字等于它上方两数之和 </span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>            
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//从第一行开始输出 </span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>k<span class="token operator">&lt;=</span>n<span class="token operator">-</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//控制格式 </span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"   "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>  
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%-6d"</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//左对齐，输出 </span>
+        <span class="token punctuation">}</span> 
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：</p>
+<p><img src="/images/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92_C%E8%AF%AD%E8%A8%80.png" alt="杨辉三角_C语言"></p>
+<h3 id="小结😋"><a href="#小结😋" class="headerlink" title="小结😋"></a>小结😋</h3><p>数据结构挺好玩的，我之前的blog有整理，欢迎大家去康康😁</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -775,7 +939,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://whloki.gitee.io/2020/03/27/emoji/">http://whloki.gitee.io/2020/03/27/emoji/</a>
+                    <a href="http://whloki.gitee.io/2020/04/07/shu-ju-jie-gou-zuo-ye/">http://whloki.gitee.io/2020/04/07/shu-ju-jie-gou-zuo-ye/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -813,8 +977,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/emoji/">
-                                    <span class="chip bg-color">emoji</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                                <a href="/tags/study/">
+                                    <span class="chip bg-color">study</span>
                                 </a>
                             
                         </div>
@@ -1243,49 +1411,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/27/pwn-cong-ru-men-dao-fang-qi/">
+                <a href="/2020/04/07/shu-ju-jie-gou-zuo-ye/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Pwn从入门到放弃">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="记一次有趣的东西及数据结构作业">
                         
-                        <span class="card-title">Pwn从入门到放弃</span>
+                        <span class="card-title">记一次有趣的东西及数据结构作业</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在线教pwn如何从入门到放弃
+                            来一次数据结构的头脑风暴
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/study/" class="post-category">
+                                    study
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
-                    <a href="/tags/Pwn/">
-                        <span class="chip bg-color">Pwn</span>
+                    <a href="/tags/study/">
+                        <span class="chip bg-color">study</span>
                     </a>
                     
                 </div>
@@ -1299,30 +1469,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/23/bjd-wp/">
+                <a href="/2020/04/06/chi-san-shu-xue/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第二届BJDCTF——WP">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Discrete Math的学习历程">
                         
-                        <span class="card-title">第二届BJDCTF——WP</span>
+                        <span class="card-title">Discrete Math的学习历程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BJDCTF的wp
+                            带你走进离散数学的神秘世界
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                            <a href="/categories/study/" class="post-category">
+                                    study
                                 </a>
                             
                             
@@ -1332,16 +1502,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/BJDCTF/">
-                        <span class="chip bg-color">BJDCTF</span>
+                    <a href="/tags/study/">
+                        <span class="chip bg-color">study</span>
                     </a>
                     
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
-                    </a>
-                    
-                    <a href="/tags/WP/">
-                        <span class="chip bg-color">WP</span>
+                    <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">离散数学</span>
                     </a>
                     
                 </div>
