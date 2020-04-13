@@ -9,8 +9,32 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 07 Apr 2020 23:55:17 GMT</pubDate>
+    <pubDate>Mon, 13 Apr 2020 13:16:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>test</title>
+      <link>http://whloki.gitee.io/2020/04/13/test/</link>
+      <guid>http://whloki.gitee.io/2020/04/13/test/</guid>
+      <pubDate>Mon, 13 Apr 2020 13:20:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;qqq&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return;
+        
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<p>qqq</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>http://whloki.gitee.io/2020/04/13/test/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>模式匹配算法——KMP的从理解到不懂到再会的历程</title>
