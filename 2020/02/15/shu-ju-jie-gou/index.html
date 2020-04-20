@@ -677,7 +677,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-14
+                    2020-04-19
                 </div>
                 
 
@@ -1654,7 +1654,7 @@
 <h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><h4 id="定义-12"><a href="#定义-12" class="headerlink" title="定义"></a>定义</h4><p><strong>二叉树的遍历（traversing binary tree）是指从根结点出发，按照某种次序依次访问二叉树中所有结点，使得每个结点被访问一次且仅被访问一次；</strong></p>
 <p>以这棵树为例：</p>
 <p><img src="/images/%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91.png" alt="遍历二叉树"></p>
-<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><h5 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h5><p><strong>若二叉树为空，遍历结束，否则依次执行以下操作：</strong></p>
+<h4 id="前序遍历（DLR）"><a href="#前序遍历（DLR）" class="headerlink" title="前序遍历（DLR）"></a>前序遍历（DLR）</h4><h5 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h5><p><strong>若二叉树为空，遍历结束，否则依次执行以下操作：</strong></p>
 <p><strong>1、访问根结点</strong></p>
 <p><strong>2、先序遍历根结点的左子树</strong></p>
 <p><strong>3、先序遍历根结点的右子树</strong></p>
@@ -1669,7 +1669,7 @@
     <span class="token function">PreOrderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//先序遍历右子树</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>先序遍历输出为：<code>ABDGHCEIF</code></p>
-<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><h5 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h5><p><strong>若二叉树为空，遍历结束，否则依次执行以下操作：</strong></p>
+<h4 id="中序遍历（LDR）"><a href="#中序遍历（LDR）" class="headerlink" title="中序遍历（LDR）"></a>中序遍历（LDR）</h4><h5 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h5><p><strong>若二叉树为空，遍历结束，否则依次执行以下操作：</strong></p>
 <p><strong>1、中序遍历根结点的左子树</strong></p>
 <p><strong>2、访问根结点</strong></p>
 <p><strong>3、中序遍历根结点的右子树</strong></p>
@@ -1684,7 +1684,7 @@
     <span class="token function">InOrderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//中序遍历右子树</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h5><p>中序遍历输出为：<code>BGDHAEICF</code></p>
-<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><h5 id="操作-2"><a href="#操作-2" class="headerlink" title="操作"></a>操作</h5><p><strong>若二叉树为空，遍历结束，否则依次执行以下操作：</strong></p>
+<h4 id="后序遍历（LRD）"><a href="#后序遍历（LRD）" class="headerlink" title="后序遍历（LRD）"></a>后序遍历（LRD）</h4><h5 id="操作-2"><a href="#操作-2" class="headerlink" title="操作"></a>操作</h5><p><strong>若二叉树为空，遍历结束，否则依次执行以下操作：</strong></p>
 <p><strong>1、后序遍历根结点的左子树</strong></p>
 <p><strong>2、后序遍历根结点的右子树</strong></p>
 <p><strong>3、访问根结点</strong> </p>
@@ -2593,7 +2593,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('4'),
+            collapseDepth: Number('6'),
             headingSelector: 'h1, h2, h3'
         });
 
@@ -2747,6 +2747,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                                                                     
                                                                         <br>
 
+						
 
 
                                                                         
