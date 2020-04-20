@@ -130,11 +130,11 @@
       
         <tags>
             
+            <tag> CTF </tag>
+            
             <tag> WP </tag>
             
             <tag> Pwn </tag>
-            
-            <tag> CTF </tag>
             
             <tag> XCTF </tag>
             
@@ -161,13 +161,13 @@
       
         <tags>
             
-            <tag> BUUCTF </tag>
+            <tag> CTF </tag>
             
             <tag> WP </tag>
             
-            <tag> Pwn </tag>
+            <tag> BUUCTF </tag>
             
-            <tag> CTF </tag>
+            <tag> Pwn </tag>
             
         </tags>
       
@@ -192,9 +192,9 @@
       
         <tags>
             
-            <tag> Pwn </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> Pwn </tag>
             
         </tags>
       
@@ -244,11 +244,11 @@
       
         <tags>
             
-            <tag> WP </tag>
+            <tag> BJDCTF </tag>
             
             <tag> CTF </tag>
             
-            <tag> BJDCTF </tag>
+            <tag> WP </tag>
             
         </tags>
       
@@ -273,11 +273,11 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> summary </tag>
             
             <tag> BJDCTF </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
