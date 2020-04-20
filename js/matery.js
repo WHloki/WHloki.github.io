@@ -170,6 +170,7 @@ $(function () {
 
 var title2="msg=Loki'blog又有新评论啦~！\n"
 var SCKEY_Qmsg="https://qmsg.zendee.cn:443/send/3ee8e68de19afe97ad9edaa0b3aa5134.html"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
 function send_valine_Qmsg(){
     var pagename=document.title;
     var wz=pagename.indexOf('|');
