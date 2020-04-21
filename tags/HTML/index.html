@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="标签: HTML, 算法,编程,CTF">
-    <meta name="description" content="计算机小萌新，正努力成为一名优秀的CTFer">
+    <meta name="description" content="计算机小萌新，努力成为一名优秀的CTFer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -152,7 +152,7 @@
         <div class="logo-name">Loki's Family</div>
         <div class="logo-desc">
             
-            计算机小萌新，正努力成为一名优秀的CTFer
+            计算机小萌新，努力成为一名优秀的CTFer
             
         </div>
     </div>
@@ -580,7 +580,39 @@
                                                                     </script>
                                                                     
                                                                         <br>
-
+														
+			<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script> 
+            <script type="text/javascript">  
+            document.write('欢迎来自:' + returnCitySN["cname"]+'的朋友' + ",您的IP:" + returnCitySN["cip"] + ",浏览器版本:"+getBrowserInfo());
+        function getBrowserInfo()
+{
+    var agent = navigator.userAgent.toLowerCase() ;
+    var regStr_ie = /msie [\d.]+;/gi ;
+    var regStr_ff = /firefox\/[\d.]+/gi
+    var regStr_chrome = /chrome\/[\d.]+/gi ;
+    var regStr_saf = /safari\/[\d.]+/gi ;
+    //IE
+    if(agent.indexOf("msie") > 0)
+    {
+        return agent.match(regStr_ie) ;
+    }
+    //firefox
+    if(agent.indexOf("firefox") > 0)
+    {
+        return agent.match(regStr_ff) ;
+    }
+    //Chrome
+    if(agent.indexOf("chrome") > 0)
+    {
+        return agent.match(regStr_chrome) ;
+    }
+    //Safari
+    if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+    {
+        return agent.match(regStr_saf) ;
+    }
+}
+</script> 
 						
 
 
