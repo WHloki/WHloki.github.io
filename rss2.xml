@@ -9,8 +9,32 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>计算机小萌新，努力成为一名优秀的CTFer</description>
-    <pubDate>Fri, 17 Apr 2020 12:40:40 GMT</pubDate>
+    <pubDate>Wed, 22 Apr 2020 12:17:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>test</title>
+      <link>http://whloki.gitee.io/2020/04/22/test/</link>
+      <guid>http://whloki.gitee.io/2020/04/22/test/</guid>
+      <pubDate>Wed, 22 Apr 2020 07:44:13 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;。。。&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return;
+        
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<p>。。。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>http://whloki.gitee.io/2020/04/22/test/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>模式匹配算法——KMP的从理解到不懂到再会的历程</title>
