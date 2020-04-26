@@ -947,22 +947,23 @@
     </div>
 </div>
 
-
-<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
         appId: '4eTTwcW4LbmtC9nSWqAbekph-gzGzoHsz',
         appKey: 'k1vFce20H7t5wsbsAY4xd1R7',
-        notify: 'false' === 'true',
-        verify: 'false' === 'true',
         visitor: 'true' === 'true',
         avatar: 'monsterid',
         pageSize: '10',
         lang: 'zh-cn',
-        placeholder: '来都来了，留个脚印再走吧（＾∀＾●）ﾉ'
+        placeholder: '来都来了，留个脚印再走吧（＾∀＾●）ﾉ',
+        enableQQ: 'true', 
+        meta: ['nick'],
+        requiredFields: ['nick']
     });
 </script>
+
 
     
 
