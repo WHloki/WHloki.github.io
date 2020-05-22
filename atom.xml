@@ -175,9 +175,9 @@
     
       <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
     
-      <category term="WP" scheme="http://whloki.github.io/tags/WP/"/>
-    
       <category term="BUUCTF" scheme="http://whloki.github.io/tags/BUUCTF/"/>
+    
+      <category term="WP" scheme="http://whloki.github.io/tags/WP/"/>
     
       <category term="Pwn" scheme="http://whloki.github.io/tags/Pwn/"/>
     
