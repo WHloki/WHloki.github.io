@@ -5,9 +5,9 @@
   <subtitle>Los-Kos</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://whloki.github.io/"/>
-  <updated>2020-04-17T12:40:40.473Z</updated>
-  <id>http://whloki.github.io/</id>
+  <link href="https://www.los-kos.cn/"/>
+  <updated>2020-05-22T05:03:11.093Z</updated>
+  <id>https://www.los-kos.cn/</id>
   
   <author>
     <name>whloki</name>
@@ -17,9 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="https://www.los-kos.cn/2020/05/22/untitled/"/>
+    <id>https://www.los-kos.cn/2020/05/22/untitled/</id>
+    <published>2020-05-22T04:00:00.000Z</published>
+    <updated>2020-05-22T05:03:11.093Z</updated>
+    
+    <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>模式匹配算法——KMP的从理解到不懂到再会的历程</title>
-    <link href="http://whloki.github.io/2020/04/07/bf-kmp/"/>
-    <id>http://whloki.github.io/2020/04/07/bf-kmp/</id>
+    <link href="https://www.los-kos.cn/2020/04/07/bf-kmp/"/>
+    <id>https://www.los-kos.cn/2020/04/07/bf-kmp/</id>
     <published>2020-04-07T10:20:00.000Z</published>
     <updated>2020-04-17T12:40:40.473Z</updated>
     
@@ -37,21 +63,21 @@
     </summary>
     
     
-      <category term="study" scheme="http://whloki.github.io/categories/study/"/>
+      <category term="study" scheme="https://www.los-kos.cn/categories/study/"/>
     
     
-      <category term="数据结构" scheme="http://whloki.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.los-kos.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="Algorithm" scheme="http://whloki.github.io/tags/Algorithm/"/>
+      <category term="Algorithm" scheme="https://www.los-kos.cn/tags/Algorithm/"/>
     
-      <category term="study" scheme="http://whloki.github.io/tags/study/"/>
+      <category term="study" scheme="https://www.los-kos.cn/tags/study/"/>
     
   </entry>
   
   <entry>
     <title>记一次有趣的东西及数据结构作业</title>
-    <link href="http://whloki.github.io/2020/04/07/shu-ju-jie-gou-homework/"/>
-    <id>http://whloki.github.io/2020/04/07/shu-ju-jie-gou-homework/</id>
+    <link href="https://www.los-kos.cn/2020/04/07/shu-ju-jie-gou-homework/"/>
+    <id>https://www.los-kos.cn/2020/04/07/shu-ju-jie-gou-homework/</id>
     <published>2020-04-07T01:20:00.000Z</published>
     <updated>2020-04-07T02:55:20.915Z</updated>
     
@@ -64,19 +90,19 @@
     </summary>
     
     
-      <category term="study" scheme="http://whloki.github.io/categories/study/"/>
+      <category term="study" scheme="https://www.los-kos.cn/categories/study/"/>
     
     
-      <category term="数据结构" scheme="http://whloki.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.los-kos.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="study" scheme="http://whloki.github.io/tags/study/"/>
+      <category term="study" scheme="https://www.los-kos.cn/tags/study/"/>
     
   </entry>
   
   <entry>
     <title>Discrete Math的学习历程</title>
-    <link href="http://whloki.github.io/2020/04/06/discrete-math/"/>
-    <id>http://whloki.github.io/2020/04/06/discrete-math/</id>
+    <link href="https://www.los-kos.cn/2020/04/06/discrete-math/"/>
+    <id>https://www.los-kos.cn/2020/04/06/discrete-math/</id>
     <published>2020-04-06T05:20:00.000Z</published>
     <updated>2020-04-13T10:21:32.035Z</updated>
     
@@ -90,19 +116,19 @@
     </summary>
     
     
-      <category term="study" scheme="http://whloki.github.io/categories/study/"/>
+      <category term="study" scheme="https://www.los-kos.cn/categories/study/"/>
     
     
-      <category term="study" scheme="http://whloki.github.io/tags/study/"/>
+      <category term="study" scheme="https://www.los-kos.cn/tags/study/"/>
     
-      <category term="离散数学" scheme="http://whloki.github.io/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
+      <category term="离散数学" scheme="https://www.los-kos.cn/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>烧脑的密码——花里胡哨</title>
-    <link href="http://whloki.github.io/2020/04/03/crypto/"/>
-    <id>http://whloki.github.io/2020/04/03/crypto/</id>
+    <link href="https://www.los-kos.cn/2020/04/03/crypto/"/>
+    <id>https://www.los-kos.cn/2020/04/03/crypto/</id>
     <published>2020-04-03T05:20:00.000Z</published>
     <updated>2020-04-04T14:27:47.872Z</updated>
     
@@ -116,19 +142,19 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="Crypto" scheme="http://whloki.github.io/tags/Crypto/"/>
+      <category term="Crypto" scheme="https://www.los-kos.cn/tags/Crypto/"/>
     
   </entry>
   
   <entry>
     <title>XCTF—WP</title>
-    <link href="http://whloki.github.io/2020/03/30/xctf/"/>
-    <id>http://whloki.github.io/2020/03/30/xctf/</id>
+    <link href="https://www.los-kos.cn/2020/03/30/xctf/"/>
+    <id>https://www.los-kos.cn/2020/03/30/xctf/</id>
     <published>2020-03-30T02:00:00.000Z</published>
     <updated>2020-05-06T11:46:10.343Z</updated>
     
@@ -141,23 +167,23 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="WP" scheme="http://whloki.github.io/tags/WP/"/>
+      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
-      <category term="Pwn" scheme="http://whloki.github.io/tags/Pwn/"/>
+      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
     
-      <category term="XCTF" scheme="http://whloki.github.io/tags/XCTF/"/>
+      <category term="XCTF" scheme="https://www.los-kos.cn/tags/XCTF/"/>
     
   </entry>
   
   <entry>
     <title>BUUCTF—WP</title>
-    <link href="http://whloki.github.io/2020/03/30/buuctf/"/>
-    <id>http://whloki.github.io/2020/03/30/buuctf/</id>
+    <link href="https://www.los-kos.cn/2020/03/30/buuctf/"/>
+    <id>https://www.los-kos.cn/2020/03/30/buuctf/</id>
     <published>2020-03-30T00:00:00.000Z</published>
     <updated>2020-05-06T12:25:14.045Z</updated>
     
@@ -170,23 +196,23 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="BUUCTF" scheme="http://whloki.github.io/tags/BUUCTF/"/>
+      <category term="BUUCTF" scheme="https://www.los-kos.cn/tags/BUUCTF/"/>
     
-      <category term="WP" scheme="http://whloki.github.io/tags/WP/"/>
+      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
-      <category term="Pwn" scheme="http://whloki.github.io/tags/Pwn/"/>
+      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
     
   </entry>
   
   <entry>
     <title>Pwn从入门到放弃</title>
-    <link href="http://whloki.github.io/2020/03/27/pwn-cong-ru-men-dao-fang-qi/"/>
-    <id>http://whloki.github.io/2020/03/27/pwn-cong-ru-men-dao-fang-qi/</id>
+    <link href="https://www.los-kos.cn/2020/03/27/pwn-cong-ru-men-dao-fang-qi/"/>
+    <id>https://www.los-kos.cn/2020/03/27/pwn-cong-ru-men-dao-fang-qi/</id>
     <published>2020-03-27T07:15:00.000Z</published>
     <updated>2020-04-04T14:18:43.623Z</updated>
     
@@ -199,19 +225,19 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="Pwn" scheme="http://whloki.github.io/tags/Pwn/"/>
+      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
     
   </entry>
   
   <entry>
     <title>emoji的一些使用</title>
-    <link href="http://whloki.github.io/2020/03/27/emoji/"/>
-    <id>http://whloki.github.io/2020/03/27/emoji/</id>
+    <link href="https://www.los-kos.cn/2020/03/27/emoji/"/>
+    <id>https://www.los-kos.cn/2020/03/27/emoji/</id>
     <published>2020-03-27T03:00:00.000Z</published>
     <updated>2020-04-04T14:20:38.247Z</updated>
     
@@ -224,17 +250,17 @@
     </summary>
     
     
-      <category term="花里胡哨" scheme="http://whloki.github.io/categories/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/"/>
+      <category term="花里胡哨" scheme="https://www.los-kos.cn/categories/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/"/>
     
     
-      <category term="emoji" scheme="http://whloki.github.io/tags/emoji/"/>
+      <category term="emoji" scheme="https://www.los-kos.cn/tags/emoji/"/>
     
   </entry>
   
   <entry>
     <title>第二届BJDCTF——WP</title>
-    <link href="http://whloki.github.io/2020/03/23/bjd-wp/"/>
-    <id>http://whloki.github.io/2020/03/23/bjd-wp/</id>
+    <link href="https://www.los-kos.cn/2020/03/23/bjd-wp/"/>
+    <id>https://www.los-kos.cn/2020/03/23/bjd-wp/</id>
     <published>2020-03-23T12:32:00.000Z</published>
     <updated>2020-04-04T14:23:21.132Z</updated>
     
@@ -247,21 +273,21 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="BJDCTF" scheme="http://whloki.github.io/tags/BJDCTF/"/>
+      <category term="BJDCTF" scheme="https://www.los-kos.cn/tags/BJDCTF/"/>
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="WP" scheme="http://whloki.github.io/tags/WP/"/>
+      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
   </entry>
   
   <entry>
     <title>BJDCTF——赛后总结</title>
-    <link href="http://whloki.github.io/2020/03/23/bjd/"/>
-    <id>http://whloki.github.io/2020/03/23/bjd/</id>
+    <link href="https://www.los-kos.cn/2020/03/23/bjd/"/>
+    <id>https://www.los-kos.cn/2020/03/23/bjd/</id>
     <published>2020-03-23T06:00:00.000Z</published>
     <updated>2020-04-04T14:28:41.587Z</updated>
     
@@ -274,21 +300,21 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="summary" scheme="http://whloki.github.io/tags/summary/"/>
+      <category term="summary" scheme="https://www.los-kos.cn/tags/summary/"/>
     
-      <category term="BJDCTF" scheme="http://whloki.github.io/tags/BJDCTF/"/>
+      <category term="BJDCTF" scheme="https://www.los-kos.cn/tags/BJDCTF/"/>
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
   </entry>
   
   <entry>
     <title>HTML+CSS——基本用法</title>
-    <link href="http://whloki.github.io/2020/03/13/html-css/"/>
-    <id>http://whloki.github.io/2020/03/13/html-css/</id>
+    <link href="https://www.los-kos.cn/2020/03/13/html-css/"/>
+    <id>https://www.los-kos.cn/2020/03/13/html-css/</id>
     <published>2020-03-13T09:00:00.000Z</published>
     <updated>2020-05-20T07:46:49.133Z</updated>
     
@@ -301,21 +327,21 @@
     </summary>
     
     
-      <category term="前端" scheme="http://whloki.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://www.los-kos.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="HTML" scheme="http://whloki.github.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://www.los-kos.cn/tags/HTML/"/>
     
-      <category term="CSS" scheme="http://whloki.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://www.los-kos.cn/tags/CSS/"/>
     
-      <category term="前端" scheme="http://whloki.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://www.los-kos.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>Algorithm——简单算法总结</title>
-    <link href="http://whloki.github.io/2020/03/05/algorithm/"/>
-    <id>http://whloki.github.io/2020/03/05/algorithm/</id>
+    <link href="https://www.los-kos.cn/2020/03/05/algorithm/"/>
+    <id>https://www.los-kos.cn/2020/03/05/algorithm/</id>
     <published>2020-03-05T10:13:00.000Z</published>
     <updated>2020-04-14T13:28:13.090Z</updated>
     
@@ -328,17 +354,17 @@
     </summary>
     
     
-      <category term="Algorithm" scheme="http://whloki.github.io/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://www.los-kos.cn/categories/Algorithm/"/>
     
     
-      <category term="Algorithm" scheme="http://whloki.github.io/tags/Algorithm/"/>
+      <category term="Algorithm" scheme="https://www.los-kos.cn/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>2月29日的深更半夜</title>
-    <link href="http://whloki.github.io/2020/02/29/2-yue-29-ri/"/>
-    <id>http://whloki.github.io/2020/02/29/2-yue-29-ri/</id>
+    <link href="https://www.los-kos.cn/2020/02/29/2-yue-29-ri/"/>
+    <id>https://www.los-kos.cn/2020/02/29/2-yue-29-ri/</id>
     <published>2020-02-29T14:00:00.000Z</published>
     <updated>2020-04-23T04:51:35.563Z</updated>
     
@@ -351,19 +377,19 @@
     </summary>
     
     
-      <category term="Diary" scheme="http://whloki.github.io/categories/Diary/"/>
+      <category term="Diary" scheme="https://www.los-kos.cn/categories/Diary/"/>
     
     
-      <category term="Diary" scheme="http://whloki.github.io/tags/Diary/"/>
+      <category term="Diary" scheme="https://www.los-kos.cn/tags/Diary/"/>
     
-      <category term="summary" scheme="http://whloki.github.io/tags/summary/"/>
+      <category term="summary" scheme="https://www.los-kos.cn/tags/summary/"/>
     
   </entry>
   
   <entry>
     <title>链表—Link List</title>
-    <link href="http://whloki.github.io/2020/02/18/lian-biao/"/>
-    <id>http://whloki.github.io/2020/02/18/lian-biao/</id>
+    <link href="https://www.los-kos.cn/2020/02/18/lian-biao/"/>
+    <id>https://www.los-kos.cn/2020/02/18/lian-biao/</id>
     <published>2020-02-18T04:23:34.000Z</published>
     <updated>2020-04-04T14:25:07.712Z</updated>
     
@@ -377,17 +403,17 @@
     </summary>
     
     
-      <category term="数据结构" scheme="http://whloki.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.los-kos.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="http://whloki.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.los-kos.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>CTF常用工具汇总</title>
-    <link href="http://whloki.github.io/2020/02/17/ctf-gong-ju/"/>
-    <id>http://whloki.github.io/2020/02/17/ctf-gong-ju/</id>
+    <link href="https://www.los-kos.cn/2020/02/17/ctf-gong-ju/"/>
+    <id>https://www.los-kos.cn/2020/02/17/ctf-gong-ju/</id>
     <published>2020-02-17T13:00:32.000Z</published>
     <updated>2020-04-04T14:21:06.534Z</updated>
     
@@ -401,17 +427,17 @@
     </summary>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="CTF" scheme="http://whloki.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
   </entry>
   
   <entry>
     <title>数据结构</title>
-    <link href="http://whloki.github.io/2020/02/15/shu-ju-jie-gou/"/>
-    <id>http://whloki.github.io/2020/02/15/shu-ju-jie-gou/</id>
+    <link href="https://www.los-kos.cn/2020/02/15/shu-ju-jie-gou/"/>
+    <id>https://www.los-kos.cn/2020/02/15/shu-ju-jie-gou/</id>
     <published>2020-02-15T07:44:13.000Z</published>
     <updated>2020-05-20T13:19:10.522Z</updated>
     
@@ -426,17 +452,17 @@
     </summary>
     
     
-      <category term="数据结构" scheme="http://whloki.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.los-kos.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="http://whloki.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://www.los-kos.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://whloki.github.io/2020/02/14/hello-world/"/>
-    <id>http://whloki.github.io/2020/02/14/hello-world/</id>
+    <link href="https://www.los-kos.cn/2020/02/14/hello-world/"/>
+    <id>https://www.los-kos.cn/2020/02/14/hello-world/</id>
     <published>2020-02-14T06:00:00.000Z</published>
     <updated>2020-04-04T14:19:31.812Z</updated>
     
@@ -451,10 +477,10 @@
     </summary>
     
     
-      <category term="Testing" scheme="http://whloki.github.io/categories/Testing/"/>
+      <category term="Testing" scheme="https://www.los-kos.cn/categories/Testing/"/>
     
     
-      <category term="Testing" scheme="http://whloki.github.io/tags/Testing/"/>
+      <category term="Testing" scheme="https://www.los-kos.cn/tags/Testing/"/>
     
   </entry>
   
