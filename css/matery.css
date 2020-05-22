@@ -582,6 +582,7 @@ header .go-back i {
 }
 
 .bg-cover .title {
+	font-family: '宋体';
     font-size: 3rem;
     line-height: 1.85em;
     margin-bottom: 20px;
