@@ -66,9 +66,9 @@
       <category term="study" scheme="https://www.los-kos.cn/categories/study/"/>
     
     
-      <category term="Algorithm" scheme="https://www.los-kos.cn/tags/Algorithm/"/>
-    
       <category term="数据结构" scheme="https://www.los-kos.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Algorithm" scheme="https://www.los-kos.cn/tags/Algorithm/"/>
     
       <category term="study" scheme="https://www.los-kos.cn/tags/study/"/>
     
@@ -170,11 +170,11 @@
       <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
+    
       <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
       <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
-    
-      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
       <category term="XCTF" scheme="https://www.los-kos.cn/tags/XCTF/"/>
     
@@ -199,13 +199,13 @@
       <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="BUUCTF" scheme="https://www.los-kos.cn/tags/BUUCTF/"/>
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
       <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
-      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
+      <category term="BUUCTF" scheme="https://www.los-kos.cn/tags/BUUCTF/"/>
     
-      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
+      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
     
   </entry>
   
@@ -228,9 +228,9 @@
       <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
-    
       <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
+    
+      <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
     
   </entry>
   
@@ -276,11 +276,11 @@
       <category term="CTF" scheme="https://www.los-kos.cn/categories/CTF/"/>
     
     
-      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
+      <category term="BJDCTF" scheme="https://www.los-kos.cn/tags/BJDCTF/"/>
     
       <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="BJDCTF" scheme="https://www.los-kos.cn/tags/BJDCTF/"/>
+      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
   </entry>
   
@@ -305,9 +305,9 @@
     
       <category term="summary" scheme="https://www.los-kos.cn/tags/summary/"/>
     
-      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
-    
       <category term="BJDCTF" scheme="https://www.los-kos.cn/tags/BJDCTF/"/>
+    
+      <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
   </entry>
   
