@@ -1,1290 +1,158 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Los-Kos - Los-Kos</title><meta name="description" content="计算机小萌新，努力成为一名优秀的CTFer"><meta name="keywords" content="算法,编程,CTF"><meta name="author" content="Los-kos"><meta name="copyright" content="Los-kos"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Los-Kos"><meta name="twitter:description" content="计算机小萌新，努力成为一名优秀的CTFer"><meta name="twitter:image" content="https://www.los-kos.cn/img/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="Los-Kos"><meta property="og:url" content="https://www.los-kos.cn/"><meta property="og:site_name" content="Los-Kos"><meta property="og:description" content="计算机小萌新，努力成为一名优秀的CTFer"><meta property="og:image" content="https://www.los-kos.cn/img/avatar.png"><meta property="article:published_time" content="2020-06-01T05:13:02.889Z"><meta property="article:modified_time" content="2020-06-01T05:13:02.889Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
 
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="算法,编程,CTF">
-    <meta name="description" content="计算机小萌新，努力成为一名优秀的CTFer">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Los-Kos</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.1/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-	<script>
-    var _hmt = _hmt || [];
-	(function() {
-	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?8156eb470c2d34104408dd52ad3f8182";
-	var s = document.getElementsByTagName("script")[0]; 
-	s.parentNode.insertBefore(hm, s);
-	})();
-	</script> 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Los-Kos" type="application/atom+xml">
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://www.los-kos.cn/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isSidebar: false  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Los-Kos" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Los-Kos" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
-
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="head-container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/6.gif" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">Los-Kos</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/navigate" class="waves-effect waves-light">
-      
-      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
-      
-      <span>导航</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/6.gif" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">Los-Kos</div>
-        <div class="logo-desc">
-            
-            计算机小萌新，努力成为一名优秀的CTFer
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/navigate" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-location-arrow"></i>
-			
-			导航
-		</a>
-          
-        </li>
-        
-        
-    </ul>
-</div>
-
-        </div>
-
-        
-    </nav>
-
-</header>
-
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item white white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                Los-Kos
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['O(￣▽￣)╭  Ohohoho.....','o(●&#39;◡&#39;●)ノ  Go for it！Just do it！'],
-                        startDelay: 200,
-                        typeSpeed: 200,
-                        loop: true,
-                        backSpeed: 200,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/WHloki" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-    
-
-
-        
-
-                
-
-                        
-
-                                
-                                    <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
-                                        <i class="fab fa-weibo"></i>
-                                    </a>
-                                    
-
-                                     
-  
-
-                                        
-
-                                                
-
-                                                        
-                                                            <a href="mailto:1845199691@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-                                                                <i class="fas fa-envelope-open"></i>
-                                                            </a>
-                                                            </div>
-        </div>
-    </div>
-
-    
-</div>
-
-<script>
-    // TODO 此处的轮播尚需优化，PC/Mobile 在触摸切换时都感觉相当不灵活
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'false' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-
-        function restartPlay() {
-            
-        };
-
-        
-    });
-</script>
-
-
-
-<main class="content">
-
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;Tips
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            本站主要是记录我的学习内容，分享一些新知识，也会更新一些花里胡哨的东西和新学的技术；如有问题，请在留言板留言，24小时内定会回复；想交换友链的朋友去友情链接页面，那里有说明；蟹蟹合作ヾ(≧ ▽ ≦)ゝ
-        </div>
-    </div>
-</div>
-                    
-
-                    
-                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fas fa-music"></i>&nbsp;&nbsp;Listen to music
-        </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="tencent"
-                   type="playlist"
-                   id="7575887431"
-                   fixed='false'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-                        
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/22/untitled/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="test">
-                            
-                            <span class="card-title">test</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><div id="body-wrap"><div class="full_page" id="nav" style="background-image: url(https://i.loli.net/2020/05/01/IuWi8QbHvzjlOPw.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Los-Kos</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="site-info"><h1 id="site_title">Los-Kos</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/jerryc127" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:xxxxxxx@gmail.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div><div id="scroll_down"><i class="fa fa-angle-down scroll-down-effects"></i></div></div><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/22/untitled/" title="test">     <img class="post_bg" src="/img/featureimages/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/22/untitled/" title="test">test</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-22 12:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-05-22</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/Testtt/">Testtt</a></span></div><div class="content">
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
-            if (!el.dataset.src) { return
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-22
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Los-kos
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/04/07/bf-kmp/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="模式匹配算法——KMP的从理解到不懂到再会的历程">
-                            
-                            <span class="card-title">模式匹配算法——KMP的从理解到不懂到再会的历程</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                对KMP算法的深度研究
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/study/" class="post-category">
-                                    study
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                            <span class="chip bg-color">数据结构</span>
-                        </a>
-                        
-                        <a href="/tags/Algorithm/">
-                            <span class="chip bg-color">Algorithm</span>
-                        </a>
-                        
-                        <a href="/tags/study/">
-                            <span class="chip bg-color">study</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/04/07/shu-ju-jie-gou-homework/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="记一次有趣的东西及数据结构作业">
-                            
-                            <span class="card-title">记一次有趣的东西及数据结构作业</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                来一次数据结构的头脑风暴
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/study/" class="post-category">
-                                    study
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                            <span class="chip bg-color">数据结构</span>
-                        </a>
-                        
-                        <a href="/tags/study/">
-                            <span class="chip bg-color">study</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/04/06/discrete-math/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Discrete Math的学习历程">
-                            
-                            <span class="card-title">Discrete Math的学习历程</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                带你走进离散数学的神秘世界
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/study/" class="post-category">
-                                    study
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/study/">
-                            <span class="chip bg-color">study</span>
-                        </a>
-                        
-                        <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
-                            <span class="chip bg-color">离散数学</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/04/03/crypto/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="烧脑的密码——花里胡哨">
-                            
-                            <span class="card-title">烧脑的密码——花里胡哨</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                积累各种Crypto，研究花里胡哨的Crypto
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/Crypto/">
-                            <span class="chip bg-color">Crypto</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/30/xctf/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="XCTF—WP">
-                            
-                            <span class="card-title">XCTF—WP</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                XCTF刷题的wp
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/WP/">
-                            <span class="chip bg-color">WP</span>
-                        </a>
-                        
-                        <a href="/tags/Pwn/">
-                            <span class="chip bg-color">Pwn</span>
-                        </a>
-                        
-                        <a href="/tags/XCTF/">
-                            <span class="chip bg-color">XCTF</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/30/buuctf/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="BUUCTF—WP">
-                            
-                            <span class="card-title">BUUCTF—WP</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                BUUCTF刷题的wp
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/WP/">
-                            <span class="chip bg-color">WP</span>
-                        </a>
-                        
-                        <a href="/tags/BUUCTF/">
-                            <span class="chip bg-color">BUUCTF</span>
-                        </a>
-                        
-                        <a href="/tags/Pwn/">
-                            <span class="chip bg-color">Pwn</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/27/pwn-cong-ru-men-dao-fang-qi/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Pwn从入门到放弃">
-                            
-                            <span class="card-title">Pwn从入门到放弃</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                在线教pwn如何从入门到放弃
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/Pwn/">
-                            <span class="chip bg-color">Pwn</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/27/emoji/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="emoji的一些使用">
-                            
-                            <span class="card-title">emoji的一些使用</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                个性化操作，值得一看
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/" class="post-category">
-                                    花里胡哨
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/emoji/">
-                            <span class="chip bg-color">emoji</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
-
-</main>
+            if (!el.dataset.src) { return; }
+            const img = do ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/07/bf-kmp/" title="模式匹配算法——KMP的从理解到不懂到再会的历程">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="模式匹配算法——KMP的从理解到不懂到再会的历程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/07/bf-kmp/" title="模式匹配算法——KMP的从理解到不懂到再会的历程">模式匹配算法——KMP的从理解到不懂到再会的历程</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-07 18:20:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/study/">study</a></span></div><div class="content">这篇博文基于我之前的数据结构那篇文章，里面的”串”那一章最后剩下的KMP算法没有讲；
+今天上课，老师成功地把我会的KMP讲成不会的啦（没说讲的不好）🙃
+BF算法先讲讲BF算法：
+暴风(Brute Force)算法是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字
+符 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/07/shu-ju-jie-gou-homework/" title="记一次有趣的东西及数据结构作业">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次有趣的东西及数据结构作业"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/07/shu-ju-jie-gou-homework/" title="记一次有趣的东西及数据结构作业">记一次有趣的东西及数据结构作业</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-07 09:20:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/study/">study</a></span></div><div class="content">最近复习数据结构，发现了一些有趣的东西，哈哈哈，记录一下；
 
 
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
+汉诺塔汉诺塔相信大家都略有耳闻，这里就不多解释；
+数据结构课上，讲到了汉诺塔问题——“利用递归求解移动过程”，那我就不得不拿出来以前的代码（不，还是自己
+回忆写一下比较好😄），这个其实早就学过了，之前刷acm的题目，做过好几道汉诺塔问 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/06/discrete-math/" title="Discrete Math的学习历程">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math的学习历程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/06/discrete-math/" title="Discrete Math的学习历程">Discrete Math的学习历程</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-06 13:20:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-06</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/study/">study</a></span></div><div class="content">大一下的课程真的好多，连水课都无；学个离散还晕头转向的，上直播课根本听不进去😭，所以还得占用周末时
+间补习功课，这篇博客就整理一些离散数学用的比较多的公式呀，定理呀……什么的，嘿嘿嘿
 
 
-
-<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tperch/jsd/instantclick-1.2.2.js" type="module"></script>
-
-
-    <footer class="page-footer bg-color">
-    
-                <div class="container row center-align" style="margin-bottom: 15px !important;">
-                    <div class="col s12 m8 l8 copy-right">
-                        Copyright&nbsp;&copy;
-                        <span id="year">2020</span>
-                        <a href="https://www.los-kos.cn" target="_blank">
-                            Los-kos
-                        </a>
-                        |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;
-                        <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-                        <br>
-                        
-                            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">33.5k</span>&nbsp;字
-                            
-                                
-                                    
-                                        
-                                            
-                                                
-                                                    <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量PV:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-                                                    </span>
-                                                    
-                                                        
-                                                            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数UV:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-                                                            </span>
-                                                            
-                                                                <br>
-                                                                
-                                                                    <span id="sitetime">载入运行时间...</span>
-                                                                    <script>
-                                                                        function siteTime() {
-                                                                            var seconds = 1000;
-                                                                            var minutes = seconds * 60;
-                                                                            var hours = minutes * 60;
-                                                                            var days = hours * 24;
-                                                                            var years = days * 365;
-                                                                            var today = new Date();
-                                                                            var startYear = "2020";
-                                                                            var startMonth = "5";
-                                                                            var startDate = "21";
-                                                                            var startHour = "0";
-                                                                            var startMinute = "0";
-                                                                            var startSecond = "0";
-                                                                            var todayYear = today.getFullYear();
-                                                                            var todayMonth = today.getMonth() + 1;
-                                                                            var todayDate = today.getDate();
-                                                                            var todayHour = today.getHours();
-                                                                            var todayMinute = today.getMinutes();
-                                                                            var todaySecond = today.getSeconds();
-                                                                            var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                                                                            var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                                                                            var diff = t2 - t1;
-                                                                            var diffYears = Math.floor(diff / years);
-                                                                            var diffDays = Math.floor((diff / days) - diffYears * 365);
-                                                                            var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                                                                            var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                                                                                minutes);
-                                                                            var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                                                                                diffMinutes * minutes) / seconds);
-                                                                            if (startYear == todayYear) {
-                                                                                document.getElementById("year").innerHTML = todayYear;
-                                                                                document.getElementById("sitetime").innerHTML = "O(￣▽￣)o .z Z 本站已安全运行 " + diffDays + " 天 " + diffHours +
-                                                                                    " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                                                                            } else {
-                                                                                document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                                                                                document.getElementById("sitetime").innerHTML = "O(￣▽￣)o .z Z 本站已安全运行 " + diffYears + " 年 " + diffDays +
-                                                                                    " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                                                                            }
-                                                                        }
-                                                                        setInterval(siteTime, 1000);
-                                                                    </script>
-                                                                    
-                                                                        <br>
-														
-			<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script> 
-            <script type="text/javascript">  
-            document.write('Hi~ o(*￣▽￣*)ブ:' + returnCitySN["cname"]+'的朋友' + ",您的IP:" + returnCitySN["cip"] + ",浏览器版本:"+getBrowserInfo());
-        function getBrowserInfo()
-{
-    var agent = navigator.userAgent.toLowerCase() ;
-    var regStr_ie = /msie [\d.]+;/gi ;
-    var regStr_ff = /firefox\/[\d.]+/gi
-    var regStr_chrome = /chrome\/[\d.]+/gi ;
-    var regStr_saf = /safari\/[\d.]+/gi ;
-    //IE
-    if(agent.indexOf("msie") > 0)
-    {
-        return agent.match(regStr_ie) ;
-    }
-    //firefox
-    if(agent.indexOf("firefox") > 0)
-    {
-        return agent.match(regStr_ff) ;
-    }
-    //Chrome
-    if(agent.indexOf("chrome") > 0)
-    {
-        return agent.match(regStr_chrome) ;
-    }
-    //Safari
-    if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
-    {
-        return agent.match(regStr_saf) ;
-    }
-}
-</script> 
-						
+等值式1、双重否定律：
+​        ┐┐A ⇔ A
+2、幂等律：
+​        A∧A ⇔ A
+​  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/03/crypto/" title="烧脑的密码——花里胡哨">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="烧脑的密码——花里胡哨"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/03/crypto/" title="烧脑的密码——花里胡哨">烧脑的密码——花里胡哨</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-03 13:20:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a></span></div><div class="content">最近学习pwn，又累又自闭=_=我觉得还得抓抓crypto才行，主打pwn，副业crypto，perfect ！！😊
+这篇博文就对crypto做个小总结吧，会不定时的更新，毕竟现在学的也不都多，学无止境哈哈哈；
 
 
-                                                                        
-                    </div>
-                    <div class="col s12 m4 l4 social-link social-statis">
-                        
-    <a href="https://github.com/WHloki" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-    
+16进制—&gt;文本这个是我做题以来，用到的最多的一种
+解密网站1：16进制文本 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/30/xctf/" title="XCTF—WP">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XCTF—WP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/30/xctf/" title="XCTF—WP">XCTF—WP</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-30 10:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-03-30</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a></span></div><div class="content">这篇博客呢，就记录一些平时在XCTF刷的题目的wp，可能整理不开，会分支放；
 
 
-        
+Hello_pwn这个算是第一篇wp了吧，不足之处，还请多多指教；
+拿到题目，按照惯例，先查看保护机制：
 
-                
+可以看到，开了NX，未开canary，丢进ida查看伪代码：
 
-                        
-
-                                
-                                    <a href="https://weibo.com/u/6621312895" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6621312895" data-position="top" data-delay="50">
-                                        <i class="fab fa-weibo"></i>
-                                    </a>
-                                    
-
-                                     
-  
-
-                                        
-
-                                                
-
-                                                        
-                                                            <a href="mailto:1845199691@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-                                                                <i class="fas fa-envelope-open"></i>
-                                                            </a>
-                                                            
-                    </div>
-                </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-$(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
-});
-</script>
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
+可以看到这里，先读取一个字符串，再判断如果dw ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/30/buuctf/" title="BUUCTF—WP">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUUCTF—WP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/30/buuctf/" title="BUUCTF—WP">BUUCTF—WP</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-30 08:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-03-30</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a></span></div><div class="content">上一篇写的是XCTF的wp，那这篇博客，就记录一些在BUUCTF刷题的wp；
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+rip这道题拿过来，还是先看保护机制：
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+这、这、这个什么保护都没开😂，看样子不难，丢进ida查看伪代码：
 
+这个意思就是，先读取一个字符串，然后输出这个字符串，然后就没有啦；
+再看有个fun()函数，点进去：
 
-    <!-- Baidu Analytics -->
-
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?8156eb470c2d34104408dd52ad3f8182";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
-    <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-    
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
-
-    
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+这 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/27/pwn-cong-ru-men-dao-fang-qi/" title="Pwn从入门到放弃">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pwn从入门到放弃"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/27/pwn-cong-ru-men-dao-fang-qi/" title="Pwn从入门到放弃">Pwn从入门到放弃</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-27 15:15:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-03-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a></span></div><div class="content">我是一名CTF小白，主学习pwn，初学不久，几乎刚入门，现在说说如何“从入门到放弃”：
 
 
-</body>
-
-</html>
-
-<script type="text/javascript" src="/js/click_show_text.js"></script>
+pwntools的介绍首先需要学习的是pwntools，这个也是我刚开始入门就学的东西；那么先来了解一下pwntools：
+什么是pwntools？pwntools是一个二进制利用框架，是CTF框架和漏洞利用 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/27/emoji/" title="emoji的一些使用">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="emoji的一些使用"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/27/emoji/" title="emoji的一些使用">emoji的一些使用</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-27 11:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-03-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/">花里胡哨</a></span></div><div class="content">之前看堆堆的blog有emoji，感觉能给博客增加一份光彩，我也整个一个；嘿嘿嘿 \(^o^)/😂
 
 
-
-
-
+首先来配置一个插件：
+$ npm install hexo-filter-github-emojis --save
+然后在Hexo的根目录下的_config.yml中，新增一下的配置项：
+git ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Los-kos</div><div class="author-info__description">计算机小萌新，努力成为一名优秀的CTFer</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">18</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">20</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">9</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jerryc127" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:xxxxxxx@gmail.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/05/22/untitled/"><div class="aside-post-cover"><img class="aside-post-bg" src="/img/featureimages/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="test" alt="test"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/05/22/untitled/" title="test">test</div><time class="aside-post_meta post-meta__date" title="发表于 2020-05-22 12:00:00">2020-05-22</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/07/bf-kmp/"><div class="aside-post-cover"><img class="aside-post-bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="模式匹配算法——KMP的从理解到不懂到再会的历程" alt="模式匹配算法——KMP的从理解到不懂到再会的历程"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/07/bf-kmp/" title="模式匹配算法——KMP的从理解到不懂到再会的历程">模式匹配算法——KMP的从理解到不懂到再会的历程</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-07 18:20:00">2020-04-07</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/07/shu-ju-jie-gou-homework/"><div class="aside-post-cover"><img class="aside-post-bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="记一次有趣的东西及数据结构作业" alt="记一次有趣的东西及数据结构作业"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/07/shu-ju-jie-gou-homework/" title="记一次有趣的东西及数据结构作业">记一次有趣的东西及数据结构作业</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-07 09:20:00">2020-04-07</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/06/discrete-math/"><div class="aside-post-cover"><img class="aside-post-bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Discrete Math的学习历程" alt="Discrete Math的学习历程"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/06/discrete-math/" title="Discrete Math的学习历程">Discrete Math的学习历程</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-06 13:20:00">2020-04-06</time></div></a></div><div class="aside-recent-post"><a href="/2020/04/03/crypto/"><div class="aside-post-cover"><img class="aside-post-bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="烧脑的密码——花里胡哨" alt="烧脑的密码——花里胡哨"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/04/03/crypto/" title="烧脑的密码——花里胡哨">烧脑的密码——花里胡哨</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-03 13:20:00">2020-04-03</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Diary/"><span class="card-category-list-name">Diary</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Testing/"><span class="card-category-list-name">Testing</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Testtt/"><span class="card-category-list-name">Testtt</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/study/"><span class="card-category-list-name">study</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">2</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Algorithm/" style="font-size: 17.5px; color: #999da3">Algorithm</a> <a href="/tags/BJDCTF/" style="font-size: 17.5px; color: #999da3">BJDCTF</a> <a href="/tags/BUUCTF/" style="font-size: 16px; color: #999">BUUCTF</a> <a href="/tags/CSS/" style="font-size: 16px; color: #999">CSS</a> <a href="/tags/CTF/" style="font-size: 22px; color: #99a9bf">CTF</a> <a href="/tags/Crypto/" style="font-size: 16px; color: #999">Crypto</a> <a href="/tags/Diary/" style="font-size: 16px; color: #999">Diary</a> <a href="/tags/HTML/" style="font-size: 16px; color: #999">HTML</a> <a href="/tags/Pwn/" style="font-size: 19px; color: #99a1ac">Pwn</a> <a href="/tags/TTTest/" style="font-size: 16px; color: #999">TTTest</a> <a href="/tags/Testing/" style="font-size: 16px; color: #999">Testing</a> <a href="/tags/WP/" style="font-size: 19px; color: #99a1ac">WP</a> <a href="/tags/XCTF/" style="font-size: 16px; color: #999">XCTF</a> <a href="/tags/emoji/" style="font-size: 16px; color: #999">emoji</a> <a href="/tags/study/" style="font-size: 19px; color: #99a1ac">study</a> <a href="/tags/summary/" style="font-size: 17.5px; color: #999da3">summary</a> <a href="/tags/test/" style="font-size: 16px; color: #999">test</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 16px; color: #999">前端</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 20.5px; color: #99a5b6">数据结构</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 16px; color: #999">离散数学</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">5</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">18</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="6/7/2018 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Los-kos</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@3/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: '今日事&#44;今日畢,Never put off till tomorrow what you can do today'.split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: false,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '今日事&#44;今日畢'
+}</script></body></html>
