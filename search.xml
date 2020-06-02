@@ -8,7 +8,7 @@
       <link href="/2020/05/22/untitled/"/>
       <url>/2020/05/22/untitled/</url>
       
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/avatar.jpg" alt="test"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> Algorithm </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> study </tag>
             
@@ -157,11 +157,11 @@
       
         <tags>
             
+            <tag> CTF </tag>
+            
             <tag> WP </tag>
             
             <tag> Pwn </tag>
-            
-            <tag> CTF </tag>
             
             <tag> XCTF </tag>
             
@@ -188,13 +188,13 @@
       
         <tags>
             
-            <tag> BUUCTF </tag>
+            <tag> CTF </tag>
             
             <tag> WP </tag>
             
-            <tag> Pwn </tag>
+            <tag> BUUCTF </tag>
             
-            <tag> CTF </tag>
+            <tag> Pwn </tag>
             
         </tags>
       
@@ -219,9 +219,9 @@
       
         <tags>
             
-            <tag> Pwn </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> Pwn </tag>
             
         </tags>
       
@@ -271,11 +271,11 @@
       
         <tags>
             
-            <tag> WP </tag>
+            <tag> BJDCTF </tag>
             
             <tag> CTF </tag>
             
-            <tag> BJDCTF </tag>
+            <tag> WP </tag>
             
         </tags>
       
@@ -302,9 +302,9 @@
             
             <tag> summary </tag>
             
-            <tag> CTF </tag>
-            
             <tag> BJDCTF </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       

@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Student &amp; CTFer</description>
-    <pubDate>Mon, 01 Jun 2020 06:07:33 GMT</pubDate>
+    <pubDate>Tue, 02 Jun 2020 03:47:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -24,7 +24,7 @@
       </description>
       
       
-      <content:encoded><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      <content:encoded><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/avatar.jpg" alt="test"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
       
       <comments>https://www.los-kos.cn/2020/05/22/untitled/#disqus_thread</comments>
     </item>
