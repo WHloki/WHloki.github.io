@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Los-Kos</title>
   
-  
+  <subtitle>OwO</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.los-kos.cn/"/>
