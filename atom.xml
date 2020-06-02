@@ -60,9 +60,9 @@
       <category term="study" scheme="https://www.los-kos.cn/categories/study/"/>
     
     
-      <category term="Algorithm" scheme="https://www.los-kos.cn/tags/Algorithm/"/>
-    
       <category term="数据结构" scheme="https://www.los-kos.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="Algorithm" scheme="https://www.los-kos.cn/tags/Algorithm/"/>
     
       <category term="study" scheme="https://www.los-kos.cn/tags/study/"/>
     
@@ -193,9 +193,9 @@
     
       <category term="CTF" scheme="https://www.los-kos.cn/tags/CTF/"/>
     
-      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
-    
       <category term="BUUCTF" scheme="https://www.los-kos.cn/tags/BUUCTF/"/>
+    
+      <category term="WP" scheme="https://www.los-kos.cn/tags/WP/"/>
     
       <category term="Pwn" scheme="https://www.los-kos.cn/tags/Pwn/"/>
     
