@@ -126,7 +126,55 @@ function activateLightMode(){
             });
             document.body.appendChild(img);
           });
-      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Los-kos</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.los-kos.cn/2020/02/29/2-yue-29-ri/">https://www.los-kos.cn/2020/02/29/2-yue-29-ri/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.los-kos.cn" target="_blank">Los-Kos</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Diary/">Diary</a><a class="post-meta__tags" href="/tags/summary/">summary</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/featureimages/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/w.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/z.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/03/05/algorithm/"><img class="prev_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/6.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Algorithm——简单算法总结</div></div></a></div><div class="next-post pull_right"><a href="/2020/02/18/lian-biao/"><img class="next_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/4.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">链表—Link List</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Los-kos</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.los-kos.cn/2020/02/29/2-yue-29-ri/">https://www.los-kos.cn/2020/02/29/2-yue-29-ri/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.los-kos.cn" target="_blank">Los-Kos</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Diary/">Diary</a><a class="post-meta__tags" href="/tags/summary/">summary</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/featureimages/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div id="article-container"><div class="post-timecount"></div><script>var now = new Date()
+now = now.getTime() // 当前时间戳
+
+var postinfo = document.getElementsByClassName("post-meta__date-created")[0]
+var postinfo__date_created = new Date(postinfo.title.split(" ")[1].replace(/-/,"/"))
+postinfo__date_created = postinfo__date_created.getTime() // 文章发布时间戳
+//console.log("文章创建时间",postinfo__date_created)
+
+var datepassing = parseInt(now - postinfo__date_created)
+//console.log("过期时间",datepassing)
+// 超过31天提示：3600*24*31*1000
+if(datepassing > 2678400000){
+    var timecount = document.getElementsByClassName("post-timecount")[0]
+    var out = parseInt(datepassing / 86400000)
+    timecount.innerHTML = "<div class=\"note info\"><p><strong>文章有效性提示</strong><br>这是一篇创建于 " + out + " 天前的文章，其中的信息可能已经有所发展或是发生改变。</p></div>"
+}</script><div class="post-content"><p>这篇博客呢就闲聊一点吧，反正今天也是一个特殊的日子；</p>
+<a id="more"></a>
+
+<p>​        寒假到今天为止50天了，因为疫情原因，大把好时光就这么浪费了，真是难过又觉得可惜，先自我作个总结吧：</p>
+<p>​        从寒假第一天开始，玩了一个多星期的王者荣耀（自己很不务正业），想着自己还有任务，赶紧学习，还来得及其实，但是吧，我这人，虽说自觉性很高，但是吧，想耐住性子学习还真不容易；</p>
+<p>​        况且，我们任务学习汇编和PHP。这种底层语言真的是很无聊，学着就想吐；刚开始接触PHP的时候感觉很好玩，但是学了一段时间，发现，它的语法还有格式对我这种强迫症来讲，算了算了吧，实在是驾驭不了；</p>
+<p>​        我就重点学习汇编，汇编说实话，更麻烦，枯燥无味，很繁琐，可能受C，C++的影响，底层语言真的是无话可说，顿时感觉高级语言好玩；</p>
+<p>​        讲真的，想过放弃，但是某一天，堆堆给了我XCTF的链接，我一进去，哇塞，好酷的页面，瞬间又有了学习的动力，我就注册账号，发现题目不是想象的那样，太难了；但是没关系，谁能一开始就觉得简单呢，我就边玩边学，耐得住性子，坐在写字桌前面看书看视频，开头难但是还得学好。。。</p>
+<p>​        第一次做出来一道CTF的题目的时候，我那心情，别提有多高兴，题目考验的不仅仅是思维能力，还有计算能力，使用工具的能力，印象最深的是一道P二维码的题目，为了做它，新学了一点PS基础，P了一个晚上还没出来，心态没了；</p>
+<p>​        再后来，老师收集学习进度说还得整blog（一提到blog我就来气），看着教程做都做不出来，多亏了柠檬大佬，才有了今天在这里写似日记非日记的东西（嘻嘻嘻）；</p>
+<p>​        最近，又得学习Python，还得装虚拟机，虚拟机更是麻烦，所有的错误情况我都遇见了估计，没有比我还倒霉的啦，现在还没装，没心情了，想着尽快把Python基础学完才行，才能进行下一个学习计划；</p>
+<p>、</p>
+<p>、</p>
+<p>、</p>
+<p>长路漫漫，为了拿offer，为了将来，加油干<del>~</del></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Los-kos</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.los-kos.cn/2020/02/29/2-yue-29-ri/">https://www.los-kos.cn/2020/02/29/2-yue-29-ri/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.los-kos.cn" target="_blank">Los-Kos</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Diary/">Diary</a><a class="post-meta__tags" href="/tags/summary/">summary</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/featureimages/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/w.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/z.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/03/05/algorithm/"><img class="prev_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/6.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Algorithm——简单算法总结</div></div></a></div><div class="next-post pull_right"><a href="/2020/02/18/lian-biao/"><img class="next_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/4.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">链表—Link List</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
   var from = from
   var setting = set.split(',').filter(function(item){
   return from.indexOf(item) > -1

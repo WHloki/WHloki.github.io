@@ -147,7 +147,76 @@ function activateLightMode(){
             });
             document.body.appendChild(img);
           });
-      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Los-kos</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.los-kos.cn/2020/02/17/ctf-gong-ju/">https://www.los-kos.cn/2020/02/17/ctf-gong-ju/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.los-kos.cn" target="_blank">Los-Kos</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/featureimages/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/w.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/z.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/02/18/lian-biao/"><img class="prev_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/4.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">链表—Link List</div></div></a></div><div class="next-post pull_right"><a href="/2020/02/15/shu-ju-jie-gou/"><img class="next_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/2.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据结构</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Los-kos</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.los-kos.cn/2020/02/17/ctf-gong-ju/">https://www.los-kos.cn/2020/02/17/ctf-gong-ju/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.los-kos.cn" target="_blank">Los-Kos</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/featureimages/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div id="article-container"><div class="post-timecount"></div><script>var now = new Date()
+now = now.getTime() // 当前时间戳
+
+var postinfo = document.getElementsByClassName("post-meta__date-created")[0]
+var postinfo__date_created = new Date(postinfo.title.split(" ")[1].replace(/-/,"/"))
+postinfo__date_created = postinfo__date_created.getTime() // 文章发布时间戳
+//console.log("文章创建时间",postinfo__date_created)
+
+var datepassing = parseInt(now - postinfo__date_created)
+//console.log("过期时间",datepassing)
+// 超过31天提示：3600*24*31*1000
+if(datepassing > 2678400000){
+    var timecount = document.getElementsByClassName("post-timecount")[0]
+    var out = parseInt(datepassing / 86400000)
+    timecount.innerHTML = "<div class=\"note info\"><p><strong>文章有效性提示</strong><br>这是一篇创建于 " + out + " 天前的文章，其中的信息可能已经有所发展或是发生改变。</p></div>"
+}</script><div class="post-content"><p>假期做了很多CTF的题目，刚学没多久，只会简单的MISC和CRYPTO，网上搜集各种解密类型，</p>
+<p>一个个去尝试，先整理一波；</p>
+<a id="more"></a>
+
+<p>整理这个是因为收藏夹满了，工具堆叠太多（噗哈哈哈，其实因为自己太懒，不想做题的时候再去搜），话不多说</p>
+<p>直接上网址；</p>
+<h4 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h4><p>之前就喜欢密码学，了解的不是很多，但是感觉超厉害！！！Very Good！！！</p>
+<p>做了题目知道了很多密码：Base64，ROT13，摩斯密码，凯撒密码，栅栏密码，幂数加密（计算就可以，或者写</p>
+<p>个脚本），RSA加密（到现在还没看懂原理emmm）</p>
+<p><a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">16进制文本转换</a>   </p>
+<p><a href="http://tool.chinaz.com/Tools/Base64.aspx" target="_blank" rel="noopener">Base64</a>    </p>
+<p><a href="https://tool.lu/morse/" target="_blank" rel="noopener">Morse</a>  </p>
+<p><a href="https://www.qqxiuzi.cn/bianma/kaisamima.php" target="_blank" rel="noopener">Caesar</a> </p>
+<p><a href="https://www.jisuan.mobi/puzzm6z1B1HH6yXW.html" target="_blank" rel="noopener">ROT13</a> </p>
+<p><a href="http://www.atoolbox.net/Tool.php?Id=777" target="_blank" rel="noopener">W型栅栏密码</a>  </p>
+<p><a href="https://www.sojson.com/encrypt_aes.html" target="_blank" rel="noopener">AES</a> </p>
+<p><a href="https://www.sojson.com/encrypt_rabbit.html" target="_blank" rel="noopener">Rabbit</a>   </p>
+<p><a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">Ook</a> </p>
+<p><a href="https://tool.bugku.com/brainfuck/?wafcloud=1" target="_blank" rel="noopener">Brainfuck</a>  </p>
+<p><a href="http://serpent.online-domain-tools.com/" target="_blank" rel="noopener">serpent</a>  </p>
+<p><a href="http://web.chacuo.net/charsetquotedprintable" target="_blank" rel="noopener">Quoted-printable</a>  </p>
+<p><a href="https://pmd5.com/" target="_blank" rel="noopener">MD5</a></p>
+<p><a href="http://code.mcdvisa.com" target="_blank" rel="noopener">中文电码</a></p>
+<p><a href="https://quipqiup.com/" target="_blank" rel="noopener">quipqiup</a> </p>
+<p><a href="http://www.atoolbox.net/Category.php?Id=27" target="_blank" rel="noopener">加密解密工具</a></p>
+<p><a href="https://blog.csdn.net/weixin_42037232/article/details/89018997?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">密码积累</a></p>
+<h4 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h4><p>杂项题目更头疼，五花八门的解密方法，确实让人头疼。还得精通ps（真是佩服），有一道p二维码的题，p了一</p>
+<p>个晚上；</p>
+<p><a href="https://www.sojson.com/qr/deqr.html" target="_blank" rel="noopener">二维码</a></p>
+<p><a href="https://app.xunjiepdf.com/pdf2word/" target="_blank" rel="noopener">PDF转-&gt;</a></p>
+<p><a href="http://keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">与佛论禅</a></p>
+<p><a href="http://hi.pcmoe.net/buddha.html" target="_blank" rel="noopener">新约佛论禅</a></p>
+<h4 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h4><p><a href="http://ctf.ssleye.com/?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">CTF在线工具</a></p>
+<p><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">CTF资源库</a></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>CTF是个很好玩的“游戏”，现在虽然是个小白，但是我要努力成为大佬，题目越做越多，后面再进行整理。</p>
+<p>Fighting！</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Los-kos</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.los-kos.cn/2020/02/17/ctf-gong-ju/">https://www.los-kos.cn/2020/02/17/ctf-gong-ju/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.los-kos.cn" target="_blank">Los-Kos</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/featureimages/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/w.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/z.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/02/18/lian-biao/"><img class="prev_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/4.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">链表—Link List</div></div></a></div><div class="next-post pull_right"><a href="/2020/02/15/shu-ju-jie-gou/"><img class="next_cover" src="https://cdn.jsdelivr.net/gh/whloki/cdn@1.2/img/featureimages/2.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/whloki/cdn@1.1/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据结构</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
   var from = from
   var setting = set.split(',').filter(function(item){
   return from.indexOf(item) > -1
