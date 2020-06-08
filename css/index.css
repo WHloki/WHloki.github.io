@@ -2507,8 +2507,11 @@ blockquote footer cite:before {
   text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.15);
   font-weight: bold;
   cursor: pointer;
-  font-family: "隶书";
-  font-size: 30px;
+  font-family: "宋体";
+  font-size: 40px;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -16px;
 }
 #page-header .menus_items {
   display: inline;
@@ -2606,13 +2609,20 @@ blockquote footer cite:before {
   text-shadow: 0.05rem 0.05rem 0.1rem rgba(0,0,0,0.3);
   font-size: 0.7rem;
   cursor: pointer;
+  font-size: 17px;
+  font-family: "宋体";
 }
 @media screen and (min-width: 768px) {
   #nav #site_title {
-    font-size: 2rem;
+    font-size: 57px;
+    font-family: "宋体";
+    position: absolute;
+    margin-left: 32rem;
+    margin-top: -5rem;
   }
   #nav #site_subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-family: "宋体";
   }
 }
 @media screen and (max-width: 768px) {
