@@ -2507,6 +2507,8 @@ blockquote footer cite:before {
   text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.15);
   font-weight: bold;
   cursor: pointer;
+  font-family: "隶书";
+  font-size: 30px;
 }
 #page-header .menus_items {
   display: inline;
