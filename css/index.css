@@ -2616,9 +2616,6 @@ blockquote footer cite:before {
   #nav #site_title {
     font-size: 57px;
     font-family: "宋体";
-    position: absolute;
-    margin-left: 32rem;
-    margin-top: -5rem;
   }
   #nav #site_subtitle {
     font-size: 1.3rem;
