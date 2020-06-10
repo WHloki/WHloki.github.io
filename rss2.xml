@@ -31,19 +31,19 @@
     
     <item>
       <title>test</title>
-      <link>https://www.los-kos.cn/posts/undefined/</link>
-      <guid>https://www.los-kos.cn/posts/undefined/</guid>
+      <link>https://www.los-kos.cn/posts/test/</link>
+      <guid>https://www.los-kos.cn/posts/test/</guid>
       <pubDate>Fri, 22 May 2020 04:00:00 GMT</pubDate>
       <description>
       
-        tttteeessst
+        Test
       
       </description>
       
       
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h1><a><center>测试</center></a></h1><h2><a><center>测试</center></a></h2><h3><a><center>测试</center></a></h3><h4><a><center>测试</center></a></h4><h5><a><center>测试</center></a></h5><h6><a><center>测试</center></a></h6><div class="note primary">            <p>初级标签</p></div><div class="note success">    <p> Codeblock in note<br>成功标签</p></div><div class="note info">            <p> Info Header<br>信息标签</p></div><div class="note warning">            <p> Warning Header<br>警告标签</p>          </div><div class="note danger">            <p> Danger Header<br>危险标签</p>          </div><div class="note info no-icon">            <p>note info no-icon<br>无图标标签</p>          </div><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
       
-      <comments>https://www.los-kos.cn/posts/undefined/#disqus_thread</comments>
+      <comments>https://www.los-kos.cn/posts/test/#disqus_thread</comments>
     </item>
     
     <item>
